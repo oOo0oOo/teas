@@ -661,6 +661,7 @@ var projects = [
 		effect: function(state){
 			state['focus'] -= 75;
 			$("#ui_meditation").show();
+            reset_meditation();
 			return state
 		}
 	},
@@ -679,7 +680,8 @@ var projects = [
 			state['meditation_width'] = 0.25;
 			state['meditation_price'] = 60;
 			state['meditation_try_cost'] = 20;
-			state['meditation_win'] = 65;
+			state['meditation_win'] = 125;
+            reset_meditation();
 			return state
 		}
 	},
@@ -698,7 +700,8 @@ var projects = [
 			state['meditation_width'] = 0.26;
 			state['meditation_price'] = 75;
 			state['meditation_try_cost'] = 25;
-			state['meditation_win'] = 80;
+			state['meditation_win'] = 155;
+            reset_meditation();
 			return state
 		}
 	},

@@ -68,6 +68,10 @@ function run_engine(state){
     $(document).foundation();
 }
 
+function reset_meditation(){
+    engine.reset_meditation();
+}
+
 function setup(){
     // Load extra content for phases from files
     // $("#ui_game_phase0").load("phase0.html");

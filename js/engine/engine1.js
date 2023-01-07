@@ -286,8 +286,11 @@ class EnginePhase1 extends BaseEngine {
         if (s['workers'] < 1 || s['meditation_active'] != -1 || s['focus'] < 30){
             return
         }
+
         s['workers'] -= 1;
         s['focus'] -= s['meditation_price'];
+
+        $("#meditation_target_container").show();
 
         // Set the target color
         var color = 0.2 + 0.6 * Math.random();
@@ -303,8 +306,8 @@ class EnginePhase1 extends BaseEngine {
         $("#start_meditation").hide();
 
         // Show price
-        var img = " <img src='static/focus_dark.png' class='img_project_resource'>"
-        $(".btn_try_meditation").html(s['meditation_price'] + img);
+        // var img = " <img src='static/focus_dark.png' class='img_project_resource'>"
+        // $(".btn_try_meditation").html(s['meditation_price'] + img);
 
         // Start the first color cycle
         this.activate_meditation_box(0);
@@ -321,10 +324,6 @@ class EnginePhase1 extends BaseEngine {
     try_meditation(num_tries){
         var s = this.state;
         if (s['meditation_active'] == num_tries){
-            // if (s['focus'] < s['meditation_price']){
-            //     return
-            // }
-            // s['focus'] -= s['meditation_price'];
 
             // Stop animation
             var box = $('#meditation_box' + num_tries);
@@ -419,6 +418,12 @@ class EnginePhase1 extends BaseEngine {
         $("#start_meditation").show();
         $("#meditation_win").hide();
         $("#meditation_lose").hide();
+        $("#meditation_target_container").hide();
+
+        
+        // Write correct price in button
+        var price = "1 Worker<br><br>" + engine.state['meditation_price'] + "<img src='static/focus_dark.png' style='width:24px'></img>";
+        $("#start_meditation").html(price);
     }
 
     render_status_text(production_rates = false){

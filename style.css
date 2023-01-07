@@ -548,6 +548,10 @@ button:focus {
   background-image: linear-gradient(to right, #303030, #ffe);
 }
 
+#meditation_target_container {
+    display: none;
+}
+
 .meditation_box {
   width: 70px;
   height: 80px;
