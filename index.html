@@ -18,12 +18,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0-rc5/css/foundation-float.min.css" type="text/css" />
 
     <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABIUlEQVRYhe2XsRWDIBCGf/IyiKVuYG9l5wgu4DQu4Ah2VvRuIKWbmOp8F+UQhcTGv0p8yPfl8AICT25I2dYLfX7fAZ60Wa/tBMq2XoamU7GhWzBlB+I3hIjYfi1l7sd1XiugbOtl0gZZkXqLEHBoOkX328LhwMEzQJPwyX3GS9nCAeBlG7gFTdpg0gZlWy98ic7EBhcFpHARaUxS5bvyS3DAsQRzP6qkyq2gK6WWcqoCPFIVzsABoQt4pCoQjLfbWTjgUYG5H9XRxEdL4or3XzGXoKq4qhNdQJLJijRI4vJDGCuPQLTd7koLAoEVCGm/KAIx8gg8At6ts91+Y50JnIOOjtS+ccmIp+JQqK+I9b0gNtgl8fXl13CbxO6Q8a+QxAdkSqxYTllAtwAAAABJRU5ErkJggg==">
   </head>
   <body>
     <div id="intro">
       <br><br><br><br><br><br><br>
       <center>
-
         <img src="static/logo.png">
         <br><br><br>
         <h3>I feel like having a tea!</h3>
@@ -261,9 +262,6 @@
           <div id="projects_list"></div>
         </div>
       </div>
-
-
-
     </div>
 
     <!-- phase1 starts here -->
@@ -283,6 +281,7 @@
           </div>
           <div class="row">
             <div class="small-6 columns">
+            It is <span id="season"></span>.
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags_rate1"></span>/s<br>
@@ -292,8 +291,8 @@
         <!-- worker box -->
         <div class="row box">
           <div class="row">
-            <div class="small-6 columns">
-              Free Workers&nbsp;<span id="workers"></span>
+            <div class="small-12 columns" id="free_workers_display">
+              Free Workers:&nbsp;<span id="workers"></span><br><br>
             </div>
           </div>
           <div class= "row">
@@ -356,7 +355,7 @@
 
               <div id="ui_greenhouse_bonus" class="row more_line_height">
                 <div class="small-5 columns">
-                  cult-bonus
+                  Cult Bonus
                 </div>
                 <div class="small-2 columns">
                   <span id="farm_bonus"></span>
@@ -373,7 +372,7 @@
 
           <div id="ui_greenhouse_use" class="row more_line_height">
             <div class="small-4 columns">
-              bonus use
+              Bonus Use
             </div>
             <div class="small-2 columns">
               <span id="greenhouse_use"></span>
@@ -420,7 +419,7 @@
             <div class="small-12 columns">
               <div id="ui_factory_bonus" class="row more_line_height">
                 <div class="small-5 columns">
-                  cult-bonus
+                  Cult Bonus
                 </div>
                 <div class="small-2 columns">
                   <span id="factory_bonus"></span>
@@ -436,7 +435,7 @@
 
           <div id="ui_factory_use" class="row more_line_height">
             <div class="small-4 columns">
-              bonus use
+              Bonus Use
             </div>
             <div class="small-3 columns">
               <span id="factory_use"></span>
@@ -517,14 +516,8 @@
           <img src="static/focus.gif" class="img_focus" width="40px"> <span id="focus"></span>
           </center>
         </div>
-      </div>
-      <!-- right column -->
-      <div class="small-4 columns main_column">
-        <!-- projects box -->
-        <div id="ui_projects1" class="row box"></div>
         <!-- meditation box-->
         <div id="ui_meditation" class="row box">
-
           <div class="row">
             <div class="small-7 columns">
               Meditate
@@ -561,6 +554,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <!-- right column -->
+      <div class="small-4 columns main_column">
+        <!-- projects box -->
+        <div id="ui_projects1" class="row box"></div>
       </div>
     </div>
 

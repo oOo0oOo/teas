@@ -72,6 +72,10 @@ function reset_meditation(){
     engine.reset_meditation();
 }
 
+function update_free_workers(){
+    engine.update_free_workers();
+}
+
 function setup(){
     // Load extra content for phases from files
     // $("#ui_game_phase0").load("phase0.html");

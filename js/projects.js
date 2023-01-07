@@ -296,6 +296,7 @@ var projects = [
 		effect: function(state){
 			state['teabags'] -= 500;
 			state['workers'] += 1;
+            update_free_workers();
 			$("#ui_focus").show();
 			$("#ui_greenhouse_bonus").show();
 			$("#ui_factory_bonus").show();
@@ -598,6 +599,7 @@ var projects = [
 			state['teabags'] -= 5e3;
 			state['focus'] -= 25;
 			state['workers'] += 1;
+            update_free_workers();
 			return state
 		}
 	},
@@ -614,6 +616,7 @@ var projects = [
 			state['teabags'] -= 12e3;
 			state['focus'] -= 50;
 			state['workers'] += 1;
+            update_free_workers();
 			return state
 		}
 	},
@@ -630,6 +633,7 @@ var projects = [
 			state['teabags'] -= 25e3;
 			state['focus'] -= 50;
 			state['workers'] += 1;
+            update_free_workers();
 			return state
 		}
 	},
@@ -646,6 +650,7 @@ var projects = [
 			state['teabags'] -= 1e6;
 			state['focus'] -= 150;
 			state['workers'] += 2;
+            update_free_workers();
 			return state
 		}
 	},

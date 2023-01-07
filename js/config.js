@@ -221,6 +221,12 @@ var START_STATE = {
     'meditation_active': -1,
     'meditation_target': 0,
 
+    // SEASON
+    'season': 0,                            // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter
+    'season_duration': 180 * 20,            // Ticks (20 / s)
+    'season_tick': 0,
+    'season_herbs': [0.8, 1.0, 0.8, 0],           // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter
+    
 
     // GAME PHASE 3 (Bag building & press your luck)
     'ceremony_state': 0, // 0 = Pick Ceremony, 1 = Select Pets, 2 = Fight (3 = Reward)

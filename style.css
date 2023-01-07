@@ -51,9 +51,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-
-}
-
 button, select {
   font-family: 'PixelOperator';
 }
@@ -439,6 +436,11 @@ button:focus {
   margin: 3px;
 }
 
+
+.free_workers_highlight {
+    color: rgb(255, 63, 4);
+    font-size: 10pt;
+}
 
 /*Focus Projects*/
 #ui_focus {

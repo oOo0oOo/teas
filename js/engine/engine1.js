@@ -10,6 +10,7 @@ class EnginePhase1 extends BaseEngine {
 
         this.reset_meditation();
         this.generate_level(true);
+        this.update_free_workers();
     }
 
     generate_level(reset=true){
@@ -37,6 +38,7 @@ class EnginePhase1 extends BaseEngine {
         this.update_factory();
         this.update_monks();
         this.update_focus();
+        this.update_season();
     }
 
     perform_all_actions(){
@@ -50,6 +52,7 @@ class EnginePhase1 extends BaseEngine {
                     break;
                 case 'shift_worker':
                     this.shift_worker(action[1][0], action[1][1]);
+                    this.update_free_workers();
                     break;
                 case 'start_meditation':
                     this.start_meditation();
@@ -62,13 +65,26 @@ class EnginePhase1 extends BaseEngine {
         this.action_queue = [];
     }
 
+    // Season
+    update_season(){
+        this.state['season_tick'] += 1;
+        this.state['season'] = Math.floor(this.state['season_tick'] / this.state['season_duration']);
+    }
+
+    update_free_workers(){
+        if (this.state['workers'] > 0){
+            $("#free_workers_display").addClass("free_workers_highlight");
+        } else {
+            $("#free_workers_display").removeClass("free_workers_highlight");
+        }
+    }
 
     // GREENHOUSE (Herbs game_phase 1)
     update_greenhouse(){
         var s = this.state;
 
         // Use greenhouse speeds calc amount
-        var amount = s['greenhouse_speeds'][s['greenhouse_speed']] * s['farmers'];
+        var amount = s['greenhouse_speeds'][s['greenhouse_speed']] * s['farmers'] * s['season_herbs'][s['season']];
 
         // Add boost from fertilizer
         amount *= 1. + s['fertilizer_effect'] * (s['fertilizer'] / s['fertilizer_max']);
@@ -479,6 +495,9 @@ class EnginePhase1 extends BaseEngine {
             $("#teabags_rate1").html(num_to_mega(production_rates[1]));
         }
 
+        // Season
+        var current_season = ['spring', 'summer', 'fall', 'winter'][s['season']];
+        $("#season").html(current_season);
     }
 
     render_upgradable_text(){
