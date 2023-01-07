@@ -304,6 +304,7 @@ class EnginePhase1 extends BaseEngine {
         }
 
         s['workers'] -= 1;
+        this.update_free_workers();
         s['focus'] -= s['meditation_price'];
 
         $("#meditation_target_container").show();
@@ -420,8 +421,7 @@ class EnginePhase1 extends BaseEngine {
         // Return the workers
         if (engine.state['meditation_active'] !== -1){
             engine.state['workers'] += 1;
-
-            // s['focus'] += s['meditation_price'] * (1 + s['meditation_active']);
+            engine.update_free_workers();
         }
 
         engine.state['meditation_active'] = -1;
