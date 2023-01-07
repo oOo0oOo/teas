@@ -1,3 +1,19 @@
+=============== NEW 2023 =====================
+
+=================phase 2 =====================
+
+Simi:
+- reorder elements in gardening and processing tab
+Ceremony:
+- design generator vs. converter
+- show how many monks are necessary for a ceremony
+- 
+
+
+
+
+=================== OLD ===================
+
 ==================== phase 1 ========================
 TODO
 

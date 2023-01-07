@@ -448,6 +448,7 @@ button:focus {
 }
 
 .focus_project {
+  position: relative;
   /*padding: 12px;
   padding-bottom: 10px;
   width: 95%;*/
@@ -457,6 +458,9 @@ button:focus {
   color: var(--dark-mid-color);
   height: 106px;
   transition: all 1500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .focus_project.level1 {
@@ -467,7 +471,57 @@ button:focus {
 
 }
 
-.focus_worker {
+.img_focus_project {
+  width: 35px;
+}
+
+.focus_icons {
+  text-align: center;
+  /* display: inline-block; */
+  /* padding-top: 20px; */
+}
+
+
+.focus_swirl {
+  position: absolute;
+  width: 120px;
+  display: none; /*set to flex to make it always visible */
+}
+
+.focus_swirl.converter {
+  left: 0;
+  top: 0;
+}
+
+.focus_swirl.generator {
+  left: -1.7rem;
+  top: 0rem;
+  -webkit-animation: rotation linear 10s infinite;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: translate(30px, 0px) rotate(0deg);
+    }
+    to {
+        -webkit-transform: translate(30px, 0px) rotate(-359deg);
+    }
+}
+
+
+
+.img_project_resource{
+  width: 25px;
+  transform: translateY(-2px);
+}
+
+.btn_cheat {
+  background-color: var(--bright-color);
+  color: var(--dark-mid-color);
+}
+
+/* unused */
+.focus_worker { 
   font-size: var(--norm_size);
   font-weight: bold;
 }
@@ -493,9 +547,7 @@ button:focus {
   height: 3px;
 }
 
-.img_focus_project {
-  width: 35px;
-}
+
 
 .img_focus_arrow {
   width: 20px;
@@ -504,39 +556,6 @@ button:focus {
   margin-right: 8px;
 }
 
-.focus_icons {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.focus_swirl {
-  position: absolute;
-  width: 102px;
-  display: none;
-}
-
-@-webkit-keyframes rotation {
-    from {
-        -webkit-transform: translate(30px, 0px) rotate(0deg);
-    }
-    to {
-        -webkit-transform: translate(30px, 0px) rotate(-359deg);
-    }
-}
-
-.focus_swirl.generator {
-  -webkit-animation: rotation linear 10s infinite;
-}
-
-.img_project_resource{
-  width: 25px;
-  transform: translateY(-2px);
-}
-
-.btn_cheat {
-  background-color: var(--bright-color);
-  color: var(--dark-mid-color);
-}
 
 /* MEDITATION */
 
