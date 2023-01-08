@@ -22,7 +22,7 @@ var projects = [
 		trigger: function(state){return project_done('initial')},
         cost: {teabags: 12},
 		game_phase: 0,
-		description: "Tell your workers where to go.",
+		description: "Tell your farmers where to go.",
 		effect: function(state){
 			$("#ui_coll_strategy").show();
 			return state
@@ -44,11 +44,11 @@ var projects = [
 	},
 	{
 		id: "time1",
-		title: "Collector Speed 1",
+		title: "Farmer Speed",
 		trigger: function(state){return project_done('compost0')},
         cost: {teabags: 80},
 		game_phase: 0,
-		description: "If you offer your workers some of your tea for free, they'll work faster.",
+		description: "If you offer your farmers some of your tea for free, they'll work faster.",
 		effect: function(state){
 			state['farmer_delay'] = 6;
 			return state
@@ -56,11 +56,11 @@ var projects = [
 	},
 	{
 		id: "hiring",
-		title: "Hire some people!",
+		title: "Hire Some People",
 		trigger: function(state){return project_done('strategy0')},
         cost: {teabags: 60},
 		game_phase: 0,
-		description: "Gardening together is more fun and faster.",
+		description: "Gardening together is more fun.",
 		effect: function(state){
 			$("#ui_collectors").show();
 			state['farmers'] += 1
@@ -69,7 +69,7 @@ var projects = [
 	},
 	{
 		id: "gardening1",
-		title: "More Garden = More FUN!",
+		title: "More Garden, More Fun",
 		trigger: function(state){return project_done('hiring')},
         cost: {teabags: 100},
 		game_phase: 0,
@@ -86,7 +86,7 @@ var projects = [
 		trigger: function(state){return project_done('compost0')},
         cost: {teabags: 40},
 		game_phase: 0,
-		description: "Why doing it all by hand?!",
+		description: "Why are you doing it by hand?!",
 		effect: function(state){
 			state['processors'] += 1;
 			$("#ui_processors1").show();
@@ -99,7 +99,7 @@ var projects = [
 		trigger: function(state){return project_done("auto_processing")},
         cost: {teabags: 30},
 		game_phase: 0,
-		description: "After drinking a tea, you'll gain more insight into those changing numbers.",
+		description: "After drinking some tea, you gain more insight into those changing numbers.",
 		effect: function(state){
 			$(".ui_rates").show();
 			return state
@@ -111,7 +111,7 @@ var projects = [
 		trigger: function(state){return project_done('compost0') && project_done('gardening1')},
         cost: {teabags: 120},
 		game_phase: 0,
-		description: "Fertilizer is nice but you need more!",
+		description: "A bucket is nice but you need more!",
 		effect: function(state){
 			$("#ui_compost1").show();
 			engine.start_compost(1, true);
@@ -124,7 +124,7 @@ var projects = [
 		trigger: function(state){return project_done('auto_processing') && project_done('compost1')},
         cost: {teabags: 100},
 		game_phase: 0,
-		description: "Automatically make composts when possible!",
+		description: "Automatically buy composts if possible!",
 		effect: function(state){
 			$("#auto_compost_box0").show();
 			$("#auto_compost_box1").show();
@@ -134,11 +134,11 @@ var projects = [
 	},
 	{
 		id: "time2",
-		title: "Collector Speed 2",
+		title: "Farmer Speed Up",
 		trigger: function(state){return project_done('time1') && project_done('gardening1')},
         cost: {teabags: 220},
 		game_phase: 0,
-		description: "Let your workers participate in your daily tea ceremonies, they'll work even faster.",
+		description: "Let your farmers participate in your daily tea ceremonies, they'll work even faster.",
 		effect: function(state){
 			state['farmer_delay'] = 4;
 			return state
@@ -159,11 +159,11 @@ var projects = [
 	},
 	{
 		id: "strategy1",
-		title: "New Strategy: Half Smart",
+		title: "New Strategy: Smart",
 		trigger: function(state){return project_done('strategy0') && project_done('time2') && project_done('compost1')},
         cost: {teabags: 400},
 		game_phase: 0,
-		description: "Regroup your workers and have a tea at home.",
+		description: "Teach your farmers to spot good tea bushes.",
 		effect: function(state){
 			$("#strategy-smart").css("opacity", 1.0);
 			action('strategy_smart');
@@ -188,7 +188,7 @@ var projects = [
 		trigger: function(state){return project_done('auto_processing2') && project_done('strategy1')},
         cost: {teabags: 420},
 		game_phase: 0,
-		description: "Improve your herb collecting to new levels!",
+		description: "Improve your herb collection by using tools!",
 		effect: function(state){
 			state['coll_efficiency'] = 1;
 			$("#ui_collectors2").show();
@@ -201,7 +201,7 @@ var projects = [
 		trigger: function(state){return project_done('strategy1')},
         cost: {teabags: 900},
 		game_phase: 0,
-		description: "Get a fertilizer-silo, this is the best option on the market.",
+		description: "Get a fertilizer-silo! This is the best option on the market.",
 		effect: function(state){
 			$("#ui_compost2").show();
 			$("#ui_compost0").hide();
@@ -211,11 +211,11 @@ var projects = [
 	},
 	{
 		id: "time3",
-		title: "Collector Speed 3",
+		title: "Farmer Focus",
 		trigger: function(state){return project_done('time2') && project_done('auto_processing2')},
         cost: {teabags: 2000},
 		game_phase: 0,
-		description: "Teach your workers your newly discovered concentration method, they'll collect leaves at a higher rate.",
+		description: "Teach your farmers your newly discovered focus method, they'll collect leaves faster.",
 		effect: function(state){
 			state['farmer_delay'] = 2;
 			return state
@@ -223,11 +223,11 @@ var projects = [
 	},
 	{
 		id: "time4",
-		title: "Collector Speed 4",
+		title: "Farmer Tea Ceremony",
 		trigger: function(state){return project_done('time3')},
         cost: {teabags: 4000},
 		game_phase: 0,
-		description: "By letting your workers sleep in a room filled with the vapors of fresh tea, they'll collect leave like crazy!",
+		description: "By letting your workers sleep in a room filled with fresh tea vapors, they'll collect leaves like crazy!",
 		effect: function(state){
 			state['farmer_delay'] = 1;
 			return state
@@ -241,7 +241,7 @@ var projects = [
 		trigger: function(state){return project_done('initial')},
         cost: {teabags: 15000},
 		game_phase: 1,
-		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it has an unexpected positive influence on your tea production.",
+		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production.",
 		effect: function(state){
 			switch_to_game_phase_1();
 			return state
@@ -253,7 +253,7 @@ var projects = [
 		trigger: function(state){return project_done('worker_placement')},
         cost: {teabags: 500},
 		game_phase: 1,
-		description: "You gained more time to focus on the important aspects of tea - the ceremonies - and are now proud memeber of the tea-cult!",
+		description: "You gained more time to focus on the important aspects of tea - the ceremonies - and are now proud member of a tea-cult!",
 		effect: function(state){
 			state['workers'] += 1;
             update_free_workers();

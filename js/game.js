@@ -1,3 +1,6 @@
+// Infinity main file
+
+// Cool FX
 //https://codepen.io/linrock/pen/tBefH
 //https://codepen.io/briangonzalez/pen/DrJyG
 //https://codepen.io/hi-im-si/pen/oXyqjG/
@@ -101,7 +104,7 @@ function setup(){
         var cost = "";
         // if focus is in the cost dictionary, add the focus icon
         if (p.cost.focus){
-            cost += num_to_mega(p.cost.focus) + " {{focus}}";
+            cost += num_to_mega(p.cost.focus) + " <img src='static/focus_dark.png' class='img_project_resource'>";
             
             // Add a space if there is also teabags cost
             if (p.cost.teabags){
@@ -109,17 +112,13 @@ function setup(){
             }
         }
         if (p.cost.teabags){
-            cost += num_to_mega(p.cost.teabags) + " {{teas}}";
+            cost += num_to_mega(p.cost.teabags) + " <img src='static/tea_icon.png' class='tea-icon'>";
         }
         p.cost_str = cost;
 
         p.status = 0; // hidden at the start
     };
     var html = template({projects: projects});
-
-    // Cost icons
-    html = html.replaceAll('{{focus}}', "<img src='static/focus_dark.png' class='img_project_resource'>");
-    html = html.replaceAll('{{teas}}', "<img src='static/tea_icon.png' class='tea-icon'>");
     $("#projects_list").html(html);
 
     // Compile the template for the focus projects
