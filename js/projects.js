@@ -98,7 +98,7 @@ var projects = [
 	},
 	{
 		id: "auto_processing",
-		title: "Auto Processing",
+		title: "Auto Brewing",
 		trigger: function(state){return project_done('compost0')},
 		cost_str: "40 {{teas}}",
 		cost: function(state){return state["teabags"] >= 40},
@@ -160,13 +160,13 @@ var projects = [
 	},
 	{
 		id: "auto_processing2",
-		title: "Processing Efficiency",
+		title: "Brewing Efficiency",
 		trigger: function(state){return project_done('auto_processing') && project_done('time2')},
 		cost_str: "220 {{teas}}",
 		cost: function(state){return state["teabags"] >= 220},
 		status: 0,
 		game_phase: 0,
-		description: "Bag your herbs faster and more efficiently.",
+		description: "Brew your teas faster and more efficiently.",
 		effect: function(state){
 			state['teabags'] -= 220;
 			state['proc_efficiency'] = 1;
@@ -278,7 +278,7 @@ var projects = [
 		cost: function(state){return state["teabags"] >= 15e3},
 		status: 0,
 		game_phase: 1,
-		description: "You've heard about this ceremony, which needs a stupid amount of teabags. It is rumored that it has an unexpected positive influence on your teaproduction.",
+		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it has an unexpected positive influence on your tea production.",
 		effect: function(state){
 			switch_to_game_phase_1();
 			return state
@@ -407,13 +407,13 @@ var projects = [
 	},
 	{
 		id: "increase_factory",
-		title: "Factory Size",
+		title: "Brew House Size",
 		trigger: function(state){return project_done('power_use')},
 		cost_str: "20 {{focus}}&nbsp;&nbsp;3 k {{teas}}",
 		cost: function(state){return state["teabags"] >= 3000 && state['focus'] >= 20},
 		status: 0,
 		game_phase: 1,
-		description: "More members of your tea cult can work in the factory.",
+		description: "More members of your tea cult can work in the brew house.",
 		effect: function(state){
 			state['teabags'] -= 3000;
 			state['focus'] -= 20;
@@ -544,7 +544,7 @@ var projects = [
 		cost: function(state){return state["teabags"] >= 50e3 && state['focus'] >= 50},
 		status: 0,
 		game_phase: 1,
-		description: "A break room increases the number of workers, the farm and factory can use.",
+		description: "A break room increases the number of workers in the farm and brew house.",
 		effect: function(state){
 			state['teabags'] -= 50e3;
 			state['focus'] -= 50;

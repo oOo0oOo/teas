@@ -216,7 +216,7 @@ var teapets = [
 
 // UTENSILS
     {
-        title: "Teapot:\nAll x 2 for 30% of teabags...",
+        title: "Teapot:\nAll x 2 for 30% of teas...",
         icon: "UT_pot",
         possible: function(state){return true},
         type: 'utensil',
