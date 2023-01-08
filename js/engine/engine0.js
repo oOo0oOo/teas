@@ -592,6 +592,12 @@ class EnginePhase0 extends BaseEngine {
                 s['compost_timer'][i] -= 1;
                 var perc = 100.0 * s['compost_timer'][i] / s['compost_times'][i];
                 $("#meter_compost" + i).css('width', '' + perc + '%');
+            } else if (s['compost_set_active'] == -1) {
+                // If auto-compost is enabled and player has enough tea bags start a new compost
+                var auto = $("#auto_compost" + i).prop('checked');
+                if (auto && s['teabags'] >= s['compost_teabags'][i]){
+                    this.start_compost(i);
+                }
             }
         }
     }

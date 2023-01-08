@@ -142,6 +142,23 @@ var projects = [
 			engine.start_compost(1, true);
 			return state
 		}
+	},	
+    {
+		id: "auto_compost",
+		title: "Auto Compost",
+		trigger: function(state){return project_done('auto_processing') && project_done('compost1')},
+		cost_str: "75 {{teas}}",
+		cost: function(state){return state["teabags"] >= 75},
+		status: 0,
+		game_phase: 0,
+		description: "Automatically make composts when possible!",
+		effect: function(state){
+			state['teabags'] -= 75;
+			$("#auto_compost_box0").show();
+			$("#auto_compost_box1").show();
+			$("#auto_compost_box2").show();
+			return state
+		}
 	},
 	{
 		id: "time2",

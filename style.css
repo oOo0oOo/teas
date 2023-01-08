@@ -397,6 +397,10 @@ button:focus {
   display: none;
 }
 
+#auto_compost_box0, #auto_compost_box1, #auto_compost_box2 {
+  display: none;
+}
+
 .composts {
   text-align: center;
   padding: 5px;
@@ -404,6 +408,10 @@ button:focus {
 
 .btn_set_compost, .progress.compost, .compost_active {
   display: none;
+}
+
+.auto-compost {
+    font-size: 6pt;
 }
 
 .compost_active {
