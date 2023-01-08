@@ -95,6 +95,26 @@ function setup(){
     // Create all (hidden) projects
     var source = $("#project-template").html();
     var template = Handlebars.compile(source);
+
+    for (i=0; i<projects.length; i++){
+        var p = projects[i];
+        var cost = "";
+        // if focus is in the cost dictionary, add the focus icon
+        if (p.cost.focus){
+            cost += num_to_mega(p.cost.focus) + " {{focus}}";
+            
+            // Add a space if there is also teabags cost
+            if (p.cost.teabags){
+                cost += " ";
+            }
+        }
+        if (p.cost.teabags){
+            cost += num_to_mega(p.cost.teabags) + " {{teas}}";
+        }
+        p.cost_str = cost;
+
+        p.status = 0; // hidden at the start
+    };
     var html = template({projects: projects});
 
     // Cost icons

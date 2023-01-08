@@ -113,7 +113,7 @@ class BaseEngine{
                 project.status = 1;
                 obj.show();
             } else if(project['status'] == 1){
-                if (project.cost(this.state)){
+                if (this.project_buyable(project)){
                     if (!obj.hasClass('buyable')){
                         obj.addClass('buyable');
                     }
@@ -124,9 +124,29 @@ class BaseEngine{
         }
     }
 
+    project_buyable(project, subtract_cost=false){
+        // Check for each of the resources if we have enough
+        var s = this.state;
+
+        // js loop through cost object
+        for (var resource in project['cost']){
+            if (s[resource] < project['cost'][resource]){
+                return false;
+            }
+        }
+
+        if (subtract_cost){
+            for (var resource in project['cost']){
+                s[resource] -= project['cost'][resource];
+            }
+        }
+
+        return true;
+    }
+
     buy_project(id){
         var project = projects.find(x => x.id === id);
-        if (project.cost(this.state)){
+        if (this.project_buyable(project, true)){
             this.state = project.effect(this.state);
             project.status = 2;
             $("#project_" + id).hide();
