@@ -564,7 +564,7 @@ class EnginePhase0 extends BaseEngine {
         if (s['teabags'] >= tb_required || free){
             // Hide button, show progress bar
             $("#btn_compost" + id).hide();
-            // $("#price_compost" + id).hide();
+            $("#price_compost" + id).hide();
             $("#progress_compost" + id).show();
             var time_required = s['compost_times'][id];
             if (!free){
@@ -624,7 +624,7 @@ class EnginePhase0 extends BaseEngine {
         // Hide click, show button again
         $("#compost_active" + id).hide();
         $("#btn_compost" + id).show();
-        // $("#price_compost" + id).show();
+        $("#price_compost" + id).show();
         this.render_tile(x, y);
     }
 
@@ -760,6 +760,10 @@ class EnginePhase0 extends BaseEngine {
                 $("#" + p).html(t);
             }
             $("#price_" + p).html(this.get_price(p));
+        }
+
+        for (p in [0, 1, 2]){
+            $("#price_compost" + p).html(this.state["compost_teabags"][p] + ' <img src="static/tea_icon.png" class="tea-icon">');
         }
     }
 

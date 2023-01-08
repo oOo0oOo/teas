@@ -142,6 +142,15 @@ button, select {
   background-color: #BCB;
 }
 
+.tea-icon-large {
+    transform: translate(0%, -6.6px);
+}
+
+.tea-icon {
+    width: 12px;
+    transform: translate(0%, -3.2px);
+}
+
 .map {
     /*border: solid;
     border-width: 0px;*/

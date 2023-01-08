@@ -99,6 +99,7 @@ function setup(){
 
     // Cost icons
     html = html.replaceAll('{{focus}}', "<img src='static/focus_dark.png' class='img_project_resource'>");
+    html = html.replaceAll('{{teas}}', "<img src='static/tea_icon.png' class='tea-icon'>");
     $("#projects_list").html(html);
 
     // Compile the template for the focus projects

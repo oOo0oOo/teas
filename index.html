@@ -46,7 +46,7 @@
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags"></span>
-              <img src="static/tea_icon.png">
+              <img class="tea-icon-large" src="static/tea_icon.png">
               <br><br>
             </div>
           </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_coll_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'coll_efficiency')">+</button>
-              <span id="price_coll_efficiency"> Tb</span>
+              <span id="price_coll_efficiency"></span>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_processors" class="btn_buy" onclick="action('buy_upgrade', 'processors')">+</button>
-              <span id="price_processors"> Tb</span>
+              <span id="price_processors"></span>
             </div>
           </div>
           <div id="ui_processors2" class="row more_line_height">
@@ -127,7 +127,7 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_proc_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'proc_efficiency')">+</button>
-              <span id="price_proc_efficiency"> Tb</span>
+              <span id="price_proc_efficiency"></span>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
             </div>
             <div class="small-5 columns more_line_height"">
               <button class="btn_buy" id="buy_garden_size" onclick="action('buy_upgrade', 'garden_size')">+</button>
-              <span id="price_garden_size"> Tb</span>
+              <span id="price_garden_size"></span>
             </div>
             <br><br>
             <br><br>
@@ -154,7 +154,7 @@
           <div id='ui_compost' class="row">
             <div id="ui_compost0" class="small-4 columns more_line_height">
               Bucket<br>
-              <span id="price_compost0">15 Tb</span>
+              <div id="price_compost0"></div>
               <div id="progress_compost0" class="success progress compost">
                 <div id="meter_compost0" class="progress-meter" style="width:0%"></div>
               </div>
@@ -167,7 +167,7 @@
             </div>
             <div id="ui_compost1" class="small-4 columns more_line_height">
               Barrel<br>
-              <span id="price_compost1">80 Tb</span>
+              <div id="price_compost1"></div>
               <div id="progress_compost1" class="success progress compost">
                 <div id="meter_compost1" class="progress-meter" style="width:0%"></div>
               </div>
@@ -180,7 +180,7 @@
             </div>
             <div id="ui_compost2" class="small-4 columns more_line_height">
               Silo<br>
-              <span id="price_compost2">400 Tb</span>
+              <div id="price_compost2"></div>
               <div id="progress_compost2" class="success progress compost">
                 <div id="meter_compost2" class="progress-meter" style="width:0%"></div>
               </div>
@@ -218,6 +218,8 @@
         </div>
         <!-- cheat box -->
         <div class="row box">
+
+          <b>Debug</b><br><br>
           <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
           <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
@@ -379,7 +381,7 @@
             </div>
             <div class="small-6 columns">
               <button id="buy_greenhouse_use" class="btn_buy" onclick="action('buy_upgrade', 'greenhouse_use')">+</button>
-              <span id="price_greenhouse_use"> Tb</span>
+              <span id="price_greenhouse_use"></span>
             </div>
           </div>
           <br>
@@ -393,7 +395,7 @@
             </div>
             <div class="small-6 columns">
               <button id="buy_greenhouse_speed" class="btn_buy" onclick="action('buy_upgrade', 'greenhouse_speed')">+</button>
-              <span id="price_greenhouse_speed"> Tb</span>
+              <span id="price_greenhouse_speed"></span>
             </div>
           </div>
 
@@ -442,7 +444,7 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_factory_use" class="btn_buy" onclick="action('buy_upgrade', 'factory_use')">+</button>
-              <span id="price_factory_use"> Tb</span>
+              <span id="price_factory_use"></span>
             </div>
           </div>
           <br>
@@ -455,7 +457,7 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_factory_speed" class="btn_buy" onclick="action('buy_upgrade', 'factory_speed')">+</button>
-              <span id="price_factory_speed"> Tb</span>
+              <span id="price_factory_speed"></span>
             </div>
           </div>
 
@@ -468,12 +470,13 @@
             </div>
             <div class="small-5 columns">
               <button id="buy_factory_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'factory_efficiency')">+</button>
-              <span id="price_factory_efficiency"> Tb</span>
+              <span id="price_factory_efficiency"></span>
             </div>
           </div>
         </div>
         <!-- cheat box -->
         <div class="row box">
+          <b>Debug</b><br><br>
           <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
           <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
@@ -621,7 +624,7 @@
             </div>
             <div class="small-6 columns">
               <button id="buy_teabageria_use" class="btn_buy" onclick="action('buy_upgrade', 'teabageria_use')">+</button>
-              <span id="price_teabageria_use"> Tb</span>
+              <span id="price_teabageria_use"></span>
             </div>
           </div>
           <br>
@@ -635,7 +638,7 @@
             </div>
             <div class="small-6 columns">
               <button id="buy_teabageria_speed" class="btn_buy" onclick="action('buy_upgrade', 'teabageria_speed')">+</button>
-              <span id="price_teabageria_speed"> Tb</span>
+              <span id="price_teabageria_speed"></span>
             </div>
           </div>
 
@@ -766,7 +769,7 @@
         {{description}}
       </div>
       <div class="project_price">
-        {{{cost_str}}} Tb
+        {{{cost_str}}}
       </div>
     </div>
     {{/each}}

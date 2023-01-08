@@ -155,7 +155,7 @@ Allgemein:
 - change colors for garden to fit the color scheme (when color scheme is fix)
 
 ==== Phase 1 ====
-OK worker left/right strategy earlier 40Tb
+OK worker left/right strategy earlier 40Teas
 OK Gardening is fun -> increase garden size
 OK order projects after price?
 OK bigger compost upgrade too expensive?
