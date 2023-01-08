@@ -407,7 +407,14 @@ button:focus {
 }
 
 .compost_active {
-  color: #fff;
+  font-size: 9pt;
+  animation: blinker 1s infinite;
+}
+  
+@keyframes blinker {
+    from { color:rgb(255, 63, 4); }
+    50% { color:rgb(32, 30, 30); }
+    to { color:rgb(255, 63, 4); }
 }
 
 .columns.no_padding {
