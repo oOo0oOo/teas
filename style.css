@@ -476,6 +476,7 @@ button:focus {
   position: relative;
   font-size: var(--norm_size);
   /* background-color: var(--bright-color); */
+
   color: var(--dark-mid-color);
   height: 106px;
   transition: all 1500ms;
@@ -500,10 +501,17 @@ button:focus {
   display: flex;
 }
 
-.icon_focus_actions {
+.focus_actions_container {
   position: absolute;
   bottom: 0;
-  height: 25px;
+  left:0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon_focus_actions {
+  height: 30px;
 }
 
 
