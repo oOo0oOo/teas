@@ -263,6 +263,7 @@ class EnginePhase1 extends BaseEngine {
                 this.state['focus_action'] -= project['focus_action'];
                 $("#focus_swirl" + project['id']).show();
                 $("#focus_project" + project['id']).css("color", "#ddd");
+                $("#focus_monks" + project['id']).hide();
                 project['lifetime'] = project['duration'];
             }
         }
