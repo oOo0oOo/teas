@@ -790,7 +790,7 @@
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/mandala.gif">
         {{/if_eq}}
         <div class="focus_icons">
-          {{focus_action}} 
+          <!-- {{focus_action}}  -->
           {{#each effect}}
           <img src="static/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
           {{#if @first}}
@@ -801,6 +801,9 @@
           {{/each}}
         </div>
       </div>
+      <!-- {{#if_eq focus_action '1'}} -->
+      <img scr="static/monk.png" class="icon_focus_actions">
+      <!-- {{/if_eq}} -->
     </div>
   </div>
   </script>
