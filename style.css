@@ -501,9 +501,7 @@ button:focus {
 }
 
 .icon_focus_actions {
-  position: absolute;
-  bottom: 0;
-  height: 25px;
+  width: 20px;
 }
 
 
