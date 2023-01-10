@@ -254,6 +254,8 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
     elem.msRequestFullscreen();
   }
+  // Update text
+  $("#fullscreenBtn").html("Exit Fullscreen");
 }
 
 /* Close fullscreen */
@@ -267,4 +269,29 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE/Edge */
     document.msExitFullscreen();
   }
+  // Update text
+  $("#fullscreenBtn").html("Fullscreen");
 }
+
+// Play and pause the music
+var audioPlayer = document.getElementById("audio");
+var audioBtn = document.getElementById("audioBtn");
+var isPlaying = false;
+
+function togglePlay() {
+  if (isPlaying) {
+    audioPlayer.pause()
+    musicBtn.innerHTML = "Play Music";
+  } else {
+    audioPlayer.play();
+    musicBtn.innerHTML = "Pause Music";
+  }
+};
+
+audioPlayer.onplaying = function() {
+  isPlaying = true;
+};
+
+audioPlayer.onpause = function() {
+  isPlaying = false;
+};

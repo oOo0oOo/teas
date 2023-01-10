@@ -42,7 +42,7 @@
           <div class="row">
             <div class="small-6 columns">
               <h3>Tea</h3>
-              <a onclick="toggleFullscreen()">Fullscreen</a>
+              <a id="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags"></span>
@@ -52,7 +52,7 @@
           </div>
           <div class="row">
             <div class="small-6 columns">
-              <br>
+              <a id="musicBtn" onclick="togglePlay()">Play Music</a>
             </div>
             <div class="small-6 columns teabag_container">
               <span class="ui_rates"> <span id="teabags_rate"></span>/s</span><br>
@@ -290,6 +290,7 @@
             It is <span id="season"></span>.
             </div>
             <div class="small-6 columns teabag_container">
+              <br>
               <span id="teabags_rate1"></span>/s<br>
             </div>
           </div>
@@ -747,7 +748,9 @@
     </div>
     <footer class="footer">
     </footer>
-
+    <audio loop id="audio">
+      <source src="static/bg.mp3" type="audio/mpeg">
+    </audio> 
     <script>
       $(document).foundation();
     </script>
