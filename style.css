@@ -659,7 +659,19 @@ button:focus {
   height: 16px;
   background-color: #fff;
   transform: translateY(5px) translateX(-50%);
+  z-index: 10;
   display: none;
+}
+
+.meditation_try {
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #84bb6d;
+  display: none;
+  z-index: 10;
+  transform: translateY(17px) translateX(-50%);
 }
 
 .stacked {

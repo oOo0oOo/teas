@@ -317,6 +317,10 @@ class EnginePhase1 extends BaseEngine {
 
         var target = $("#meditation_target");
         target.css("margin-left", "" + 300 * color + "px");
+        $("#meditation_try0").hide();
+        $("#meditation_try1").hide();
+        $("#meditation_try2").hide();
+
         target.width(s["meditation_width"] * 300 + "px");
 
         target.show();
@@ -360,6 +364,8 @@ class EnginePhase1 extends BaseEngine {
             // Hide the color box
             $("#btn_try_meditation" + num_tries).hide();
             var cur = this.update_meditation_current(val);
+            
+            $("#meditation_try" + num_tries).css("margin-left", 300 * val + "px").show();
 
             // Check if target is hit
             var diff = Math.abs(s['meditation_target'] - cur);
