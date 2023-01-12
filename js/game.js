@@ -131,7 +131,6 @@ function setup(){
 
     // Detect double click on main tea icon --> toggle visibility of the debug box
     $(".debug-box").hide();
-    $(".menu-box").hide();
     $(".tea-icon-main").dblclick(function(){
         $(".debug-box").toggle();
     });

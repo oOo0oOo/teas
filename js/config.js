@@ -223,7 +223,7 @@ var START_STATE = {
 
     // SEASON
     'season': 0,                            // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter
-    'season_duration': 150 * 20,            // Ticks (20 / s)
+    'season_duration': 180 * 20,            // Ticks (20 / s)
     'season_tick': 0,
     'season_herbs': [0.8, 1.0, 0.8, 0.2],
     
