@@ -38,7 +38,14 @@ class EnginePhase0 extends BaseEngine {
                     }
                 }
             }
+
+            // Make sure all autocompost checkboxes are not checked
+            for (var i=0;i<3;i++){
+                $("#auto_compost" + i).prop("checked", false);
+            }
         }
+
+
 
         this.generate_level(true, true)
 
