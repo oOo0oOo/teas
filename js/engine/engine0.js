@@ -1,6 +1,6 @@
 class EnginePhase0 extends BaseEngine {
-    constructor(state){
-        super(state);
+    constructor(save_state){
+        super(save_state);
 
         this.farmers = [];
         this.composts = [];
@@ -18,7 +18,7 @@ class EnginePhase0 extends BaseEngine {
             var set = this.state['compost_set_active'];
             for (var i=0;i<3;i++){
                 // Check if we have already fullfilled the project. This feels hacky...
-                if (project_done("compost" + i)){
+                if (this.project_done("compost" + i)){
                     // hide all ui elements
                     var el = ["progress_compost", "btn_compost", "btn_set_compost", "compost_active", "price_compost"];
                     for (var j=0;j<3;j++){
@@ -109,16 +109,18 @@ class EnginePhase0 extends BaseEngine {
             if (this.num_tiles > 12){
                 var side_start = Math.floor(0.8 * length_river1);
                 var length_river2 = Math.floor(0.3 * this.num_tiles);
-                coords = river[side_start];
-                coords[0] += 1; // !!! BUG: Cannot find property '0' of undefined
-                var moves = [
-                    [1, 0], [1, 0], [1, 0], [1, 0], [1, 0],
-                    [0, -1],
-                    [0, 1]
-                ]
-                var river = this.make_river(coords, moves, length_river2);
-                for (var i = 0; i < river.length; i++){
-                    this.field[river[i][0]][river[i][1]] = 3;
+                var coords = river[side_start];
+                if (coords != undefined){
+                    coords[0] += 1;
+                    var moves = [
+                        [1, 0], [1, 0], [1, 0], [1, 0], [1, 0],
+                        [0, -1],
+                        [0, 1]
+                    ]
+                    var river = this.make_river(coords, moves, length_river2);
+                    for (var i = 0; i < river.length; i++){
+                        this.field[river[i][0]][river[i][1]] = 3;
+                    }
                 }
             }
 
@@ -202,7 +204,7 @@ class EnginePhase0 extends BaseEngine {
                     this.update_strategy();
                     break;
                 case 'strategy_smart':
-                    if (project_done('strategy1')){
+                    if (this.project_done('strategy1')){
                         this.state['coll_strategy'] = 'smart';
                         this.update_strategy();
                     }

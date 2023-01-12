@@ -1,6 +1,6 @@
 class EnginePhase1 extends BaseEngine {
-    constructor(state){
-        super(state);
+    constructor(save_state){
+        super(save_state);
 
         this.focus_projects = [];
     }

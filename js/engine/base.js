@@ -1,5 +1,5 @@
 class BaseEngine{
-    constructor(state){
+    constructor(save_state){
         this.state = false;
 
         // Keep track of resources to calculate production rates [Mint, Teabags]
@@ -17,7 +17,7 @@ class BaseEngine{
         var old_tb = this.state['teabags'];
         var old_focus = this.state['focus'];
 
-        if (s['projects'][0] == 2){
+        if (this.state['project_status'][0] == 2){
             $("#ui_projects").show();
         }
 
@@ -30,9 +30,9 @@ class BaseEngine{
         this.state['teabags'] = 1e10;
         this.state['focus'] = 1e10;
 
-        for (var i=0;i<s['projects'].length;i++){
+        for (var i=0;i<this.state['project_status'].length;i++){
             var project = projects[i];
-            var status = s['projects'][i];
+            var status = this.state['project_status'][i];
             if (project['game_phase'] == this.state['game_phase']) {
                 if (status == 1){
                     $("#project_" + project["id"]).show();
@@ -43,7 +43,6 @@ class BaseEngine{
             } else {
                 $("#project_" + project["id"]).hide();
             }
-            projects[i]['status'] = status;
         }
 
         this.state['teabags'] = old_tb;
@@ -109,10 +108,11 @@ class BaseEngine{
 
             // Add a project
             var obj = $("#project_" + project["id"]);
-            if (project['status'] == 0 && project.trigger(this.state)){
-                project.status = 1;
+            var status = this.state['project_status'][i];
+            if (status == 0 && project.trigger(this.state)){
+                this.state['project_status'][i] = 1;
                 obj.show();
-            } else if(project['status'] == 1){
+            } else if(status == 1){
                 if (this.project_buyable(project)){
                     if (!obj.hasClass('buyable')){
                         obj.addClass('buyable');
@@ -144,11 +144,18 @@ class BaseEngine{
         return true;
     }
 
+    project_done(project_id){
+        var pId = projects.findIndex(x => x.id === project_id);
+        return this.state['project_status'][pId] == 2;
+    }
+
     buy_project(id){
-        var project = projects.find(x => x.id === id);
+        var projectInd = projects.findIndex(x => x.id === id);
+        var project = projects[projectInd];
+
         if (this.project_buyable(project, true)){
             this.state = project.effect(this.state);
-            project.status = 2;
+            this.state['project_status'][projectInd] = 2;
             $("#project_" + id).hide();
         }
         this.render_status_text();
@@ -214,26 +221,19 @@ class BaseEngine{
     }
 
     serialize(){
-        var proj = [];
-        for (var i=0;i<projects.length;i++){
-            var p = projects[i];
-            proj.push(p['status']);
-        };
-
-        var s = {
+        var save_state = {
             'state': this.state,
             'farmers': this.farmers,
             'composts': this.composts,
             'field': this.field,
-            'focus_projects': this.focus_projects,
-            'projects': proj
+            'focus_projects': this.focus_projects
         };
-        return s
+        return save_state
     }
 
     save_game(){
-        var s = this.serialize();
-        localStorage.setItem("teabagSave",JSON.stringify(s));
+        var save_state = this.serialize();
+        localStorage.setItem("InfiniteaSave", JSON.stringify(save_state));
         console.log("Saved Game!");
     }
 }

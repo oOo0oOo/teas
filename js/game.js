@@ -28,44 +28,44 @@ function tick_game(){
 }
 
 function load_game_state(){
-    var state;
-    if (localStorage.getItem("teabagSave") != null) {
-        state = JSON.parse(localStorage.getItem("teabagSave"));
+    var save_state;
+    if (localStorage.getItem("InfiniteaSave") != null) {
+        save_state = JSON.parse(localStorage.getItem("InfiniteaSave"));
     } else {
-        state = {
+        save_state = {
             'state': JSON.parse(JSON.stringify(START_STATE)),
             'farmers': [],
             'composts': [],
             'field': [],
             'focus_projects': [],
-            'projects': new Array(projects.length).fill(0)
         };
+        save_state['state']['project_status'] = new Array(projects.length).fill(0);
     }
-    return state
+    return save_state
 }
 
-function run_engine(state){
+function run_engine(save_state){
     delete engine;
-    switch(state['state']['game_phase']){
+    switch(save_state['state']['game_phase']){
         case -1:
             $("#intro").show();
             break;
         case 0:
-            engine = new EnginePhase0(state);
+            engine = new EnginePhase0(save_state);
             $("#ui_game_phase0").show();
             break;
         case 1:
-            engine = new EnginePhase1(state);
+            engine = new EnginePhase1(save_state);
             $("#ui_game_phase1").show();
             break;
         case 2:
-            engine = new EnginePhase2(state);
+            engine = new EnginePhase2(save_state);
             $("#ui_game_phase2").show();
             break;
     };
 
     if (engine){
-        engine.init_game(state)
+        engine.init_game(save_state)
         tick_game();
     }
     $(document).foundation();
@@ -115,8 +115,6 @@ function setup(){
             cost += num_to_mega(p.cost.teabags) + " <img src='static/tea_icon.png' class='tea-icon'>";
         }
         p.cost_str = cost;
-
-        p.status = 0; // hidden at the start
     };
     var html = template({projects: projects});
     $("#projects_list").html(html);
@@ -172,9 +170,9 @@ function reset_save(){
 function switch_to_game_phase_0(){
     $("#intro").hide();
 
-    var state = load_game_state();
-    state['state']['game_phase'] = 0;
-    run_engine(state);
+    var save_state = load_game_state();
+    save_state['state']['game_phase'] = 0;
+    run_engine(save_state);
 }
 
 function switch_to_game_phase_1(){

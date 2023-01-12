@@ -1,6 +1,6 @@
 class EnginePhase2 extends BaseEngine {
-    constructor(state){
-        super(state);
+    constructor(save_state){
+        super(save_state);
         this.current_ceremony;
         this.current_teapet;
     }
