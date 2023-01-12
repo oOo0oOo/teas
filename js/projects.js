@@ -238,7 +238,7 @@ var projects = [
 	{
 		id: "worker_placement",
 		title: "Greenhouse Technology",
-		trigger: function(state){return project_done('initial')},
+		trigger: function(state){return project_done('initial') && state["teabags"] >= 3000},
         cost: {teabags: 15000},
 		game_phase: 1,
 		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production.",
