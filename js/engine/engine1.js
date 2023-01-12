@@ -68,7 +68,13 @@ class EnginePhase1 extends BaseEngine {
     // Season
     update_season(){
         this.state['season_tick'] += 1;
-        this.state['season'] = Math.floor(this.state['season_tick'] / this.state['season_duration']);
+
+        var season_state = this.state['season_tick'] / this.state['season_duration'];
+
+        var remaining = season_state - Math.floor(season_state);
+        $("#meter_season").css("width", (remaining * 100) + "%");
+
+        this.state['season'] = Math.floor(season_state) % 4;
     }
 
     update_free_workers(){
