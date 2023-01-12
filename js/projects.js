@@ -13,7 +13,10 @@ var projects = [
         cost: {teabags: 3},
 		game_phase: 0,
 		description: "This tea is so refreshing.",
-		effect: function(state){return state}
+		effect: function(state){
+            $(".menu-box").show();
+            return state
+        }
 	},
 
 	//================== phase 1 ==================//

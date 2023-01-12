@@ -46,7 +46,7 @@
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags"></span>
-              <img class="tea-icon-large" src="static/tea_icon.png">
+              <img class="tea-icon-main" src="static/tea_icon.png">
               <br><br>
             </div>
           </div>
@@ -219,15 +219,15 @@
             </div>
           </div>
         </div>
+        <div class="row box menu-box">
+          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart: 100 <img src="static/tea_icon.png" class="tea-icon"></button>
+        </div>
         <!-- cheat box -->
-        <div class="row box">
-
+        <div class="row box debug-box">
           <b>Debug</b><br><br>
           <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
           <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
-          &nbsp;
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Reset</button>
         </div>
       </div>
 
@@ -281,7 +281,7 @@
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags1"></span>
-              <img class="tea-icon-large" src="static/tea_icon.png">
+              <img class="tea-icon-main" src="static/tea_icon.png">
               <br><br>
             </div>
           </div>
@@ -469,16 +469,17 @@
             </div>
           </div>
         </div>
+        <div class="row box menu-box">
+          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart: 100 <img src="static/tea_icon.png" class="tea-icon"></button>
+        </div>
         <!-- cheat box -->
-        <div class="row box">
+        <div class="row box debug-box">
           <b>Debug</b><br><br>
           <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
           <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
           &nbsp;
           <button class="btn_cheat" id="give_worker" onclick="give_worker()">+ Worker</button>
-          <br><br>
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Reset</button>
         </div>
       </div>
 
@@ -654,7 +655,7 @@
           &nbsp;
           <button class="btn_cheat" id="give_worker" onclick="give_worker()">+ Worker</button>
           <br><br>
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Reset</button>
+          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
         </div>
       </div>
 

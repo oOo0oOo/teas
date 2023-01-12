@@ -129,6 +129,13 @@ function setup(){
     var source = $("#ceremony-template").html();
     ceremony_template = Handlebars.compile(source);
 
+    // Detect double click on main tea icon --> toggle visibility of the debug box
+    $(".debug-box").hide();
+    $(".menu-box").hide();
+    $(".tea-icon-main").dblclick(function(){
+        $(".debug-box").toggle();
+    });
+
     // Load a normal game
     var state = load_game_state();
     run_engine(state, false);
@@ -159,12 +166,13 @@ function give_worker(){
     engine.state['workers'] += 1;
 }
 
-
 function reset_save(){
+    if (!confirm("Are you sure you want to delete all your progress and start over?")){
+        return;
+    };
     localStorage.clear();
     location.reload();
 }
-
 
 // SWITCH GAME PHASE
 function switch_to_game_phase_0(){
