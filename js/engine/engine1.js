@@ -306,7 +306,7 @@ class EnginePhase1 extends BaseEngine {
     start_meditation(){
         var s = this.state;
         // Use 1 worker
-        if (s['workers'] < 1 || s['meditation_active'] != -1 || s['focus'] < 30){
+        if (s['workers'] < 1 || s['meditation_active'] != -1 || s['focus'] < s['meditation_price']){
             return
         }
 
