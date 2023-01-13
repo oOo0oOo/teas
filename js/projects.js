@@ -372,7 +372,7 @@ var projects = [
 	{
 		id: "greenhouse_manager",
 		title: "Greenhouse Manager",
-		trigger: function(state){return engine.project_done('fertilizer_use')},
+		trigger: function(state){return engine.project_done('increase_farm')},
         cost: {focus: 40, teabags: 8000},
 		game_phase: 1,
 		description: "By introducing a new manager, who is also part of the tea-cult, your collectors will work more efficient.",
@@ -385,7 +385,7 @@ var projects = [
 	{
 		id: "factory_manager",
 		title: "Factory Manager",
-		trigger: function(state){return engine.project_done('power_use')},
+		trigger: function(state){return engine.project_done('increase_factory')},
         cost: {focus: 45, teabags: 10000},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to inrcease the output per herb for all your factories.",
