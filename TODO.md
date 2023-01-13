@@ -10,6 +10,16 @@ Ceremony:
 - 
 
 
+Oli:
+- project "tea ceremony" adds the worker-placement-option "monks"
+- project "focus project 2" adds cult-bonus-bars to the UI
+- project "focus project 2" adds greenhouse and brewing generators
+- focus-project for greenhouse and brewing slightly stronger
+- converters are working,  eventough the resource isn't available
+
+
+
+
 
 
 =================== OLD ===================

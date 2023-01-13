@@ -271,7 +271,7 @@ var projects = [
 		id: "focus_level2",
 		title: "Focus Projects Level 2",
 		trigger: function(state){return engine.project_done('focus')},
-        cost: {teabags: 100},
+        cost: {focus: 30, teabags: 4000},
 		game_phase: 1,
 		description: "Focus Projects Level 2",
 		effect: function(state){
@@ -283,7 +283,7 @@ var projects = [
 		id: "focus_level3",
 		title: "Focus Projects Level 3",
 		trigger: function(state){return engine.project_done('focus_level2')},
-        cost: {teabags: 100},
+        cost: {focus: 40, teabags: 7000},
 		game_phase: 1,
 		description: "Focus Projects Level 3",
 		effect: function(state){
@@ -295,7 +295,7 @@ var projects = [
 		id: "focus_level4",
 		title: "Focus Projects Level 4",
 		trigger: function(state){return engine.project_done('focus_level3')},
-        cost: {teabags: 100},
+        cost: {focus: 80, teabags: 38000},
 		game_phase: 1,
 		description: "Focus Projects Level 4",
 		effect: function(state){
@@ -306,8 +306,8 @@ var projects = [
 	{
 		id: "fertilizer_use",
 		title: "Advanced Fertilizer",
-		trigger: function(state){return engine.project_done('focus')},
-        cost: {focus: 20, teabags: 1500},
+		trigger: function(state){return engine.project_done('focus_level2')},
+        cost: {focus: 20, teabags: 3000},
 		game_phase: 1,
 		description: "Use the sacred tea from ceremonies to fertilize your greenhouses.",
 		effect: function(state){
@@ -320,7 +320,7 @@ var projects = [
 	{
 		id: "power_use",
 		title: "Advanced Power",
-		trigger: function(state){return engine.project_done('focus')},
+		trigger: function(state){return engine.project_done('focus_level2')},
         cost: {focus: 25, teabags: 2000},
 		game_phase: 1,
 		description: "Use the sacred tea from ceremonies to fertilize your greenhouses.",
@@ -337,7 +337,7 @@ var projects = [
 		id: "increase_farm",
 		title: "Farm Size",
 		trigger: function(state){return engine.project_done('fertilizer_use')},
-        cost: {focus: 20, teabags: 2500},
+        cost: {focus: 30, teabags: 3500},
 		game_phase: 1,
 		description: "More members of your tea cult can work on the farm.",
 		effect: function(state){
@@ -349,7 +349,7 @@ var projects = [
 		id: "increase_factory",
 		title: "Brew House Size",
 		trigger: function(state){return engine.project_done('power_use')},
-        cost: {focus: 20, teabags: 3000},
+        cost: {focus: 30, teabags: 4000},
 		game_phase: 1,
 		description: "More members of your tea cult can work in the brew house.",
 		effect: function(state){
@@ -360,8 +360,8 @@ var projects = [
 	{
 		id: "increase_monks",
 		title: "More Monks",
-		trigger: function(state){return engine.project_done('focus')},
-        cost: {focus: 25, teabags: 1000},
+		trigger: function(state){return engine.project_done('focus_level3')},
+        cost: {focus: 50, teabags: 3000},
 		game_phase: 1,
 		description: "Make room for an additional monk.",
 		effect: function(state){
@@ -373,7 +373,7 @@ var projects = [
 		id: "greenhouse_manager",
 		title: "Greenhouse Manager",
 		trigger: function(state){return engine.project_done('fertilizer_use')},
-        cost: {focus: 30, teabags: 5000},
+        cost: {focus: 40, teabags: 8000},
 		game_phase: 1,
 		description: "By introducing a new manager, who is also part of the tea-cult, your collectors will work more efficient.",
 		effect: function(state){
@@ -386,7 +386,7 @@ var projects = [
 		id: "factory_manager",
 		title: "Factory Manager",
 		trigger: function(state){return engine.project_done('power_use')},
-        cost: {focus: 35, teabags: 7000},
+        cost: {focus: 45, teabags: 10000},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to inrcease the output per herb for all your factories.",
 		effect: function(state){
@@ -400,7 +400,7 @@ var projects = [
 		id: "fertilizer_bonus_max",
 		title: "Fertilizer bonus",
 		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
-        cost: {focus: 50, teabags: 30000},
+        cost: {focus: 70, teabags: 30000},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
 		effect: function(state){
@@ -412,7 +412,7 @@ var projects = [
 		id: "fertilizer_bonus_max2",
 		title: "Fertilizer bonus 2",
 		trigger: function(state){return engine.project_done('fertilizer_bonus_max')},
-        cost: {focus: 75, teabags: 1e6},
+        cost: {focus: 90, teabags: 1e6},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
 		effect: function(state){
@@ -424,7 +424,7 @@ var projects = [
 		id: "power_bonus_max",
 		title: "Power bonus",
 		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
-        cost: {focus: 50, teabags: 30000},
+        cost: {focus: 60, teabags: 30000},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
 		effect: function(state){
@@ -436,7 +436,7 @@ var projects = [
 		id: "power_bonus_max2",
 		title: "Power bonus 2",
 		trigger: function(state){return engine.project_done('power_bonus_max')},
-        cost: {focus: 75, teabags: 1e6},
+        cost: {focus: 85, teabags: 1e6},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
 		effect: function(state){
@@ -448,24 +448,12 @@ var projects = [
 		id: "increase_workers_both",
 		title: "Break Room",
 		trigger: function(state){return engine.project_done('increase_farm') && engine.project_done('increase_factory') && engine.project_done('fertilizer_bonus_max') && engine.project_done('power_bonus_max')},
-        cost: {focus: 50, teabags: 50000},
+        cost: {focus: 100, teabags: 50000},
 		game_phase: 1,
 		description: "A break room increases the number of workers in the farm and brew house.",
 		effect: function(state){
 			state['farmers_max'] += 1;
 			state['processors_max'] += 1;
-			return state
-		}
-	},	
-	{
-		id: "increase_monks2",
-		title: "Spiritual Leader",
-		trigger: function(state){return engine.project_done('increase_workers_both')},
-        cost: {focus: 80, teabags: 50000},
-		game_phase: 1,
-		description: "You become a spiritual leader and increase meditation group.",
-		effect: function(state){
-			state['monks_max'] += 1;
 			return state
 		}
 	},
@@ -482,12 +470,24 @@ var projects = [
 			engine.generate_level();
 			return state
 		}
+	},	
+	{
+		id: "increase_monks2",
+		title: "Spiritual Leader",
+		trigger: function(state){return engine.project_done('more_focus_projects')},
+        cost: {focus: 120, teabags: 50000},
+		game_phase: 1,
+		description: "You become a spiritual leader and increase meditation group.",
+		effect: function(state){
+			state['monks_max'] += 1;
+			return state
+		}
 	},
 	{
 		id: "more_workers",
 		title: "Add Worker",
-		trigger: function(state){return engine.project_done('worker_placement')},
-        cost: {focus: 25, teabags: 5000},
+		trigger: function(state){return engine.project_done('focus')},
+        cost: {focus: 30, teabags: 5500},
 		game_phase: 1,
 		description: 'You gain control over one more "normal" human.',
 		effect: function(state){
@@ -513,7 +513,7 @@ var projects = [
 		id: "more_workers3",
 		title: "Add Worker",
 		trigger: function(state){return engine.project_done('more_workers2') && engine.project_done('meditation')},
-        cost: {focus: 50, teabags: 25e3},
+        cost: {focus: 90, teabags: 25e3},
 		game_phase: 1,
 		description: 'You gain control over one more "normal" human.',
 		effect: function(state){
@@ -526,7 +526,7 @@ var projects = [
 		id: "more_workers4",
 		title: "Add Two Workers",
 		trigger: function(state){return engine.project_done('more_workers3')},
-        cost: {focus: 150, teabags: 1e6},
+        cost: {focus: 200, teabags: 1e6},
 		game_phase: 1,
 		description: 'You gain control over one more "normal" human.',
 		effect: function(state){
@@ -539,7 +539,7 @@ var projects = [
 		id: "meditation",
 		title: "Meditation",
 		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('factory_manager') && engine.project_done('greenhouse_manager')},
-        cost: {focus: 75},
+        cost: {focus: 85},
 		game_phase: 1,
 		description: "The master of the tea-cult, wants to show you some secret techniques - for devoted members only!",
 		effect: function(state){
@@ -552,7 +552,7 @@ var projects = [
 		id: "meditation2",
 		title: "Meditation 2",
 		trigger: function(state){return engine.project_done('meditation')},
-        cost: {focus: 100, teabags: 1e6},
+        cost: {focus: 170, teabags: 2e6},
 		game_phase: 1,
 		description: "Your master's secret-techniques start to make more sense.",
 		effect: function(state){
@@ -568,7 +568,7 @@ var projects = [
 		id: "meditation3",
 		title: "Meditation 3",
 		trigger: function(state){return engine.project_done('meditation2')},
-        cost: {focus: 150, teabags: 10e6},
+        cost: {focus: 250, teabags: 10e6},
 		game_phase: 1,
 		description: "Your master's secret-techniques start to make more sense.",
 		effect: function(state){
@@ -584,7 +584,7 @@ var projects = [
 		id: "nirvana",
 		title: "Nirvana",
 		trigger: function(state){return state['game_phase'] == 1},
-        cost: {focus: 500, teabags: 2.5e9},
+        cost: {focus: 700, teabags: 3.5e9},
 		game_phase: 1,
 		description: "It's time for a change! Become master of your own tea-cult.",
 		effect: function(state){

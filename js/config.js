@@ -76,8 +76,8 @@ var START_STATE = {
     'monks': 0,
 
     'monks_max': 2,
-    'farmers_max': 2,
-    'processors_max': 2,
+    'farmers_max': 3,
+    'processors_max': 3,
 
     'factory_speed': 0,
     'factory_efficiency': 0,
@@ -95,7 +95,7 @@ var START_STATE = {
 
     // Monks
     'focus_action': 0.0,
-    'monk_focus_action_generate': 0.001,             // Focus action generated per monk per tick
+    'monk_focus_action_generate': 0.0013,             // Focus action generated per monk per tick
 
 
     'price_greenhouse_speed': [1e3, 5e3, 8e3, 32e3, 185e3, 520e3, 1.1e6, 12e6, 110e6],
@@ -158,7 +158,20 @@ var START_STATE = {
         {
             'name': 'Nature generator',
             'effect': {
-                'fertilizer': [0.01, 0.02],
+                'fertilizer': [0.013, 0.02],
+            },
+            'duration': [700, 800],                  // Ticks (20 / s)
+            'focus_action': [2, 3],
+            'rarity': [0.3, 0.3],
+            'level': [
+                [1, 2, 3],
+                [2, 3, 4]
+            ],
+        },
+        {
+            'name': 'Processing generator',
+            'effect': {
+                'power': [0.011, 0.02],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [2, 3],
