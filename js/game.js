@@ -176,6 +176,8 @@ function reset_save(){
 // SWITCH GAME PHASE
 function switch_to_game_phase_0(){
     $("#intro").hide();
+    // Open tutorial popup (reveal)
+    $("#tutorial_popup").foundation('open');
 
     var save_state = load_game_state();
     save_state['state']['game_phase'] = 0;

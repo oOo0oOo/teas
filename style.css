@@ -107,7 +107,6 @@ button, select {
 /*end of style for tooltip */
 
 
-
 .main_column {
   padding: 0px 7px 0px 7px;
 }
@@ -140,6 +139,13 @@ button, select {
 
 .teapet-selected {
   background-color: #BCB;
+}
+
+#tutorial_popup {
+  font-size: 10pt;
+  text-align: center;
+  padding: 40px;
+  background-color: var(--bright-color);
 }
 
 .tea-icon-main {

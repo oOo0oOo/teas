@@ -31,9 +31,22 @@
         <br>
         <button onclick="switch_to_game_phase_0()">Check out garden</button>
       </center>
+      <div style="position: absolute; bottom: 10%; right: 50%;transform: translateX(50%)">
+        Made with <span style="font-size: 18pt">&#9749;</span> by Simon Wüthrich & Oliver Dressler.
+      </div>
     </div>
     <!-- phase0 starts here -->
     <div id="ui_game_phase0" class="row">
+
+      <!-- Intro popup with explanation -->
+      <div class="reveal" id="tutorial_popup" data-reveal>
+        <h2>This is Your Garden</h2>
+        <br><br>
+        <p>You are walking around collecting <b>herbs</b>.</p>
+        <p>With these herbs you can brew <b>tea</b>.</p>
+        <p>Tea is the most important thing in life.</p>
+        <span style="font-size: 18pt">&#9749;&emsp;&#9749;&emsp;&#9749;</span>
+      </div>
 
       <!--left column-->
       <div class="large-4 small-6 columns main_column">
