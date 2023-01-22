@@ -166,6 +166,9 @@ function give_worker(){
 }
 
 function reset_save(){
+    if (engine.state["teabags"] < 100){
+        return;
+    };
     if (!confirm("Are you sure you want to delete all your progress and start over?")){
         return;
     };
@@ -181,6 +184,10 @@ function switch_to_game_phase_0(){
 
     var save_state = load_game_state();
     save_state['state']['game_phase'] = 0;
+
+    // Hide the restart button
+    $(".menu-box").hide();
+
     run_engine(save_state);
 }
 
