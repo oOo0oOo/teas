@@ -189,8 +189,8 @@ var projects = [
 	{
 		id: "map_fertilizer",
 		title: "Train Gardeners",
-		trigger: function(state){return engine.project_done('collecting_efficiency')},
-        cost: {teabags: 500},
+		trigger: function(state){return engine.project_done('collecting_efficiency') && engine.project_done('compost2')},
+        cost: {teabags: 2500},
 		game_phase: 0,
 		description: "Equip your farmers with fertilizer",
 		effect: function(state){
@@ -232,8 +232,8 @@ var projects = [
 	{
 		id: "time3",
 		title: "Farmer Focus",
-		trigger: function(state){return engine.project_done('time2') && engine.project_done('auto_processing2')},
-        cost: {teabags: 2000},
+		trigger: function(state){return engine.project_done('time2') && engine.project_done('auto_processing2') && engine.project_done('compost2')},
+        cost: {teabags: 20000},
 		game_phase: 0,
 		description: "Teach your farmers your newly discovered focus method, they'll collect leaves faster.",
 		effect: function(state){
@@ -245,7 +245,7 @@ var projects = [
 		id: "time4",
 		title: "Farmer Tea Ceremony",
 		trigger: function(state){return engine.project_done('time3')},
-        cost: {teabags: 6000},
+        cost: {teabags: 80000},
 		game_phase: 0,
 		description: "By letting your workers sleep in a room filled with fresh tea vapors, they'll collect leaves like crazy!",
 		effect: function(state){
@@ -256,8 +256,8 @@ var projects = [
 	{
 		id: "worker_placement",
 		title: "Greenhouse Technology",
-		trigger: function(state){return engine.project_done('initial') && state["teabags"] >= 3000},
-        cost: {teabags:40000},
+		trigger: function(state){return engine.project_done('initial') && state["teabags"] >= 80000},
+        cost: {teabags:500000},
 		game_phase: 0,
 		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production. Are you sure?!",
 		effect: function(state){

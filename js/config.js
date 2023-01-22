@@ -41,7 +41,7 @@ var START_STATE = {
 
     // Farming & processing efficiency
     'coll_efficiency_speed': [1, 2, 3, 4, 5, 6, 7],
-    'proc_efficiency_speed': [1, 2, 3, 5, 7, 10, 13, 19, 25, 30, 35],
+    'proc_efficiency_speed': [1, 2, 3, 5, 9, 17, 25, 30, 40, 55, 70],
 
     // Processing efficiency gives bonus herbs
     'proc_efficiency_effect': [1.0, 1.1, 1.2, 1.35, 1.5, 1.75, 2.0, 2.25, 2.5, 3, 3.5, 4],      // Create bonus teabags when processing herbs
@@ -53,18 +53,18 @@ var START_STATE = {
 
     // Compost (there are three different ones)
     'compost_times': [120, 500, 700],               // Time to charge compost
-    'compost_teabags': [15, 80, 400],               // Cost of compost in teabags
+    'compost_teabags': [15, 80, 700],               // Cost of compost in teabags
     'compost_lifetime': [900, 1200, 2000],         // How long does the compost stay on the map
     'compost_probability': [0.3, 0.5, 2],           // How many fields does the compost fertilize per tick
     'compost_distance': [2, 3, 10],               // Distance is a normal distribution: this is one standard deviation (68% of fields fertilized)
     'compost_amount': [0.125, 0.125, 0.2],             // Fertilize = random([1 - 2]) * amount
 
     // Prices
-    'price_coll_efficiency': [1, 530, 1500, 2500, 4500, 6000],
-    'price_proc_efficiency': [1, 150, 360, 700, 1200, 2000, 3500, 5000, 8000, 12000],
-    'price_farmers': [0, 0, 50, 90, 180, 500, 1000, 1800, 2500, 4000, 6000, 8500],
-    'price_processors': [0, 45, 60, 80, 150, 230, 600, 1200, 2100, 2500, 4000, 7500, 10000],
-    'price_garden_size': [0, 200, 420, 900, 3000, 5000],
+    'price_coll_efficiency': [1, 700, 2500, 15000, 90000, 150000], //tools
+    'price_proc_efficiency': [1, 150, 360, 900, 2500, 7500, 12000, 30000, 80000, 120000],
+    'price_farmers': [0, 0, 50, 90, 180, 500, 2000, 5000, 15000, 40000, 70000, 100000],
+    'price_processors': [0, 45, 60, 80, 150, 230, 800, 3500, 6000, 12500, 35000, 60000, 110000],
+    'price_garden_size': [0, 200, 420, 900, 5000, 10000],
 
     // Some dudes are fertilizers
     'map_fertilizer_ratio': 0.5,                            // The slider value
