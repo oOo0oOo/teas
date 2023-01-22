@@ -245,7 +245,7 @@ var projects = [
 		id: "time4",
 		title: "Farmer Tea Ceremony",
 		trigger: function(state){return engine.project_done('time3')},
-        cost: {teabags: 4000},
+        cost: {teabags: 6000},
 		game_phase: 0,
 		description: "By letting your workers sleep in a room filled with fresh tea vapors, they'll collect leaves like crazy!",
 		effect: function(state){
@@ -257,7 +257,7 @@ var projects = [
 		id: "worker_placement",
 		title: "Greenhouse Technology",
 		trigger: function(state){return engine.project_done('initial') && state["teabags"] >= 3000},
-        cost: {teabags: 15000},
+        cost: {teabags:40000},
 		game_phase: 0,
 		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production. Are you sure?!",
 		effect: function(state){

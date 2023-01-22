@@ -40,8 +40,8 @@ var START_STATE = {
     'num_tiles': [12, 18, 26, 40, 60, 92, 136],
 
     // Farming & processing efficiency
-    'coll_efficiency_speed': [1, 2, 3, 4, 5],
-    'proc_efficiency_speed': [1, 2, 3, 5, 7, 10, 13, 18, 22, 27, 32],
+    'coll_efficiency_speed': [1, 2, 3, 4, 5, 6, 7],
+    'proc_efficiency_speed': [1, 2, 3, 5, 7, 10, 13, 19, 25, 30, 35],
 
     // Processing efficiency gives bonus herbs
     'proc_efficiency_effect': [1.0, 1.1, 1.2, 1.35, 1.5, 1.75, 2.0, 2.25, 2.5, 3, 3.5, 4],      // Create bonus teabags when processing herbs
@@ -60,11 +60,11 @@ var START_STATE = {
     'compost_amount': [0.125, 0.125, 0.2],             // Fertilize = random([1 - 2]) * amount
 
     // Prices
-    'price_coll_efficiency': [1, 530, 1500, 3000],
+    'price_coll_efficiency': [1, 530, 1500, 2500, 4500, 6000],
     'price_proc_efficiency': [1, 150, 360, 700, 1200, 2000, 3500, 5000, 8000, 12000],
-    'price_farmers': [0, 0, 50, 90, 180, 500, 1000, 1800, 2500, 4000],
+    'price_farmers': [0, 0, 50, 90, 180, 500, 1000, 1800, 2500, 4000, 6000, 8500],
     'price_processors': [0, 45, 60, 80, 150, 230, 600, 1200, 2100, 2500, 4000, 7500, 10000],
-    'price_garden_size': [0, 200, 420, 1000, 4000, 6000],
+    'price_garden_size': [0, 200, 420, 900, 3000, 5000],
 
     // Some dudes are fertilizers
     'map_fertilizer_ratio': 0.5,                            // The slider value
