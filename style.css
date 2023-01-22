@@ -65,6 +65,8 @@ button, select {
   z-index: -1;
 }
 
+
+
 .slider-handle {
   background-color: var(--bright-mid-color);
   border-radius:5px;
@@ -146,6 +148,7 @@ button, select {
   text-align: center;
   padding: 40px;
   background-color: var(--bright-color);
+  line-height: 25pt;
 }
 
 .tea-icon-main {
@@ -155,6 +158,10 @@ button, select {
 .tea-icon {
     width: 12px;
     transform: translate(0%, -3.2px);
+}
+
+.icon_spacing {
+  margin: 0 .5rem;
 }
 
 .map {
@@ -307,6 +314,11 @@ button:focus {
   outline: none;
 }
 
+.btn_big {
+  padding: .8rem;
+  font-size: .9rem;
+}
+
 #ui_projects, #ui_projects1, #ui_projects2 {
   padding: 0px;
   padding-top: 12px;
@@ -406,6 +418,7 @@ button:focus {
 
 #auto_compost_box0, #auto_compost_box1, #auto_compost_box2 {
   display: none;
+  color: var(--dark-color);
 }
 
 .composts {

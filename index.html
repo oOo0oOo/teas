@@ -27,12 +27,16 @@
       <center>
         <img src="static/logo.png">
         <br><br><br>
-        <h3>I feel like having a tea!</h3>
+        <h3>I feel like having a tea!
+        </h3>
         <br>
-        <button onclick="switch_to_game_phase_0()">Check out garden</button>
+        <img class="tea-icon-main icon_spacing" src="static/tea_icon.png">
+        <br>
+        <br>
+        <button class="btn_big" onclick="switch_to_game_phase_0()"><b>Check out garden</b></button>
       </center>
       <div style="position: absolute; bottom: 10%; right: 50%;transform: translateX(50%)">
-        Made with <span style="font-size: 18pt">&#9749;</span> by Simon Wüthrich & Oliver Dressler.
+        Made with  <img class="tea-icon-main icon_spacing" src="static/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
       </div>
     </div>
     <!-- phase0 starts here -->
@@ -42,10 +46,13 @@
       <div class="reveal" id="tutorial_popup" data-reveal>
         <h2>This is Your Garden</h2>
         <br><br>
-        <p>You are walking around collecting <b>herbs</b>.</p>
+        <p>A gardener is walking around collecting <b>herbs</b>.</p>
         <p>With these herbs you can brew <b>tea</b>.</p>
         <p>Tea is the most important thing in life.</p>
-        <span style="font-size: 18pt">&#9749;&emsp;&#9749;&emsp;&#9749;</span>
+        <img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png">
+        <p>Oh look! </p>
+        <p>He already brought some herbs into your storage.</p> 
+        <p>Start brewing!</p>
       </div>
 
       <!--left column-->
@@ -168,7 +175,7 @@
             <div id="ui_compost0" class="small-4 columns more_line_height">
               Bucket<br>
               <div id="auto_compost_box0" class="auto-compost">
-                <input type="checkbox" id="auto_compost0"> Auto-buy
+                <input type="checkbox" id="auto_compost0">Auto-buy
               </div>
               <div id="price_compost0"></div>
               <div id="progress_compost0" class="success progress compost">
@@ -181,7 +188,7 @@
             <div id="ui_compost1" class="small-4 columns more_line_height">
               Barrel<br>
               <div id="auto_compost_box1" class="auto-compost">
-                <input type="checkbox" id="auto_compost1"> Auto-buy
+                <input type="checkbox" id="auto_compost1">Auto-buy
               </div>
               <div id="price_compost1"></div>
               <div id="progress_compost1" class="success progress compost">
@@ -258,14 +265,15 @@
         <div id="ui_coll_strategy" class="row box">
           <div id="strategies">
             <div class="info-exists">
-              <img onclick="action('strategy_random')" id="strategy-random">
+              <img onclick="action('strategy_home')" id="strategy-home" title="Call your workers home.">
+             
               <span class="info">Workers move random.</span>
             </div>
             <img onclick="action('strategy_up')" id="strategy-up" title="All workers move north.">
             &emsp;&emsp;&emsp;&emsp;&emsp;
             <br>
             <img onclick="action('strategy_left')" id="strategy-left" title="All workers move west.">
-            <img onclick="action('strategy_home')" id="strategy-home" title="Call your workers home.">
+            <img onclick="action('strategy_random')" id="strategy-random">
             <img onclick="action('strategy_right')" id="strategy-right" title="All workers move east.">
             <br>
             <img onclick="action('strategy_smart')" id="strategy-smart" title="Workers pick the best option.">
