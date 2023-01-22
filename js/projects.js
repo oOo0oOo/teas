@@ -47,6 +47,18 @@ var projects = [
 		}
 	},
 	{
+		id: "home",
+		title: "Come Home!",
+		trigger: function(state){return engine.project_done('hiring') && engine.project_done('compost0')},
+        cost: {teabags: 50},
+		game_phase: 0,
+		description: "Regroup your farmers at home.",
+		effect: function(state){
+			$("#strategy-home").css("opacity", 1.0);
+			return state
+		}
+	},
+	{
 		id: "time1",
 		title: "Farmer Speed",
 		trigger: function(state){return engine.project_done('compost0')},
@@ -74,7 +86,7 @@ var projects = [
 	{
 		id: "gardening1",
 		title: "More Garden, More Fun",
-		trigger: function(state){return engine.project_done('hiring')},
+		trigger: function(state){return engine.project_done('hiring') && engine.project_done('home')},
         cost: {teabags: 100},
 		game_phase: 0,
 		description: "Expand your territory.",

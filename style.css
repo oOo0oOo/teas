@@ -391,7 +391,7 @@ button:focus {
 
 
 
-#strategy-smart {
+#strategy-smart, #strategy-home {
   opacity: 0.0;
   cursor: default !important;
 }
