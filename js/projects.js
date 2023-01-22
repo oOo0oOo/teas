@@ -261,7 +261,8 @@ var projects = [
 		game_phase: 0,
 		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production. Are you sure?!",
 		effect: function(state){
-			switch_to_game_phase_1();
+			// Open tutorial popup (reveal)
+			$("#intro_popup_phase1").foundation('open');
 			return state
 		}
 	},
@@ -270,7 +271,7 @@ var projects = [
 	{
 		id: "focus",
 		title: "Tea Ceremony",
-		trigger: function(state){return engine.project_done('worker_placement')},
+		trigger: function(state){return engine.project_done('worker_placement') && state["game_phase"] == 1},
         cost: {teabags: 500},
 		game_phase: 1,
 		description: "You gained more time to focus on the important aspects of tea - the ceremonies - and are now proud member of a tea-cult!",

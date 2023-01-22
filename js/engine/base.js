@@ -45,10 +45,6 @@ class BaseEngine{
             }
         }
 
-        if (this.state['game_phase'] == 0){
-            $(".menu-box").hide();
-        }
-
         this.state['teabags'] = old_tb;
         this.state['focus'] = old_focus;
     }
