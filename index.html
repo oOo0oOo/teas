@@ -250,6 +250,8 @@
           <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
           &nbsp;
           <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
+          &nbsp;
+          <button class="btn_cheat" onclick="switch_to_game_phase_1()">To Phase 2</button>
         </div>
       </div>
 
@@ -302,8 +304,8 @@
         <br>
         <p>We are currently finishing up the next chapter of your epic tea journey.<br>
         Check back at the <b>end of february</b> to unlock new content.</p>
-        <button>Keep playing</button>
-        <button>Restart</button>
+        <button onclick="stay_in_game_phase_0()">Keep playing</button>
+        <button onclick="reset_save()">Restart</button>
       </div>
 
       <!-- left column -->

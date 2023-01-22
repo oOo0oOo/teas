@@ -184,11 +184,25 @@ function switch_to_game_phase_0(){
     run_engine(save_state);
 }
 
+function stay_in_game_phase_0(){
+    $("#intro_popup_phase1").foundation('close');
+    
+    // Re-add the "worker_placement" project
+    var p = projects.findIndex(function(p){return p.id == "worker_placement"});
+    engine.state["teabags"] += projects[p]["cost"]["teabags"];
+    engine.state["project_status"][p] = 0;
+    engine.update_projects();
+}
+
 function switch_to_game_phase_1(){
     // Hide all remaining projects
     $(".project").hide();
 
     $("#map0").remove();
+
+    // Mark the "worker_placement" project as done
+    var p = projects.findIndex(function(p){return p.id == "worker_placement"});
+    engine.state["project_status"][p] = 2;
 
     // Clone the projects from ui_projects to ui_projects1
     var p = $("#projects_list").clone();
@@ -213,9 +227,6 @@ function switch_to_game_phase_1(){
     canvas = document.getElementById("map1");
     ctx = canvas.getContext('2d');
     run_engine(s);
-    
-    // Open tutorial popup (reveal)
-    $("#intro_popup_phase1").foundation('open');
 }
 
 function switch_to_game_phase_2(){
