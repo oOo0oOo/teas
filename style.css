@@ -431,7 +431,9 @@ button:focus {
 }
 
 .auto-compost {
-    font-size: 6pt;
+  font-size: 6pt;
+  color: var(--dark-color);
+  accent-color: var(--dark-color);
 }
 
 .compost_active {
