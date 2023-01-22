@@ -768,12 +768,7 @@ class EnginePhase0 extends BaseEngine {
         var p;
         for (p in up){
             p = up[p];
-            if (p !== 'proc_efficiency'){
-                $("#" + p).html(num_to_mega(s[p]));
-            } else {
-                var t = "x" + s['proc_efficiency_speed'][s[p]] + " +" + Math.round(100 * (s['proc_efficiency_effect'][s[p]]-1)) + "%";
-                $("#" + p).html(t);
-            }
+            $("#" + p).html(num_to_mega(s[p]));
             $("#price_" + p).html(this.get_price(p));
         }
 
