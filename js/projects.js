@@ -220,7 +220,11 @@ var projects = [
 		description: "Get a fertilizer-silo! This is the best option on the market.",
 		effect: function(state){
 			$("#ui_compost2").show();
-			$("#ui_compost0").hide();
+
+			// Hide bucket and unset checkbox
+			$("#ui_compost0").css("opacity", 0.0);
+			$("#auto_compost0").prop("checked", false);
+			
 			engine.start_compost(2, true);
 			return state
 		}
