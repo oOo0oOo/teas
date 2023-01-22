@@ -41,7 +41,7 @@ var START_STATE = {
 
     // Farming & processing efficiency
     'coll_efficiency_speed': [1, 2, 3, 4, 5, 6, 7],
-    'proc_efficiency_speed': [1, 2, 3, 5, 9, 17, 25, 30, 40, 55, 70],
+    'proc_efficiency_speed': [1, 2, 3, 5, 9, 17, 25, 34, 48, 70, 90],
 
     // Processing efficiency gives bonus herbs
     'proc_efficiency_effect': [1.0, 1.1, 1.2, 1.35, 1.5, 1.75, 2.0, 2.25, 2.5, 3, 3.5, 4],      // Create bonus teabags when processing herbs
@@ -64,7 +64,7 @@ var START_STATE = {
     'price_proc_efficiency': [1, 150, 360, 900, 2500, 7500, 12000, 30000, 80000, 120000],
     'price_farmers': [0, 0, 50, 90, 180, 500, 2000, 5000, 15000, 40000, 70000, 100000],
     'price_processors': [0, 45, 60, 80, 150, 230, 800, 3500, 6000, 12500, 35000, 60000, 110000],
-    'price_garden_size': [0, 200, 420, 900, 5000, 10000],
+    'price_garden_size': [0, 200, 420, 900, 6000, 13000],
 
     // Some dudes are fertilizers
     'map_fertilizer_ratio': 0.5,                            // The slider value

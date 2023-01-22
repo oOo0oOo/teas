@@ -173,9 +173,12 @@
             <div id="ui_compost0" class="small-4 columns more_line_height">
               Bucket<br>
               <div id="auto_compost_box0" class="auto-compost">
-                <input type="checkbox" id="auto_compost0"> Auto-buy
+                <label class="switch">Auto-buy
+                  <input type="checkbox" id="auto_compost0" class="debug-red"> 
+                  <span class="slider"></span>
+                </label>
               </div>
-              <div id="price_compost0"></div>
+              <div id="price_compost0" class="compost_price_tag"></div>
               <div id="progress_compost0" class="success progress compost">
                 <div id="meter_compost0" class="progress-meter" style="width:0%"></div>
               </div>
@@ -186,9 +189,12 @@
             <div id="ui_compost1" class="small-4 columns more_line_height">
               Barrel<br>
               <div id="auto_compost_box1" class="auto-compost">
-                <input type="checkbox" id="auto_compost1"> Auto-buy
+                <label class="switch">Auto-buy
+                  <input type="checkbox" id="auto_compost1" class="debug-red"> 
+                  <span class="slider"></span>
+                </label>
               </div>
-              <div id="price_compost1"></div>
+              <div id="price_compost1" class="compost_price_tag"></div>
               <div id="progress_compost1" class="success progress compost">
                 <div id="meter_compost1" class="progress-meter" style="width:0%"></div>
               </div>
@@ -199,9 +205,12 @@
             <div id="ui_compost2" class="small-4 columns more_line_height">
               Silo<br>
               <div id="auto_compost_box2" class="auto-compost">
-                <input type="checkbox" id="auto_compost2"> Auto-buy
+                <label class="switch">Auto-buy
+                  <input type="checkbox" id="auto_compost2" class="debug-red"> 
+                  <span class="slider"></span>
+                </label>
               </div>
-              <div id="price_compost2"></div>
+              <div id="price_compost2" class="compost_price_tag"></div>
               <div id="progress_compost2" class="success progress compost">
                 <div id="meter_compost2" class="progress-meter" style="width:0%"></div>
               </div>
@@ -387,7 +396,7 @@
                   Herbs
                 </div>
                 <div class="small-7 columns">
-                  <span id="herbs1"></span>&nbsp;(<span id="herbs_rate1"></span>/s)
+                  <b><span id="herbs1"></span></b>&nbsp;(<span id="herbs_rate1"></span>/s)
                 </div>
               </div>
 
