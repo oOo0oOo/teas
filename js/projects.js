@@ -255,7 +255,7 @@ var projects = [
 		trigger: function(state){return engine.project_done('initial') && state["teabags"] >= 3000},
         cost: {teabags: 15000},
 		game_phase: 0,
-		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production.",
+		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production. Are you sure?!",
 		effect: function(state){
 			switch_to_game_phase_1();
 			return state

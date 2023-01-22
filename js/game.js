@@ -177,7 +177,7 @@ function reset_save(){
 function switch_to_game_phase_0(){
     $("#intro").hide();
     // Open tutorial popup (reveal)
-    $("#tutorial_popup").foundation('open');
+    $("#intro_popup_phase0").foundation('open');
 
     var save_state = load_game_state();
     save_state['state']['game_phase'] = 0;
@@ -213,6 +213,9 @@ function switch_to_game_phase_1(){
     canvas = document.getElementById("map1");
     ctx = canvas.getContext('2d');
     run_engine(s);
+    
+    // Open tutorial popup (reveal)
+    $("#intro_popup_phase1").foundation('open');
 }
 
 function switch_to_game_phase_2(){
