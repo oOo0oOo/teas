@@ -166,9 +166,6 @@ function give_worker(){
 }
 
 function reset_save(){
-    if (engine.state["teabags"] < 100){
-        return;
-    };
     if (!confirm("Are you sure you want to delete all your progress and start over?")){
         return;
     };
