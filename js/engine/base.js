@@ -16,6 +16,8 @@ class BaseEngine{
         this.state = s['state'];
         var old_tb = this.state['teabags'];
         var old_focus = this.state['focus'];
+        var old_coll_eff = this.state['coll_efficiency'];
+        var old_proc_eff = this.state['proc_efficiency'];
 
         if (this.state['project_status'][0] == 2){
             $("#ui_projects").show();
@@ -47,6 +49,8 @@ class BaseEngine{
 
         this.state['teabags'] = old_tb;
         this.state['focus'] = old_focus;
+        this.state['coll_efficiency'] = old_coll_eff;
+        this.state['proc_efficiency'] = old_proc_eff;
     }
 
     tick(){
