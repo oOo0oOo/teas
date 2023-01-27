@@ -15,11 +15,12 @@
   --norm_size: 8pt;
   --button_size: 8pt;
 
-  --bright-color: #84BB6D; /*main color*/
+  --bright-color: #84BB6D; /* main color*/
   --hover-color: rgba(167, 206, 151, 0.15);
-  --bright-mid-color: #499360; /*border-color for buttons*/
+  --bright-mid-color: #499360; /* border-color for buttons*/
   --dark-mid-color: #295651;
-  --dark-color: #205038; /*text*/
+  /* --dark-color: #205038; text */
+  --dark-color: #091810;
   /*
   --bright-color: #DBF4B4;
   --bright-mid-color: #ABC396;
@@ -338,7 +339,7 @@ button:focus {
     font-weight: normal;
     background-color: var(--bright-color);
     display: none;
-    color: var(--dark-mid-color);
+    color: var(--dark-color);
 }
 
 .project_title {
@@ -645,7 +646,7 @@ input:checked + .compost-slider:before {
 
 .btn_cheat {
   background-color: var(--bright-color);
-  color: var(--dark-mid-color);
+  color: var(--dark-color);
 }
 
 /* unused */
