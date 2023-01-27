@@ -41,7 +41,7 @@ var START_STATE = {
 
     // Farming & processing efficiency
     'coll_efficiency_speed': [1, 2, 3, 4, 5, 6, 7],
-    'proc_efficiency_speed': [1, 2, 3, 5, 9, 17, 25, 34, 48, 70, 90],
+    'proc_efficiency_speed': [1, 2, 3, 5, 9, 18, 27, 36, 50, 72, 95],
 
     // Processing efficiency gives bonus herbs
     'proc_efficiency_effect': [1.0, 1.1, 1.2, 1.35, 1.5, 1.75, 2.0, 2.25, 2.5, 3, 3.5, 4],      // Create bonus teabags when processing herbs
