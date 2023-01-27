@@ -1,10 +1,3 @@
-<!--
-============ noticias importantes ;) ===============
-- add class='clickable' to every element, which should be clickable, besides buttons
-
-
--->
-
 <!DOCTYPE html>
 <meta charset="utf-8"/>
 <html>
@@ -869,13 +862,13 @@
   </script>
 
   <script id="teapet-template" type="text/x-handlebars-template">
-  <div class='teapet clickable column' onclick="action('select_teapet', {{zoo_id}})" id='teapet{{zoo_id}}'>
+  <div class='teapet clickable column' onclick="action('select_teapet', {{ zoo_id }})" id='teapet{{zoo_id}}'>
     {{title}}
   </div>
   </script>
 
   <script id="ceremony-template" type="text/x-handlebars-template">
-    <button class='clickable' onclick="action('start_selection', {{list_id}})" id='ceremony{{list_id}}'>
+    <button class='clickable' onclick="action('start_selection', {{ list_id }})" id='ceremony{{list_id}}'>
       {{title}}
     </button>
   </script>

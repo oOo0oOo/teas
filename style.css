@@ -532,10 +532,6 @@ input:checked + .compost-slider:before {
 
 /*Strategy*/
 
-.strategy.row {
-  /*max-width: 20px;*/
-}
-
 #strategy-left {
   transform: rotate(-90deg);
 }
