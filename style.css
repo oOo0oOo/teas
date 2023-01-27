@@ -476,7 +476,7 @@ button:focus {
 }
 
 /* The slider */
-.slider {
+.compost-slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -491,7 +491,7 @@ button:focus {
   transition: .4s;
 }
 
-.slider:before {
+.compost-slider:before {
   position: absolute;
   content: "";
   height: 16px;
@@ -503,15 +503,15 @@ button:focus {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked + .compost-slider {
   background-color: #ACC68A;
 }
 
-input:focus + .slider {
+input:focus + .compost-slider {
   box-shadow: 0 0 1px #ACC68A;
 }
 
-input:checked + .slider:before {
+input:checked + .compost-slider:before {
   background-color: var(--bright-mid-color);
   -webkit-transform: translateX(30px);
   -ms-transform: translateX(30px);
@@ -529,7 +529,6 @@ input:checked + .slider:before {
   width: 56px;
   height: 56px;
 }
-
 
 /*Strategy*/
 
