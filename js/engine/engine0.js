@@ -8,6 +8,7 @@ class EnginePhase0 extends BaseEngine {
         this.hq_coords = [0, 0];
         this.tile_size = 0;
         this.num_tiles = 0;
+        this.making_tea = false;
     }
 
     init_game(save_state){
@@ -152,6 +153,10 @@ class EnginePhase0 extends BaseEngine {
         BaseEngine.prototype.tick.call(this);
         var render_field = (this.time % this.state['farmer_delay']) == 0;
 
+        if (this.making_tea){
+            this.make_tea();
+        }
+
         if (render_field){
             this.update_farmers();
             this.update_constant_growth();
@@ -171,8 +176,11 @@ class EnginePhase0 extends BaseEngine {
         for (var i=0;i<this.action_queue.length;i++){
             var action = this.action_queue[i];
             switch (action[0]){
-                case 'make_teabag':
-                    this.make_teabag();
+                case 'make_tea_start':
+                    this.making_tea = true;
+                    break;
+                case 'make_tea_end':
+                    this.making_tea = false;
                     break;
                 case 'start_compost':
                     this.start_compost(action[1]);
@@ -493,7 +501,7 @@ class EnginePhase0 extends BaseEngine {
         };
     }
 
-    make_teabag(num = 1){
+    make_tea(num = 1){
         if (this.state['herbs'] >= num){
             this.state['herbs'] -= num;
             this.state['teabags'] += num;
