@@ -38,6 +38,10 @@
   */
 }
 
+html {
+  touch-action: manipulation;
+}
+
 body {
     background-color: var(--bright-mid-color);
     color: var(--dark-color);
