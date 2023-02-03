@@ -595,6 +595,21 @@ input:checked + .compost-slider:before {
   display: flex;
 }
 
+.focus_icons_btn {
+  padding: 5px;
+  background-color: rgba(248,248,248,.1);
+  border: solid 3px rgb(200,200,200);
+  border-style: outset;
+}
+
+.focus_icons_btn:hover {
+  background-color: rgba(248,248,248,.3);
+}
+
+.focus_icons_btn:active {
+  border-style: inset;
+}
+
 .focus_actions_container {
   position: absolute;
   bottom: 0;
@@ -613,7 +628,7 @@ input:checked + .compost-slider:before {
   position: absolute;
   width: 120px;
   top: 50%;
-  left: 50%;
+  left: 48%;
   display: none; /*set to flex to make it always visible */
 }
 
