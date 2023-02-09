@@ -77,7 +77,7 @@
           </div>
           <div class="row more_line_height">
             <div class="small-4 columns">
-              Herbs
+              <b>Herbs</b>
             </div>
             <div class="small-8 columns">
               <b><span id="herbs"></span></b>
@@ -386,7 +386,7 @@
 
               <div class="row">
                 <div class="small-5 columns">
-                  Herbs
+                  <b>Herbs</b>
                 </div>
                 <div class="small-7 columns">
                   <b><span id="herbs1"></span></b>&nbsp;(<span id="herbs_rate1"></span>/s)
@@ -825,16 +825,18 @@
         {{#if_eq ftype 'generator'}}
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/mandala.gif">
         {{/if_eq}}
-        <div class="focus_icons">
-          <!-- {{focus_action}}  -->
-          {{#each effect}}
-          <img src="static/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
-          {{#if @first}}
-          {{#if_eq ../ftype 'converter'}}
-          <br><br>
-          {{/if_eq}}
-          {{/if}}
-          {{/each}}
+        <div class="focus_icons_btn">
+          <div class="focus_icons">
+            <!-- {{focus_action}}  -->
+            {{#each effect}}
+            <img src="static/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
+            {{#if @first}}
+            {{#if_eq ../ftype 'converter'}}
+            <br><br>
+            {{/if_eq}}
+            {{/if}}
+            {{/each}}
+          </div>
         </div>
         <div id="focus_monks{{id}}" class="focus_actions_container">
             {{#if_eq focus_action 1}}

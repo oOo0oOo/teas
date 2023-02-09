@@ -7,7 +7,7 @@ Simi:
 Ceremony:
 - design generator vs. converter
 - show how many monks are necessary for a ceremony
-- 
+- focus_project: converter needs arrow and centering
 
 
 Oli:
@@ -16,6 +16,7 @@ Oli:
 - project "focus project 2" adds greenhouse and brewing generators
 - focus-project for greenhouse and brewing slightly stronger
 - converters are working,  eventough the resource isn't available
+- focus_project: get rid of button-look when active
 
 
 
