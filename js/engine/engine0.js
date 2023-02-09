@@ -176,6 +176,9 @@ class EnginePhase0 extends BaseEngine {
         for (var i=0;i<this.action_queue.length;i++){
             var action = this.action_queue[i];
             switch (action[0]){
+                case 'make_tea':
+                    this.make_tea();
+                    break;
                 case 'make_tea_start':
                     this.making_tea = true;
                     break;
