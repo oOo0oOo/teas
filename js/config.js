@@ -82,14 +82,14 @@ var START_STATE = {
     'factory_speed': 0,
     'factory_efficiency': 0,
     'factory_use': 0,
-    'factory_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],          // Use less power, factor for 'power_use'
-    'factory_speeds': [1, 2, 4, 10, 35, 50, 100, 500, 1000, 10e3],             // How much is processed per processor
+    'factory_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],          // Use less power, factor for 'power_use' (cult bonus)
+    'factory_speeds': [55, 110, 220, 440, 880, 1760, 3520, 7040, 14080, 28160],             // How much is processed per processor
     'factory_efficiencies': [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 3, 5],      // Make more teabags then use up herbs
 
     'greenhouse_speed': 0,
     'greenhouse_use': 0,
-    'greenhouse_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],  // Use less fertilizer, factor for 'fertilizer_use'
-    'greenhouse_speeds': [0.9, 1.9, 3.8, 9, 30, 45, 90, 480, 950, 10e3],       // How much is collected per farmer
+    'greenhouse_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],  // Use less fertilizer, factor for 'fertilizer_use' (cult bonus)
+    'greenhouse_speeds': [50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600],       // How much is collected per farmer
 
     // 'greenhouse_num': [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],               // How many farmers per worker
 
@@ -97,26 +97,25 @@ var START_STATE = {
     'focus_action': 0.0,
     'monk_focus_action_generate': 0.0013,             // Focus action generated per monk per tick
 
-
-    'price_greenhouse_speed': [1e3, 5e3, 8e3, 32e3, 185e3, 520e3, 1.1e6, 12e6, 110e6],
-    'price_greenhouse_use': [1e3, 1.5e3, 7e3, 30e3, 180e3, 500e3, 1e6, 10e6],
-    'price_factory_speed': [1e3, 5e3, 8e3, 32e3, 185e3, 520e3, 1.1e6, 12e6, 110e6],
-    'price_factory_efficiency': [1e3, 5e3, 7e3, 30e3, 180e3, 500e3, 1e6, 10e6],
-    'price_factory_use': [1e3, 1.5e3, 7e3, 30e3, 180e3, 500e3, 1e6, 10e6],
+    'price_greenhouse_speed':       [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
+    'price_factory_speed':          [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
+    'price_factory_efficiency':     [1e5, 5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
+    'price_greenhouse_use':         [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
+    'price_factory_use':            [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
 
     // OLD prices
     // [1e3, 2e3, 10e3, 50e3, 250e3, 1e6, 5e6, 50e6, 1e9],
 
-    // Focus Resources (current value, max_value, effect, use)
+    // Cult bonuses (current value, max_value, effect, use)
     'fertilizer': 0,
     'fertilizer_max': 25,
-    'fertilizer_effect': 4,              // If resource at max: amount_harvested *= (1 + effect)
-    'fertilizer_use': 0.01,             // How much of the resource is used per tick (if more than one worker)
+    'fertilizer_effect': 2,              // If resource at max: amount_harvested *= (1 + effect)
+    'fertilizer_use': 0.0025,             // How much of the resource is used per tick (if more than one worker)
 
     'power': 0,
     'power_max': 25,
-    'power_effect': 3.5,                // If resource at max: amount_harvested *= (1 + effect)
-    'power_use': 0.0085,                 // How much of the resource is used per tick (if more than one worker)
+    'power_effect': 1.8,                // If resource at max: amount_harvested *= (1 + effect)
+    'power_use': 0.002,                 // How much of the resource is used per tick (if more than one worker)
 
     'focus': 0,
     'focus_max': 1e9,

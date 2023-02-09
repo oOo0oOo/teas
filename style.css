@@ -564,6 +564,7 @@ input:checked + .compost-slider:before {
 /*Focus Projects*/
 #ui_focus {
   background-color: #152222;
+  color: #EEE;
 }
 
 .focus_project {

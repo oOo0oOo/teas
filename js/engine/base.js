@@ -113,7 +113,7 @@ class BaseEngine{
             // Add a project
             var obj = $("#project_" + project["id"]);
             var status = this.state['project_status'][i];
-            if (status == 0 && project.trigger(this.state)){
+            if (status == 0 && project.trigger(this.state) && project['game_phase'] == this.state['game_phase']){
                 this.state['project_status'][i] = 1;
                 obj.show();
             } else if(status == 1){
