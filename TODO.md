@@ -1,9 +1,7 @@
-=============== NEW 2023 =====================
+# NEW 2023 Phase 2
 
-=================phase 2 =====================
+## Balancing
 
-Balancing:
-==========
 - 2 monks charging too fast?
 - 400k & 500k for advanced brewing & farming too much?
 - project order: "more monks" before "focus projects 3" because 3 monks are neccesary
@@ -17,36 +15,41 @@ Balancing:
 - project for "more gardening focus-projects" or "more processing focus-projects" -> player can chose a speciality
 - when precessing-efficiency unlocks, price 100k is irrelevant
 - focus projects overthink in which phase, which ones are possible: 
-    - early: cost one monk, mainly garden, some focus
-    - mid: cost 1-2 monks, mainly focus, some garden & processing
-    - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
+- early: cost one monk, mainly garden, some focus
+- mid: cost 1-2 monks, mainly focus, some garden & processing
+- end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
 - check for similarities in project descriptions
 
+## Simi
 
-Simi:
 - focus points only animated, when active
 - gif focus points white
-- design progressbars 
-
+- design progressbars
 - reorder elements in gardening and processing tab
 Ceremony:
 - design generator vs. converter
 - show how many monks are necessary for a ceremony
 - focus_project: converter needs arrow and centering
+- Ende (stats und Aussicht)
+- Donate/Community/Idee für nächste Phase/Newletter
 
+## Oli
 
-Oli:
 - project "tea ceremony" adds the worker-placement-option "monks"
 - project "focus project 2" adds cult-bonus-bars to the UI
 - project "focus project 2" adds greenhouse and brewing generators
 - focus-project for greenhouse and brewing slightly stronger
 - converters are working,  eventough the resource isn't available
 - focus_project: get rid of button-look when active
+- Meditation initial design
+- Meditation practice mode
+- Season Warning
+- Open source publish
+- Save geflickt
 
+## Nice to have
 
-
-
-
+- SoundFX
 
 =================== OLD ===================
 
