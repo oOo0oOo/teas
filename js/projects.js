@@ -368,7 +368,7 @@ var projects = [
 		trigger: function(state){return engine.project_done('power_use')},
         cost: {focus: 30, teabags: 400000},
 		game_phase: 1,
-		description: "More members of your tea cult can work in the brew house.",
+		description: "The brew house has room for an extra worker.",
 		effect: function(state){
 			state['processors_max'] += 1;
 			return state

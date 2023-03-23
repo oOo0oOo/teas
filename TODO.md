@@ -2,7 +2,32 @@
 
 =================phase 2 =====================
 
+Balancing:
+==========
+- 2 monks charging too fast?
+- 400k & 500k for advanced brewing & farming too much?
+- project order: "more monks" before "focus projects 3" because 3 monks are neccesary
+- visualize, when focus-project is about to change
+- focus-project greenhouse -> precessing doesn't make sense
+- more processing focus-projects (and earlier)
+- tea production rate doesn't ramp up
+- project "greenhouse manager" & "factory manager" cost slightly more focus points but less tea
+- project "add another worker" for 1.2M is very expensive at the time it unlocks
+- some projects can only cost tea or focus-points
+- project for "more gardening focus-projects" or "more processing focus-projects" -> player can chose a speciality
+- when precessing-efficiency unlocks, price 100k is irrelevant
+- focus projects overthink in which phase, which ones are possible: 
+    - early: cost one monk, mainly garden, some focus
+    - mid: cost 1-2 monks, mainly focus, some garden & processing
+    - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
+- check for similarities in project descriptions
+
+
 Simi:
+- focus points only animated, when active
+- gif focus points white
+- design progressbars 
+
 - reorder elements in gardening and processing tab
 Ceremony:
 - design generator vs. converter
