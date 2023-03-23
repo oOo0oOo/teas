@@ -638,7 +638,7 @@ input:checked + .compost-slider:before {
   transform: translate(-50%, -50%);
   object-fit: cover;
   object-position: 0 0;
-  width: 100%;
+  width: 120px;
   height: 55%;
 }
 
