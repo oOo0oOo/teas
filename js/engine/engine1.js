@@ -123,20 +123,18 @@ class EnginePhase1 extends BaseEngine {
         s['focus_action'] += s['monk_focus_action_generate'] * s['monks'];
         s['focus_action'] = Math.min(s['focus_action'], s['monks']);
 
-        // Change the color of the progress bar
-        var el = $("#progress_focus_action");
-        if (s['focus_action'] >= 2){
-            if (!el.hasClass("alert")){
-                el.removeClass("warning secondary").addClass("alert");
+        // Each monk has a separate progress bar
+
+        // Loop through all monks
+        for (var i=0;i<s['monks'];i++){
+            if (s['focus_action'] >= i + 1){
+                $("#monkfg" + i).css("height", "0%");
+            } else if (s['focus_action'] >= i){
+                let perc = (i + 1 - s['focus_action']) * 100;
+                $("#monkfg" + i).css("height", perc + "%");
+            } else {
+                $("#monkfg" + i).css("height", "100%");
             }
-        }
-        else if (s['focus_action'] >= 1){
-            if (!el.hasClass("warning")){
-                el.removeClass("alert secondary").addClass("warning");
-            }
-        }
-        else if (!el.hasClass("secondary")){
-            el.removeClass("warning alert").addClass("secondary");
         }
     }
 
@@ -192,7 +190,7 @@ class EnginePhase1 extends BaseEngine {
             var project = this.generate_focus_project();
             this.focus_projects.splice(ind, 1, project);
 
-            var html = "<div class='small-4 columns' id='focus_project_slot" + ind + "'>" + focus_project_template(project) + "</div>";
+            var html = "<div class='fp-slot small-4 columns' id='focus_project_slot" + ind + "'>" + focus_project_template(project) + "</div>";
             $("#focus_project_slot" + ind).replaceWith(html);
             $("#focus_project_slot" + ind).foundation();
         }
@@ -270,6 +268,8 @@ class EnginePhase1 extends BaseEngine {
                 $("#focus_swirl" + project['id']).show();
                 $("#focus_project" + project['id']).css("color", "#ddd");
                 $("#focus_monks" + project['id']).hide();
+                $("#focus_btn" + project['id']).css("background-color", "#00000000");
+                $("#focus_btn" + project['id']).css("border", "0px solid");
                 project['lifetime'] = project['duration'];
             }
         }
@@ -485,11 +485,7 @@ class EnginePhase1 extends BaseEngine {
         var l = Math.round(100 * s['fertilizer_effect'] * fertilizer_perc);
         $("#farm_bonus").html("+" + l + "%");
 
-        // Focus action progress bar
-        var focus_perc = s['focus_action'] / s['monks_max'];
-        $("#meter_focus_action").css('width', 100.0 * focus_perc + '%');
-
-        // Focus projects progress bar
+        // // Focus projects & progress bar
         for (var ind in this.focus_projects){
             var project = this.focus_projects[ind];
 
@@ -499,7 +495,6 @@ class EnginePhase1 extends BaseEngine {
             } else {
                 perc /= project['duration'];
             }
-            $("#meter_focus" + project['id']).css('width', '' + perc + '%');
         }
 
         // Production Rates

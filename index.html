@@ -527,32 +527,52 @@
         <!-- focus box -->
         <div id="ui_focus" class="row box">
           <div class="row">
-            <div id="focus_project_slot0" class="small-4 columns"></div>
-            <div id="focus_project_slot1" class="small-4 columns"></div>
-            <div id="focus_project_slot2" class="small-4 columns"></div>
+            <div id="focus_project_slot0" class="fp-slot small-4 columns"></div>
+            <div id="focus_project_slot1" class="fp-slot small-4 columns"></div>
+            <div id="focus_project_slot2" class="fp-slot small-4 columns"></div>
           </div>
           <br><br>
           <div class="row">
-            <div id="focus_project_slot3" class="small-4 columns"></div>
-            <div id="focus_project_slot4" class="small-4 columns"></div>
-            <div id="focus_project_slot5" class="small-4 columns"></div>
+            <div id="focus_project_slot3" class="fp-slot small-4 columns"></div>
+            <div id="focus_project_slot4" class="fp-slot small-4 columns"></div>
+            <div id="focus_project_slot5" class="fp-slot small-4 columns"></div>
           </div>
           <br><br>
-          <div id="monks_focus_box">
-            <center>
-            <img id="monk0" src="static/monk.png" style="width:18%">
-            <img id="monk1" src="static/monk.png" style="width:18%">
-            <img id="monk2" src="static/monk.png" style="width:18%">
-            <img id="monk3" src="static/monk.png" style="width:18%">
-            <img id="monk4" src="static/monk.png" style="width:18%">
-            </center>
+          <div id="monks_focus_box" class="row">
+            <div id="monk0", class="monk small-12 columns">
+                <img class="monk-bg" src="static/monk.png">
+                <div class="monk-fg" id="monkfg0">
+                    <img src="static/monk.png">
+                </div>
+            </div>
+            <div id="monk1", class="monk small-12 columns">
+                <img class="monk-bg" src="static/monk.png">
+                <div class="monk-fg" id="monkfg1">
+                    <img src="static/monk.png">
+                </div>
+            </div>
+            <div id="monk2", class="monk small-12 columns">
+                <img class="monk-bg" src="static/monk.png">
+                <div class="monk-fg" id="monkfg2">
+                    <img src="static/monk.png">
+                </div>
+            </div>
+            <div id="monk3", class="monk small-12 columns">
+                <img class="monk-bg" src="static/monk.png">
+                <div class="monk-fg" id="monkfg3">
+                    <img src="static/monk.png">
+                </div>
+            </div>
+            <div id="monk4", class="monk small-12 columns">
+                <img class="monk-bg" src="static/monk.png">
+                <div class="monk-fg" id="monkfg4">
+                    <img src="static/monk.png">
+                </div>
+            </div>
           </div>
-          <div id="progress_focus_action" class="secondary progress">
-            <div id="meter_focus_action" class="progress-meter" style="width:50%"></div>
-          </div>
-          <center>
+          <div class="row center" style="padding-top: 45px;">
           <img src="static/focus.gif" class="img_focus" width="40px"> <span id="focus"></span>
-          </center>
+          </div>
         </div>
         <!-- meditation box-->
         <div id="ui_meditation" class="row box">
@@ -817,6 +837,27 @@
 
   <script id="focus-project-template" type="text/x-handlebars-template">
   <div class='focus_project relative' onclick="action('activate_focus_project', '{{id}}')" id='focus_project{{id}}'>
+  
+    <div id="focus_monks{{id}}" class="focus_actions_container">
+        {{#if_eq focus_action 1}}
+        <img src="static/monk.png" class="icon_focus_actions">
+        {{/if_eq}}
+        {{#if_eq focus_action 2}}
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        {{/if_eq}}
+        {{#if_eq focus_action 3}}
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        {{/if_eq}}
+        {{#if_eq focus_action 4}}
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/monk.png" class="icon_focus_actions">
+        {{/if_eq}}
+    </div>
     <div class="row">
       <div class="small-10 columns no_padding">
         {{#if_eq ftype 'converter'}}
@@ -825,38 +866,18 @@
         {{#if_eq ftype 'generator'}}
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/mandala.gif">
         {{/if_eq}}
-        <div class="focus_icons_btn">
+        <div id="focus_btn{{id}}" class="focus_icons_btn">
           <div class="focus_icons">
             <!-- {{focus_action}}  -->
             {{#each effect}}
             <img src="static/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
             {{#if @first}}
             {{#if_eq ../ftype 'converter'}}
-            <br><br>
+            <img src="static/arrow_white.png" class="arrow_focus_project">
             {{/if_eq}}
             {{/if}}
             {{/each}}
           </div>
-        </div>
-        <div id="focus_monks{{id}}" class="focus_actions_container">
-            {{#if_eq focus_action 1}}
-            <img src="static/monk.png" class="icon_focus_actions">
-            {{/if_eq}}
-            {{#if_eq focus_action 2}}
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            {{/if_eq}}
-            {{#if_eq focus_action 3}}
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            {{/if_eq}}
-            {{#if_eq focus_action 4}}
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            <img src="static/monk.png" class="icon_focus_actions">
-            {{/if_eq}}
         </div>
       </div>
     </div>

@@ -567,6 +567,10 @@ input:checked + .compost-slider:before {
   color: #EEE;
 }
 
+.fp-slot {
+    /* padding-top: 20px; */
+}
+
 .focus_project {
   position: relative;
   font-size: var(--norm_size);
@@ -589,18 +593,28 @@ input:checked + .compost-slider:before {
 }
 
 .img_focus_project {
-  width: 35px;
+  height: 22px;
+  width: auto;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.arrow_focus_project {
+  height: 22px;
+  width: auto;
 }
 
 .focus_icons {
   display: flex;
+    justify-content: center;
 }
 
 .focus_icons_btn {
   padding: 5px;
+  padding-bottom: 7px;
   background-color: rgba(248,248,248,.1);
   border: solid 3px rgb(200,200,200);
   border-style: outset;
+  width: 95px;
 }
 
 .focus_icons_btn:hover {
@@ -613,7 +627,7 @@ input:checked + .compost-slider:before {
 
 .focus_actions_container {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left:0;
   width: 100%;
   display: flex;
@@ -622,6 +636,8 @@ input:checked + .compost-slider:before {
 
 .icon_focus_actions {
   height: 30px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 
@@ -629,12 +645,12 @@ input:checked + .compost-slider:before {
   position: absolute;
   width: 120px;
   top: 50%;
-  left: 48%;
+  left: 53%;
   display: none; /*set to flex to make it always visible */
 }
 
 .focus_swirl.converter {
-  top: 50%;
+  top: 52%;
   transform: translate(-50%, -50%);
   object-fit: cover;
   object-position: 0 0;
@@ -695,6 +711,34 @@ input:checked + .compost-slider:before {
 }
 
 
+#monks_focus_box {
+    width: 100%;
+    height: 80px;
+    padding-left: 5%;
+    justify-content: center;
+}
+
+.monk {
+    width: 18%;
+    padding: 2px;
+    float: left;
+    position: relative;
+}
+
+.monk-bg {
+    overflow: hidden;
+    height: 90%;
+    filter: contrast(1000%) sepia(100%) saturate(10000%) hue-rotate(-30deg) brightness(95%);
+}
+
+.monk-fg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    height: 100%;
+    filter: brightness(70%);
+}
 
 .img_focus_arrow {
   width: 20px;
