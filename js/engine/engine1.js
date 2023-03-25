@@ -75,6 +75,11 @@ class EnginePhase1 extends BaseEngine {
         $("#meter_season").css("width", (remaining * 100) + "%");
 
         this.state['season'] = Math.floor(season_state) % 4;
+
+        // Show the warning during the first fall season
+        if (this.state['season_tick'] == this.state['season_duration'] * 2.5){
+            $("#season_popup").foundation('open');
+        };
     }
 
     update_free_workers(){

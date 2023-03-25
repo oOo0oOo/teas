@@ -235,7 +235,7 @@ var START_STATE = {
 
     // SEASON
     'season': 0,                            // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter
-    'season_duration': 180 * 20,            // Ticks (20 / s)
+    'season_duration': 4 * 20,            // Ticks (20 / s)  ! Make sure this is an even number!
     'season_tick': 0,
     'season_herbs': [0.8, 1.0, 0.8, 0.2],
     
