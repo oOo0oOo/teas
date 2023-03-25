@@ -216,7 +216,7 @@ class BaseEngine{
             if (focus){
                 return num_to_mega(price) + " F";
             } else {
-                return num_to_mega(price) + ' <img src="static/tea_icon.png" class="tea-icon">';
+                return num_to_mega(price) + ' <img src="static/img/tea_icon.png" class="tea-icon">';
             }
         }
         else {

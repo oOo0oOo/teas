@@ -1,6 +1,6 @@
 # Infinitea
 
-![Infinitea](static/logo.png?raw=true)
+![Infinitea](static/img/logo.png?raw=true)
 
 ## What?
 

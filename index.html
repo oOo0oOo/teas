@@ -16,18 +16,18 @@
     <div id="intro">
       <br><br><br><br><br><br><br>
       <center>
-        <img src="static/logo.png">
+        <img src="static/img/logo.png">
         <br><br><br>
         <h3>I feel like having a tea!
         </h3>
         <br>
-        <img class="tea-icon-main icon_spacing" src="static/tea_icon.png">
+        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
         <br>
         <br>
         <button class="btn_big" onclick="switch_to_game_phase_0()"><b>Check out garden</b></button>
       </center>
       <div style="position: absolute; bottom: 10%; right: 50%;transform: translateX(50%)">
-        Made with  <img class="tea-icon-main icon_spacing" src="static/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
+        Made with  <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
       </div>
     </div>
     <!-- phase0 starts here -->
@@ -40,7 +40,7 @@
         <p>A gardener is walking around collecting <b>herbs</b>.</p>
         <p>With these herbs you can brew <b>tea</b>.</p>
         <p>Tea is the most important thing in life.</p>
-        <img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png">
+        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
         <p>Oh look! </p>
         <p>They already brought some herbs into your storage.</p> 
         <p>Start brewing!</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags"></span>
-              <img class="tea-icon-main" src="static/tea_icon.png">
+              <img class="tea-icon-main" src="static/img/tea_icon.png">
               <br><br>
             </div>
           </div>
@@ -73,7 +73,7 @@
         <!-- collecting box -->
         <div id="ui_collecting" class="row box relative">
           <div class="title_tab">
-            <img src="static/greenhouse_tab.png">
+            <img src="static/img/greenhouse_tab.png">
           </div>
           <div class="row more_line_height">
             <div class="small-4 columns">
@@ -112,9 +112,9 @@
         <!-- processing box -->
         <div id="ui_processing" class="row box relative">
           <div class="title_tab">
-            <img src="static/processing_tab.png">
+            <img src="static/img/processing_tab.png">
           </div>
-          <button id="make_teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/tea_icon.png" class="tea-icon"></button>
+          <button id="make_teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/img/tea_icon.png" class="tea-icon"></button>
           <br>
           <div id="ui_processors1" class="row more_line_height">
             <div class="small-4 columns">
@@ -144,7 +144,7 @@
         <!-- fertilizer box-->
         <div id="ui_garden" class="row box relative">
           <div class="title_tab">
-            <img src="static/garden_tab.png">
+            <img src="static/img/garden_tab.png">
           </div>
           <div id="ui_garden1" class="row">
             <div class="small-4 columns more_line_height"">
@@ -175,7 +175,7 @@
                 <div id="meter_compost0" class="progress-meter" style="width:0%"></div>
               </div>
               <button class="btn_compost btn_buy" id="btn_compost0" onclick="action('start_compost', 0)">+</button>
-              <button id="btn_set_compost0" class="btn_set_compost buyable" onclick="action('set_compost', 0)"><img src="static/compost0.png" width="32px"></img></button>
+              <button id="btn_set_compost0" class="btn_set_compost buyable" onclick="action('set_compost', 0)"><img src="static/img/compost0.png" width="32px"></img></button>
               <span class="compost_active" id="compost_active0">Click Map</span>
             </div>
             <div id="ui_compost1" class="small-4 columns more_line_height">
@@ -191,7 +191,7 @@
                 <div id="meter_compost1" class="progress-meter" style="width:0%"></div>
               </div>
               <button class="btn_compost btn_buy" id="btn_compost1" onclick="action('start_compost', 1)">+</button>
-              <button id="btn_set_compost1" class="btn_set_compost buyable" onclick="action('set_compost', 1)"><img src="static/compost1.png" width="32px"></img></button>
+              <button id="btn_set_compost1" class="btn_set_compost buyable" onclick="action('set_compost', 1)"><img src="static/img/compost1.png" width="32px"></img></button>
               <span class="compost_active" id="compost_active1">Click Map</span>
             </div>
             <div id="ui_compost2" class="small-4 columns more_line_height">
@@ -208,7 +208,7 @@
               </div>
 
               <button class="btn_compost btn_buy" id="btn_compost2" onclick="action('start_compost', 2)">+</button>
-              <button id="btn_set_compost2" class="btn_set_compost buyable" onclick="action('set_compost', 2)"><img src="static/compost2.png" width="32px"></img></button>
+              <button id="btn_set_compost2" class="btn_set_compost buyable" onclick="action('set_compost', 2)"><img src="static/img/compost2.png" width="32px"></img></button>
               <span class="compost_active" id="compost_active2">Click Map</span>
             </div>
           </div>
@@ -299,7 +299,7 @@
       <!-- Intro popup phase 1 (= end popup phase 0) -->
       <div class="reveal popup" id="intro_popup_phase1" data-reveal>
         <h2>You reached the <b>TEA</b>rvana!!</h2>
-        <img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/tea_icon.png">
+        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
         <p>Stop micromanaging your workers and start medita<b>tea</b>ing!</p>
         <br>
         <p>We are currently finishing up the next chapter of your epic tea journey.<br>
@@ -325,7 +325,7 @@
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags1"></span>
-              <img class="tea-icon-main" src="static/tea_icon.png">
+              <img class="tea-icon-main" src="static/img/tea_icon.png">
               <br><br>
             </div>
           </div>
@@ -386,7 +386,7 @@
         <div id="ui_collecting" class="row box relative">
           <!-- little title tab -->
           <div class="title_tab">
-            <img src="static/greenhouse_tab.png">
+            <img src="static/img/greenhouse_tab.png">
           </div>
           <div class="row">
             <div class="small-12 columns">
@@ -454,7 +454,7 @@
         <!-- processing box -->
         <div class="row box relative">
           <div class="title_tab">
-            <img src="static/processing_tab.png">
+            <img src="static/img/processing_tab.png">
           </div>
           <div class="row">
             <div class="small-12 columns">
@@ -547,38 +547,38 @@
           <br><br>
           <div id="monks_focus_box" class="row">
             <div id="monk0", class="monk small-12 columns">
-                <img class="monk-bg" src="static/monk.png">
+                <img class="monk-bg" src="static/img/monk.png">
                 <div class="monk-fg" id="monkfg0">
-                    <img src="static/monk.png">
+                    <img src="static/img/monk.png">
                 </div>
             </div>
             <div id="monk1", class="monk small-12 columns">
-                <img class="monk-bg" src="static/monk.png">
+                <img class="monk-bg" src="static/img/monk.png">
                 <div class="monk-fg" id="monkfg1">
-                    <img src="static/monk.png">
+                    <img src="static/img/monk.png">
                 </div>
             </div>
             <div id="monk2", class="monk small-12 columns">
-                <img class="monk-bg" src="static/monk.png">
+                <img class="monk-bg" src="static/img/monk.png">
                 <div class="monk-fg" id="monkfg2">
-                    <img src="static/monk.png">
+                    <img src="static/img/monk.png">
                 </div>
             </div>
             <div id="monk3", class="monk small-12 columns">
-                <img class="monk-bg" src="static/monk.png">
+                <img class="monk-bg" src="static/img/monk.png">
                 <div class="monk-fg" id="monkfg3">
-                    <img src="static/monk.png">
+                    <img src="static/img/monk.png">
                 </div>
             </div>
             <div id="monk4", class="monk small-12 columns">
-                <img class="monk-bg" src="static/monk.png">
+                <img class="monk-bg" src="static/img/monk.png">
                 <div class="monk-fg" id="monkfg4">
-                    <img src="static/monk.png">
+                    <img src="static/img/monk.png">
                 </div>
             </div>
           </div>
           <div class="row center" style="padding-top: 45px;">
-          <img src="static/focus.gif" class="img_focus" width="40px"> <span id="focus"></span>
+          <img src="static/img/focus.gif" class="img_focus" width="40px"> <span id="focus"></span>
           </div>
         </div>
         <!-- meditation box-->
@@ -587,16 +587,16 @@
           <div class="row" id="start_meditation">
             <div class="small-6 columns">
               <button class="meditation_btn" onclick="action('start_meditation')">
-                <img src="static/monk.png" width="24px"><br>
+                <img src="static/img/monk.png" width="24px"><br>
                 <span id="meditation_price"></span>
-                <img src='static/focus_dark.png' style='width:24px'></img>
+                <img src='static/img/focus_dark.png' style='width:24px'></img>
                 <br>
                 1 free worker
               </button>
             </div>
             <div class="small-6 columns">
               <button class="meditation_btn" onclick="action('start_practice')">
-                <img src="static/monk.png" width="24px"><br>
+                <img src="static/img/monk.png" width="24px"><br>
                 pratice<br>
                 1 free worker
               </button>
@@ -612,7 +612,7 @@
             <div class="stacked meditation_try" id="meditation_try2"></div>
           </div>
           <div id="meditation_win">
-            + <span id="meditation_amount"></span> <img src='static/focus_dark.png'>
+            + <span id="meditation_amount"></span> <img src='static/img/focus_dark.png'>
           </div>
           <div id="meditation_lose">
             :-(
@@ -620,17 +620,17 @@
           <div class="row" id="meditation_boxes">
             <div id="meditation_box_container0" class="small-4 columns meditation_box_container">
               <div onclick="action('try_meditation', 0)" class="meditation_box" id="meditation_box0">
-                <img id="meditation_try_monk0" src="static/monk.png" width="24px">
+                <img id="meditation_try_monk0" src="static/img/monk.png" width="24px">
               </div>
             </div>
             <div id="meditation_box_container1" class="small-4 columns meditation_box_container">
               <div onclick="action('try_meditation', 1)" class="meditation_box" id="meditation_box1">
-                <img id="meditation_try_monk1" src="static/monk.png" width="24px">
+                <img id="meditation_try_monk1" src="static/img/monk.png" width="24px">
               </div>
             </div>
             <div onclick="action('try_meditation', 2)" id="meditation_box_container2" class="small-4 columns meditation_box_container">
               <div class="meditation_box" id="meditation_box2">
-                <img id="meditation_try_monk1" src="static/monk.png" width="24px">
+                <img id="meditation_try_monk1" src="static/img/monk.png" width="24px">
               </div>
             </div>
           </div>
@@ -671,7 +671,7 @@
         <div id="ui_teabageria" class="row box relative">
           <!-- little title tab -->
           <div class="title_tab">
-            <img src="static/greenhouse_tab.png">
+            <img src="static/img/greenhouse_tab.png">
           </div>
           <div class="row">
             <div class="small-12 columns">
@@ -774,7 +774,7 @@
           <div id="ceremony_container">
             <div id="ceremony_bg"></div>
 
-            <img id="waterfall" src="static/waterfall.gif">
+            <img id="waterfall" src="static/img/waterfall.gif">
             <div id="ceremony_bottom"></div>
             <div id="ceremony_decor_left"></div>
             <div id="ceremony_decor_right"></div>
@@ -791,15 +791,15 @@
             <div id="ceremony_water">
               <span id="water" class="counter"></span> / <span class="water_require"></span>
             </div>
-            <img id="ceremony_icon_fire" src="static/fire.png">
-            <img id="ceremony_icon_nature" src="static/nature.png">
-            <img id="ceremony_icon_water" src="static/water.png">
+            <img id="ceremony_icon_fire" src="static/img/fire.png">
+            <img id="ceremony_icon_nature" src="static/img/nature.png">
+            <img id="ceremony_icon_water" src="static/img/water.png">
 
-            <img id="ceremony_utensil1" src="static/water.png">
+            <img id="ceremony_utensil1" src="static/img/water.png">
 
             <div id="picked_teapet"><img id="picked_teapet_img"></div>
 
-            <a id="pick_bag" onclick="action('pick_bag')"><img src="static/gong.png"></a>
+            <a id="pick_bag" onclick="action('pick_bag')"><img src="static/img/gong.png"></a>
             <button id="abort_ceremony" onclick="action('abort_ceremony')">ABORT!</button>
 
             <div id="picked_teapet_text"></div>
@@ -860,40 +860,40 @@
   
     <div id="focus_monks{{id}}" class="focus_actions_container">
         {{#if_eq focus_action 1}}
-        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
         {{/if_eq}}
         {{#if_eq focus_action 2}}
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
         {{/if_eq}}
         {{#if_eq focus_action 3}}
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
         {{/if_eq}}
         {{#if_eq focus_action 4}}
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
-        <img src="static/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
+        <img src="static/img/monk.png" class="icon_focus_actions">
         {{/if_eq}}
     </div>
     <div class="row">
       <div class="small-10 columns no_padding">
         {{#if_eq ftype 'converter'}}
-        <img id="focus_swirl{{id}}" class="focus_swirl converter" src="static/mandala_converter.gif">
+        <img id="focus_swirl{{id}}" class="focus_swirl converter" src="static/img/mandala_converter.gif">
         {{/if_eq}}
         {{#if_eq ftype 'generator'}}
-        <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/mandala.gif">
+        <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/img/mandala.gif">
         {{/if_eq}}
         <div id="focus_btn{{id}}" class="focus_icons_btn">
           <div class="focus_icons">
             <!-- {{focus_action}}  -->
             {{#each effect}}
-            <img src="static/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
+            <img src="static/img/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
             {{#if @first}}
             {{#if_eq ../ftype 'converter'}}
-            <img src="static/arrow_white.png" class="arrow_focus_project">
+            <img src="static/img/arrow_white.png" class="arrow_focus_project">
             {{/if_eq}}
             {{/if}}
             {{/each}}

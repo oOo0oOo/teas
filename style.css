@@ -65,7 +65,7 @@ button, select {
   bottom: 0px;
   height: 90px;
   width:100%;
-  background-image: url("static/footer1.png");
+  background-image: url("static/img/footer1.png");
   background-repeat: repeat-x;
   z-index: -1;
 }
@@ -935,7 +935,7 @@ input:checked + .compost-slider:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(static/ceiling_fire.png);
+  background-image: url(static/img/ceiling_fire.png);
   background-repeat: repeat-x;
 }
 
@@ -946,7 +946,7 @@ input:checked + .compost-slider:before {
   width: 64px;
   height: 512px;
   background-repeat: no-repeat;
-  background-image: url(static/pillar_simple.png);
+  background-image: url(static/img/pillar_simple.png);
 }
 
 #ceremony_pillar_right {
@@ -956,7 +956,7 @@ input:checked + .compost-slider:before {
   width: 64px;
   height: 512px;
   background-repeat: no-repeat;
-  background-image: url(static/pillar_simple.png);
+  background-image: url(static/img/pillar_simple.png);
 }
 
 #ceremony_decor_left {
@@ -966,7 +966,7 @@ input:checked + .compost-slider:before {
   width: 64px;
   height: 128px;
   background-repeat: no-repeat;
-  background-image: url(static/fire_pot.png);
+  background-image: url(static/img/fire_pot.png);
 }
 
 #ceremony_decor_right {
@@ -976,7 +976,7 @@ input:checked + .compost-slider:before {
   width: 64px;
   height: 128px;
   background-repeat: no-repeat;
-  background-image: url(static/fire_pot.png);
+  background-image: url(static/img/fire_pot.png);
 }
 
 #ceremony_bottom {
@@ -985,7 +985,7 @@ input:checked + .compost-slider:before {
   left: 0;
   width: 100%;
   height: 256px;
-  background-image: url(static/floor_fire.png);
+  background-image: url(static/img/floor_fire.png);
 }
 
 #ceremony_fire {

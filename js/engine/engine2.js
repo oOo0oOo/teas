@@ -225,7 +225,7 @@ class EnginePhase2 extends BaseEngine {
         this.state['picked'].push(ind);
 
         // The teapet image
-        $("#picked_teapet_img").attr({ "src": "static/teapets/" + teapet.icon + ".png" });
+        $("#picked_teapet_img").attr({ "src": "static/img/teapets/" + teapet.icon + ".png" });
 
         $("#picked_teapet_text").html(teapet.title)
 

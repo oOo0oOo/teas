@@ -104,7 +104,7 @@ function setup(){
         var cost = "";
         // if focus is in the cost dictionary, add the focus icon
         if (p.cost.focus){
-            cost += num_to_mega(p.cost.focus) + " <img src='static/focus_dark.png' class='img_project_resource'>";
+            cost += num_to_mega(p.cost.focus) + " <img src='static/img/focus_dark.png' class='img_project_resource'>";
             
             // Add a space if there is also teabags cost
             if (p.cost.teabags){
@@ -112,7 +112,7 @@ function setup(){
             }
         }
         if (p.cost.teabags){
-            cost += num_to_mega(p.cost.teabags) + " <img src='static/tea_icon.png' class='tea-icon'>";
+            cost += num_to_mega(p.cost.teabags) + " <img src='static/img/tea_icon.png' class='tea-icon'>";
         }
         p.cost_str = cost;
     };

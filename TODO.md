@@ -22,10 +22,9 @@ Ceremony:
 
 ## Oli
 
-- Meditation initial design
-- Meditation practice mode
 - Open source publish
 - Save geflickt
+- Sound & Fullscreen in phase 2
 
 ## Nice to have
 
@@ -51,6 +50,9 @@ x design generator vs. converter
 x show how many monks are necessary for a ceremony
 x focus_project: converter needs arrow and centering
 
+- Meditation initial design
+- Meditation practice mode
+- Move images to static folder
 
 =================== OLD ===================
 
