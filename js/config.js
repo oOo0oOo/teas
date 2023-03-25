@@ -128,7 +128,7 @@ var START_STATE = {
     'focus_project_level': 0,               // 5 project levels: 0 - 4
     'focus_projects_max': 4,                // Number of focus projects available
 
-    'focus_project_disappear': [900, 1100],             // Ticks
+    'focus_project_disappear': [1000, 1200],             // Ticks
 
     'focus_project_refresh_cost': 2,        // How many focus points are needed to replace a project
     
@@ -136,11 +136,11 @@ var START_STATE = {
         {
             'name': 'Focus generator',
             'effect': {
-                'focus': [0.01, 0.02, 0.04]
+                'focus': [0.01, 0.028, 0.05]
             },
             'duration': [700, 800, 600],                  // Ticks (20 / s)
-            'focus_action': [1, 2, 4],
-            'rarity': [0.8, 0.6, 0.2],
+            'focus_action': [1, 2, 3],
+            'rarity': [0.6, 0.5, 0.3],
             'level': [
                 [0, 1, 2],
                 [1, 2, 3, 4],
@@ -178,29 +178,27 @@ var START_STATE = {
         {
             'name': 'Generate focus and nature',
             'effect': {
-                'focus': [0.01, 0.02],
-                'fertilizer': [0.01, 0.02],
+                'focus': [0.015],
+                'fertilizer': [0.015],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [3, 4],
-            'rarity': [0.2, 0.2],
+            'focus_action': [3],
+            'rarity': [0.2],
             'level': [
-                [2, 3],
-                [3, 4]
+                [2, 3, 4]
             ],
         },
         {
             'name': 'Generate focus and processing',
             'effect': {
-                'focus': [0.01, 0.02],
-                'power': [0.01, 0.03],
+                'focus': [0.015],
+                'power': [0.015],
             },
-            'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [3, 4],
-            'rarity': [0.2, 0.2],
+            'duration': [700],                  // Ticks (20 / s)
+            'focus_action': [3],
+            'rarity': [0.2],
             'level': [
-                [2, 3],
-                [3, 4]
+                [2, 3, 4]
             ],
         },
         {

@@ -504,10 +504,23 @@ var projects = [
 	{
 		id: "more_focus_projects",
 		title: "Better Focus",
-		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager') && engine.project_done('focus_level3')},
-        cost: {focus: 75},
+		trigger: function(state){return engine.project_done('focus_level2')},
+        cost: {focus: 50},
 		game_phase: 1,
 		description: "Due to repeated ceremonies, your consciousness expands and more focus options are available.",
+		effect: function(state){
+			state['focus_projects_max'] = 5;
+			engine.generate_level();
+			return state
+		}
+	},	
+	{
+		id: "more_focus_projects2",
+		title: "Laser Focus",
+		trigger: function(state){return engine.project_done('more_focus_projects')},
+        cost: {focus: 75},
+		game_phase: 1,
+		description: "Due to your incredible tea experiments, your monks will have even more focus options.",
 		effect: function(state){
 			state['focus_projects_max'] = 6;
 			state['focus_middle_generator'] = 1.0;
@@ -541,14 +554,27 @@ var projects = [
 		}
 	},
 	{
-		id: "more_workers2",
+		id: "more_workers1.5",
 		title: "Add Another Worker",
 		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('fertilizer_use') && engine.project_done('power_use')},
-        cost: {focus: 50, teabags: 1200000},
+        cost: {focus: 40, teabags: 500000},
 		game_phase: 1,
 		description: 'You gain control over one more "normal" human.',
 		effect: function(state){
 			state['workers'] += 1;
+            update_free_workers();
+			return state
+		}
+	},
+	{
+		id: "more_workers2",
+		title: "Add Two Workers",
+		trigger: function(state){return engine.project_done('more_workers1.5')},
+        cost: {focus: 50, teabags: 1500000},
+		game_phase: 1,
+		description: 'You gain control over some more "normal" humans.',
+		effect: function(state){
+			state['workers'] += 2;
             update_free_workers();
 			return state
 		}
