@@ -660,17 +660,17 @@ class EnginePhase0 extends BaseEngine {
 
         ['home', 'smart', 'random'].forEach(function(s){
             if (s == strat){
-                $("#strategy-" + s).attr('src', 'static/' + s + '_selected.png');
+                $("#strategy-" + s).attr('src', 'static/img/' + s + '_selected.png');
             } else {
-                $("#strategy-" + s).attr('src', 'static/' + s + '_unselected.png');
+                $("#strategy-" + s).attr('src', 'static/img/' + s + '_unselected.png');
             }
         });
 
         ['up', 'down', 'left', 'right'].forEach(function(s){
             if (s == strat){
-                $("#strategy-" + s).attr('src', 'static/arrow_selected.png');
+                $("#strategy-" + s).attr('src', 'static/img/arrow_selected.png');
             } else {
-                $("#strategy-" + s).attr('src', 'static/arrow_unselected.png');
+                $("#strategy-" + s).attr('src', 'static/img/arrow_unselected.png');
             }
         });
     }
@@ -784,7 +784,7 @@ class EnginePhase0 extends BaseEngine {
         }
 
         for (p in [0, 1, 2]){
-            $("#price_compost" + p).html(this.state["compost_teabags"][p] + ' <img src="static/tea_icon.png" class="tea-icon">');
+            $("#price_compost" + p).html(this.state["compost_teabags"][p] + ' <img src="static/img/tea_icon.png" class="tea-icon">');
         }
     }
 
@@ -794,7 +794,7 @@ class EnginePhase0 extends BaseEngine {
         var game_phase = s['game_phase']
 
         // Teabag image
-        // var tb_img = '&nbsp;&nbsp;&nbsp;<img src="static/teabag.png" width="40px"></img>'
+        // var tb_img = '&nbsp;&nbsp;&nbsp;<img src="static/img/teabag.png" width="40px"></img>'
 
         // Basic Resources
         $("#herbs").html(num_to_mega(s["herbs"]));
