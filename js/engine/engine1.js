@@ -225,8 +225,9 @@ class EnginePhase1 extends BaseEngine {
 
         // The temple leader can change the rarities of the projects
         var leader_focus = "none";
-        if (s['leaders'] > 0 && project_done('temple_leader_focus')) {
-            leader_focus = "focus";
+        if (s['leaders'] > 0 && this.project_done('temple_leader_focus')) {
+            // Get the value of the leader_strategy input radio group
+            leader_focus = $("input[name='leader_strategy']:checked").val();
         }
 
         var rand = Math.random();
@@ -241,7 +242,7 @@ class EnginePhase1 extends BaseEngine {
                 // Check if any of the effects of the project are the leader focus
                 // (They are always selected)
                 for (var key in project['effect']){
-                    if (key == leader_focus && project['effect'][key] > 0){
+                    if (key == leader_focus && project['effect'][key][0] > 0){
                         always_select = true;
                         break;
                     }
@@ -253,8 +254,15 @@ class EnginePhase1 extends BaseEngine {
                     all.push([i, j]);
 
                     if (always_select){
+                        // Always select
                         possibilities.push([i, j]);
+                    } else if (leader_focus != "none"){
+                        // Make less likely
+                        if (project['rarity'][j] * 0.6 >= rand){
+                            possibilities.push([i, j]);
+                        };
                     } else if (project['rarity'][j] >= rand){
+                        // Normal probability
                         possibilities.push([i, j]);
                     }
                 }
@@ -316,10 +324,24 @@ class EnginePhase1 extends BaseEngine {
 
         this.state['focus'] -= this.state['focus_project_refresh_cost'];
 
-        // Remove one focus project and replace it (set lifetime to 0)
-        var ind = Math.floor(Math.random() * this.focus_projects.length);
-        var project = this.focus_projects[ind];
-        project['lifetime'] = 0;
+        // Remove two random focus projects (set lifetime to 0)
+        for (var i=0;i<2;i++){
+            var ok = false;
+            var ind;
+            for (var i=0;i<100;i++){
+                ind = Math.floor(Math.random() * this.focus_projects.length);
+                var project = this.focus_projects[ind];
+                if (!project['active'] && project['lifetime'] > 0){
+                    ok = true;
+                    break
+                }
+            }
+
+            if (ok){
+                var project = this.focus_projects[ind];
+                project['lifetime'] = 0;
+            }
+        }
     }
 
     // WORKER PLACEMENT
@@ -352,6 +374,15 @@ class EnginePhase1 extends BaseEngine {
                     } else {
                         $("#start_meditation").hide();
                         $("#meditation_inactive").show();
+                    }
+                }
+
+                // Only show the leader box if you have a leader
+                if (type == "leaders"){
+                    if (this.state['leaders'] > 0){
+                        $(".leader_box").show();
+                    } else {
+                        $(".leader_box").hide();
                     }
                 }
 
