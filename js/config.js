@@ -74,10 +74,14 @@ var START_STATE = {
     // WORKER PLACEMENT GAME PHASE (1)
     'workers': 3,
     'monks': 0,
+    'meditators': 0,
+    'managers': 0,
 
     'monks_max': 2,
     'farmers_max': 3,
     'processors_max': 3,
+    'meditators_max': 1,
+    'managers_max': 1,
 
     'factory_speed': 0,
     'factory_efficiency': 0,
@@ -260,7 +264,7 @@ var START_STATE = {
     'meditation_price': 30,                 // Focus to stop a wheel
     'meditation_win': 60,                   // Focus to win if within target
     'meditation_try_cost': 10,              // How much do you lose for each time you try
-    
+
     'meditation_practice': false,
     'meditation_active': -1,
     'meditation_target': 0,

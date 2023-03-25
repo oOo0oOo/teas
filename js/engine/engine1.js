@@ -294,6 +294,10 @@ class EnginePhase1 extends BaseEngine {
                     this.update_num_monks();
                 }
 
+                // Update the meditation box depending on the number of meditators
+                if (type == "meditators"){
+                }
+
                 return true;
             }
         }
@@ -503,12 +507,16 @@ class EnginePhase1 extends BaseEngine {
         $("#processors1").html(num_to_mega(s["processors"]));
         $("#farmers1").html(num_to_mega(s["farmers"]));
         $("#monks").html(num_to_mega(s["monks"]));
+        $("#meditators").html(num_to_mega(s["meditators"]));
+        $("#managers").html(num_to_mega(s["managers"]));
         $("#workers").html(num_to_mega(s["workers"]));
         $("#focus").html(num_to_mega(s["focus"]));
 
         $("#farmers_max").html(s["farmers_max"]);
         $("#processors_max").html(s["processors_max"]);
         $("#monks_max").html(s["monks_max"]);
+        $("#meditators_max").html(s["meditators_max"]);
+        $("#managers_max").html(s["managers_max"]);
 
         // Focus resources levels
         var fertilizer_perc = s['fertilizer'] / s['fertilizer_max'];
