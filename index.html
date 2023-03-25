@@ -555,7 +555,11 @@
       <div class="small-4 columns main_column">
         <!-- focus box -->
         <div id="ui_focus" class="row box">
-          <div class="row">
+          <div class="row center focus_header">
+            <img src="static/img/focus_animated.gif" class="img_focus" width="40px"> <span id="focus"></span>
+          </div>
+          
+          <div class="row focus_projects">
             <div id="focus_project_slot0" class="fp-slot small-4 columns"></div>
             <div id="focus_project_slot1" class="fp-slot small-4 columns"></div>
             <div id="focus_project_slot2" class="fp-slot small-4 columns"></div>
@@ -599,8 +603,26 @@
                 </div>
             </div>
           </div>
-          <div class="row center" style="padding-top: 45px;">
-          <img src="static/img/focus.gif" class="img_focus" width="40px"> <span id="focus"></span>
+          <div class="leader_box">
+            <div class="flex-column">
+              <div class="small_price_tag pb-xsmall">-2<img src="static/img/focus_light.png"/></div>
+              <button id="clean_focus_project" class="btn_light btn_leader">
+                <img src="static/img/reload.png"/>
+              </button>
+            </div>
+            <div class="flex-column">
+              <span class="center pb-small">Focus:</span>
+              <div id="leader_strategies">
+                <input type="radio" id="strat_herbs" name="leader_strategy" value="herbs">
+                <label for="strat_herbs" class="btn_light btn_leader"><img src="static/img/fertilizer_light.png"/></label>
+                <input type="radio" id="strat_processing" name="leader_strategy" value="processing">
+                <label for="strat_processing" class="btn_light btn_leader"><img src="static/img/processing_light.png"/></label>
+                <input type="radio" id="strat_focus" name="leader_strategy" value="focus">
+                <label for="strat_focus" class="btn_light btn_leader"><img src="static/img/focus_light.png"/></label>
+                <input type="radio" id="strat_none" name="leader_strategy" value="none">
+                <label for="strat_none" class="btn_light btn_leader"><img src="static/img/x-icon.png"/></label>
+              </div>
+            </div>
           </div>
         </div>
         <!-- meditation box-->
@@ -662,6 +684,11 @@
         <div id="ui_projects1" class="row box"></div>
       </div>
     </div>
+
+
+
+
+
 
     <!-- phase2 starts here -->
     <div id="ui_game_phase2" class="row">
@@ -906,7 +933,7 @@
         {{#if_eq ftype 'generator'}}
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/img/mandala.gif">
         {{/if_eq}}
-        <div id="focus_btn{{id}}" class="focus_icons_btn">
+        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn">
           <div class="focus_icons">
             <!-- {{focus_action}}  -->
             {{#each effect}}
