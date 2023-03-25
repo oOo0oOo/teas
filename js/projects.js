@@ -292,8 +292,8 @@ var projects = [
 		description: "Focus Projects Level 2",
 		effect: function(state){
 			state['focus_project_level'] = 1;
-			$("#ui_greenhouse_bonus").show();
-			$("#ui_factory_bonus").show();
+			$("#ui_greenhouse_bonus").css('display', 'flex');
+			$("#ui_factory_bonus").css('display', 'flex');
 			return state
 		}
 	},
