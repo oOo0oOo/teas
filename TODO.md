@@ -3,19 +3,9 @@
 ## Balancing
 
 - 2 monks charging too fast?
-x 400k & 500k for advanced brewing & farming too much?
-x project order: "more monks" before "focus projects 3" because 3 monks are neccesary
-- focus-project greenhouse -> processing doesn't make sense
-- more processing focus-projects (and earlier)
 - tea production rate doesn't ramp up
-x project "greenhouse manager" & "factory manager" cost slightly more focus points but less tea
 - some projects can only cost tea or focus-points
 - project for "more gardening focus-projects" or "more processing focus-projects" -> player can chose a speciality
-x when processing-efficiency unlocks, price 100k is irrelevant
-x focus projects overthink in which phase, which ones are possible: 
-    - early: cost one monk, mainly garden, some focus
-    - mid: cost 1-2 monks, mainly focus, some garden & processing
-    - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
 - check for similarities in project descriptions
 - focus-project for greenhouse and brewing slightly stronger
 
@@ -26,9 +16,7 @@ x focus projects overthink in which phase, which ones are possible:
 - design progressbars
 - reorder elements in gardening and processing tab
 Ceremony:
-- design generator vs. converter
-- show how many monks are necessary for a ceremony
-- focus_project: converter needs arrow and centering
+
 - Ende (stats und Aussicht)
 - Donate/Community/Idee für nächste Phase/Newletter
 
@@ -48,6 +36,20 @@ Ceremony:
 - Season Warning
 - project "tea ceremony" adds the worker-placement-option "monks"
 - converters are working,  eventough the resource isn't available
+
+x 400k & 500k for advanced brewing & farming too much?
+x project order: "more monks" before "focus projects 3" because 3 monks are neccesary
+x focus-project greenhouse -> processing doesn't make sense
+x more processing focus-projects (and earlier)
+x project "greenhouse manager" & "factory manager" cost slightly more focus points but less tea
+x when processing-efficiency unlocks, price 100k is irrelevant
+x focus projects overthink in which phase, which ones are possible: 
+    - early: cost one monk, mainly garden, some focus
+    - mid: cost 1-2 monks, mainly focus, some garden & processing
+    - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
+x design generator vs. converter
+x show how many monks are necessary for a ceremony
+x focus_project: converter needs arrow and centering
 
 
 =================== OLD ===================
