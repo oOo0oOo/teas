@@ -35,7 +35,6 @@ Ceremony:
 
 ## Oli
 
-- project "tea ceremony" adds the worker-placement-option "monks"
 - project "focus project 2" adds cult-bonus-bars to the UI
 - project "focus project 2" adds greenhouse and brewing generators
 - focus-project for greenhouse and brewing slightly stronger
@@ -43,13 +42,18 @@ Ceremony:
 - focus_project: get rid of button-look when active
 - Meditation initial design
 - Meditation practice mode
-- Season Warning
 - Open source publish
 - Save geflickt
 
 ## Nice to have
 
 - SoundFX
+
+## Done
+
+- Season Warning
+- project "tea ceremony" adds the worker-placement-option "monks"
+
 
 =================== OLD ===================
 

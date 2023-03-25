@@ -279,6 +279,7 @@ var projects = [
 			state['workers'] += 1;
             update_free_workers();
 			$("#ui_focus").show();
+			$("#worker_monks").show();
 			return state
 		}
 	},
