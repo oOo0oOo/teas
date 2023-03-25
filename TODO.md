@@ -17,6 +17,7 @@ x focus projects overthink in which phase, which ones are possible:
     - mid: cost 1-2 monks, mainly focus, some garden & processing
     - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
 - check for similarities in project descriptions
+- focus-project for greenhouse and brewing slightly stronger
 
 ## Simi
 
@@ -33,21 +34,21 @@ Ceremony:
 
 ## Oli
 
-- project "tea ceremony" adds the worker-placement-option "monks"
-- project "focus project 2" adds cult-bonus-bars to the UI
-- project "focus project 2" adds greenhouse and brewing generators
-- focus-project for greenhouse and brewing slightly stronger
-- converters are working,  eventough the resource isn't available
-- focus_project: get rid of button-look when active
 - Meditation initial design
 - Meditation practice mode
-- Season Warning
 - Open source publish
 - Save geflickt
 
 ## Nice to have
 
 - SoundFX
+
+## Done
+
+- Season Warning
+- project "tea ceremony" adds the worker-placement-option "monks"
+- converters are working,  eventough the resource isn't available
+
 
 =================== OLD ===================
 

@@ -561,6 +561,10 @@ input:checked + .compost-slider:before {
     font-size: 10pt;
 }
 
+#worker_monks {
+  display: none;
+}
+
 /*Focus Projects*/
 #ui_focus {
   background-color: #152222;
