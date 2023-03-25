@@ -75,13 +75,13 @@ var START_STATE = {
     'workers': 3,
     'monks': 0,
     'meditators': 0,
-    'managers': 0,
+    'leaders': 0,
 
     'monks_max': 2,
     'farmers_max': 3,
     'processors_max': 3,
     'meditators_max': 1,
-    'managers_max': 1,
+    'leaders_max': 1,
 
     'factory_speed': 0,
     'factory_efficiency': 0,
@@ -260,15 +260,15 @@ var START_STATE = {
     ],
 
     // MEDITATION
-    'meditation_width': 0.2,                // How wide is the meditation target window
-    'meditation_price': 30,                 // Focus to stop a wheel
-    'meditation_win': 60,                   // Focus to win if within target
-    'meditation_try_cost': 10,              // How much do you lose for each time you try
+    'meditation_width': [0.24, 0.21, 0.18],                // How wide is the meditation target window
+    'meditation_price': [30, 60, 75],                 // Focus to stop a wheel
+    'meditation_win': [60, 125, 155],                   // Focus to win if within target
+    'meditation_try_cost': [10, 20, 25],              // How much do you lose for each time you try
 
     'meditation_practice': false,
     'meditation_active': -1,
     'meditation_target': 0,
-
+ 
     // SEASON
     'season': 0,                            // 0 = Spring, 1 = Summer, 2 = Autumn, 3 = Winter
     'season_duration': 180 * 20,            // Ticks (20 / s)  ! Make sure this is an even number!

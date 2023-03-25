@@ -760,13 +760,25 @@ input:checked + .compost-slider:before {
 #meter_season {
     background-color: #205038;
 }
+
+#worker_leaders {
+  display: none;
+}
  
 /* MEDITATION */
+
+#worker_meditators {
+  display: none;
+}
 
 #ui_meditation {
   display: none;
   background-color: #152222;
   color: #bdccd4;
+}
+
+#start_meditation {
+  display: none;
 }
 
 #meditation_target_bg {

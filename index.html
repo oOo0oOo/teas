@@ -384,17 +384,7 @@
               &emsp;<span id="monks"></span> / <span id="monks_max"></span>
             </div>
           </div>
-          <div class="worker_leaders row">
-            <div class="small-4 columns">
-              Leaders
-            </div>
-            <div class="small-8 columns">
-              <button id="remove_worker_leader" class="btn_buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
-              <button id="add_worker_leader" class="btn_buy" onclick="action('shift_worker', ['leaders', 1])">+</button>
-              &emsp;<span id="leaders"></span> / <span id="leaders_max"></span>
-            </div>
-          </div>
-          <div class="worker_meditators row">
+          <div id="worker_meditators" class="row">
             <div class="small-4 columns">
               Cultists
             </div>
@@ -402,6 +392,16 @@
               <button id="remove_worker_meditator" class="btn_buy minus" onclick="action('shift_worker', ['meditators', -1])">-</button>
               <button id="add_worker_meditator" class="btn_buy" onclick="action('shift_worker', ['meditators', 1])">+</button>
               &emsp;<span id="meditators"></span> / <span id="meditators_max"></span>
+            </div>
+          </div>
+          <div id="worker_leaders" class="row">
+            <div class="small-4 columns">
+              Leader
+            </div>
+            <div class="small-8 columns">
+              <button id="remove_worker_leader" class="btn_buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
+              <button id="add_worker_leader" class="btn_buy" onclick="action('shift_worker', ['leaders', 1])">+</button>
+              &emsp;<span id="leaders"></span> / <span id="leaders_max"></span>
             </div>
           </div>
         </div>
@@ -605,22 +605,19 @@
         </div>
         <!-- meditation box-->
         <div id="ui_meditation" class="row box">
-          <b>Meditation</b><br><br>
+          <b>Meditation<span id="meditation_inactive"> requires cultists</span></b><br><br>
           <div class="row" id="start_meditation">
             <div class="small-6 columns">
               <button class="meditation_btn" onclick="action('start_meditation')">
                 <img src="static/img/monk.png" width="24px"><br>
                 <span id="meditation_price"></span>
                 <img src='static/img/focus_dark.png' style='width:24px'></img>
-                <br>
-                1 free worker
               </button>
             </div>
             <div class="small-6 columns">
               <button class="meditation_btn" onclick="action('start_practice')">
                 <img src="static/img/monk.png" width="24px"><br>
-                pratice<br>
-                1 free worker
+                pratice
               </button>
             </div>
           </div>

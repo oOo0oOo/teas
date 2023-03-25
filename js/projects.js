@@ -322,6 +322,18 @@ var projects = [
 		}
 	},
 	{
+		id: "temple_leader",
+		title: "Temple Leader",
+		trigger: function(state){return engine.project_done('focus_level2')},
+        cost: {focus: 20, teabags: 200000},
+		game_phase: 1,
+		description: "Your temple leader will help your monks focus on the right projects.",
+		effect: function(state){
+			$("#worker_leaders").show();
+			return state
+		}
+	},
+	{
 		id: "fertilizer_use",
 		title: "Advanced Fertilizer",
 		trigger: function(state){return engine.project_done('focus_level2')},
@@ -562,6 +574,7 @@ var projects = [
 		description: "The master of the tea-cult, wants to show you some secret techniques - for devoted members only!",
 		effect: function(state){
 			$("#ui_meditation").show();
+			$("#worker_meditators").show();
             reset_meditation();
 			return state
 		}
@@ -574,10 +587,7 @@ var projects = [
 		game_phase: 1,
 		description: "Your master's secret-techniques start to make more sense.",
 		effect: function(state){
-			state['meditation_width'] = 0.25;
-			state['meditation_price'] = 60;
-			state['meditation_try_cost'] = 20;
-			state['meditation_win'] = 125;
+			state['meditators_max'] = 2;
             reset_meditation();
 			return state
 		}
@@ -590,10 +600,7 @@ var projects = [
 		game_phase: 1,
 		description: "Your master's secret-techniques start to make more sense.",
 		effect: function(state){
-			state['meditation_width'] = 0.26;
-			state['meditation_price'] = 75;
-			state['meditation_try_cost'] = 25;
-			state['meditation_win'] = 155;
+			state['meditators_max'] = 3;
             reset_meditation();
 			return state
 		}
