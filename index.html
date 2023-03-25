@@ -53,7 +53,7 @@
           <div class="row">
             <div class="small-6 columns">
               <h3>Tea</h3>
-              <a id="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
+              <a class="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
             </div>
             <div class="small-6 columns teabag_container">
               <span id="teabags"></span>
@@ -63,7 +63,7 @@
           </div>
           <div class="row">
             <div class="small-6 columns">
-              <a id="musicBtn" onclick="togglePlay()">Play Music</a>
+              <a class="musicBtn" onclick="togglePlay()">Play Music</a>
             </div>
             <div class="small-6 columns teabag_container">
               <b><span class="ui_rates"> <span id="teabags_rate"></span>/s</span></b><br>
@@ -329,6 +329,9 @@
               <br><br>
             </div>
           </div>
+          <a class="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
+          <a class="musicBtn" onclick="togglePlay()">Play Music</a>
+          <br><br>
           <div class="row">
             <div class="small-6 columns">
             It is <span id="season"></span>.

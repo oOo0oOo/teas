@@ -24,7 +24,7 @@ Ceremony:
 
 - Open source publish
 - Save geflickt
-- Sound & Fullscreen in phase 2
+- Connect phase 1 and 2
 
 ## Nice to have
 
@@ -53,6 +53,7 @@ x focus_project: converter needs arrow and centering
 - Meditation initial design
 - Meditation practice mode
 - Move images to static folder
+- Sound & Fullscreen in phase 2
 
 =================== OLD ===================
 
