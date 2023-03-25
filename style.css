@@ -565,6 +565,24 @@ input:checked + .compost-slider:before {
   display: none;
 }
 
+/* Progressbar */
+.progress {
+  height: 8px;
+  border-radius: 2px;
+  margin-bottom: 0;
+}
+
+#meter_fertilizer, #meter_power {
+  background-color: #205038;
+  border-radius: 2px;
+}
+
+.flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+
 /*Focus Projects*/
 #ui_focus {
   background-color: #152222;
