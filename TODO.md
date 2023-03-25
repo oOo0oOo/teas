@@ -31,7 +31,6 @@ Ceremony:
     * Toggle/radio btns to adjust focus projects generated
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
-- Win/Lose Meditation
 
 ## Nice to have
 
@@ -69,6 +68,7 @@ x focus_project: converter needs arrow and centering
 - Move images to static folder
 - Sound & Fullscreen in phase 2
 * Job: Meditator, Meditator 2
+- Win/Lose Meditation
 
 =================== OLD ===================
 

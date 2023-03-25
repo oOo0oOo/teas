@@ -63,6 +63,9 @@ class EnginePhase1 extends BaseEngine {
                 case 'try_meditation':
                     this.try_meditation(action[1]);
                     break;
+                case 'refresh_focus_project':
+                    this.refresh_focus_project();
+                    break;
             };
         };
         this.action_queue = [];
@@ -217,19 +220,41 @@ class EnginePhase1 extends BaseEngine {
     }
 
     generate_focus_project(){
-
-        var rand = Math.random();
         var s = this.state;
         var level = s['focus_project_level'];
+
+        // The temple leader can change the rarities of the projects
+        var leader_focus = "none";
+        if (s['leaders'] > 0 && project_done('temple_leader_focus')) {
+            leader_focus = "focus";
+        }
+
+        var rand = Math.random();
 
         var possibilities = [];
         var all = [];
         for (var i=0;i<s['focus_projects'].length;i++){
             var project = s['focus_projects'][i];
+
+            var always_select = false;
+            if (leader_focus !== "none"){
+                // Check if any of the effects of the project are the leader focus
+                // (They are always selected)
+                for (var key in project['effect']){
+                    if (key == leader_focus && project['effect'][key] > 0){
+                        always_select = true;
+                        break;
+                    }
+                }
+            }
+
             for (var j=0;j<project['level'].length;j++){
                 if (project['level'][j].includes(level)){
                     all.push([i, j]);
-                    if (project['rarity'][j] >= rand){
+
+                    if (always_select){
+                        possibilities.push([i, j]);
+                    } else if (project['rarity'][j] >= rand){
                         possibilities.push([i, j]);
                     }
                 }
@@ -281,6 +306,20 @@ class EnginePhase1 extends BaseEngine {
                 project['lifetime'] = project['duration'];
             }
         }
+    }
+
+    refresh_focus_project(){
+        // Check if enough focus points
+        if (this.state['focus'] < this.state['focus_project_refresh_cost']){
+            return;
+        }
+
+        this.state['focus'] -= this.state['focus_project_refresh_cost'];
+
+        // Remove one focus project and replace it (set lifetime to 0)
+        var ind = Math.floor(Math.random() * this.focus_projects.length);
+        var project = this.focus_projects[ind];
+        project['lifetime'] = 0;
     }
 
     // WORKER PLACEMENT

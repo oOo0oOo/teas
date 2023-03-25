@@ -334,6 +334,18 @@ var projects = [
 		}
 	},
 	{
+		id: "temple_leader_focus",
+		title: "Temple Leader Focus",
+		trigger: function(state){return engine.project_done('temple_leader') && engine.project_done('meditation')},
+        cost: {focus: 50, teabags: 500000},
+		game_phase: 1,
+		description: "Your temple leader can help set the focus of your projects.",
+		effect: function(state){
+			
+			return state
+		}
+	},
+	{
 		id: "fertilizer_use",
 		title: "Advanced Fertilizer",
 		trigger: function(state){return engine.project_done('focus_level2')},

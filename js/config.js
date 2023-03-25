@@ -130,6 +130,8 @@ var START_STATE = {
 
     'focus_project_disappear': [900, 1100],             // Ticks
 
+    'focus_project_refresh_cost': 2,        // How many focus points are needed to replace a project
+    
     'focus_projects': [
         {
             'name': 'Focus generator',
