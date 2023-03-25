@@ -26,9 +26,6 @@ Ceremony:
 
 - Open source publish
 - Save geflickt
-* Job: Leader
-    * Clean up focus projects (btn with progress bar / cooldown)
-    * Toggle/radio btns to adjust focus projects generated
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
 
@@ -69,6 +66,10 @@ x focus_project: converter needs arrow and centering
 - Sound & Fullscreen in phase 2
 * Job: Meditator, Meditator 2
 - Win/Lose Meditation
+* Job: Leader
+    * Clean up focus projects (btn with progress bar / cooldown)
+    * Toggle/radio btns to adjust focus projects generated
+- Project descriptions
 
 =================== OLD ===================
 
