@@ -608,8 +608,8 @@ var projects = [
 	{
 		id: "meditation",
 		title: "Meditation",
-		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('factory_manager') && engine.project_done('greenhouse_manager') && engine.project_done('more_focus_projects')},
-        cost: {focus: 85},
+		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('more_focus_projects')},
+        cost: {focus: 60},
 		game_phase: 1,
 		description: "You discover secret tea techniques - for devoted members only!",
 		effect: function(state){
@@ -622,8 +622,8 @@ var projects = [
 	{
 		id: "meditation2",
 		title: "Trance Meditation",
-		trigger: function(state){return engine.project_done('meditation')},
-        cost: {focus: 170, teabags: 200000000},
+		trigger: function(state){return engine.project_done('meditation') && engine.project_done('increase_monks2')},
+        cost: {focus: 120, teabags: 20000000},
 		game_phase: 1,
 		description: "Your master's secret meditation techniques start to make more sense.",
 		effect: function(state){
