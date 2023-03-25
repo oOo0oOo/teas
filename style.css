@@ -877,20 +877,12 @@ input:checked + .compost-slider:before {
 }
 
 #meditation_win, #meditation_lose {
-  margin-top: 30px;
+  margin-top: 90px;
   margin-bottom: 30px;
   text-align: center;
   font-size: 16pt;
   display: none;
-}
-
-#meditation_win{
-  animation: Wobble 0.4s alternate linear infinite;
-}
-
-#meditation_lose{
   animation: Wobble 0.6s alternate linear infinite;
-  color: #e44;
 }
 
 @keyframes Wobble {

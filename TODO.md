@@ -21,7 +21,6 @@ Ceremony:
 - Donate/Community/Idee für nächste Phase/Newletter
 * Special Focus Projects (shorter, more intense)
 - Connect phase 1 and 2
-- Win/Lose Meditation
 
 ## Oli
 
@@ -32,6 +31,7 @@ Ceremony:
     * Toggle/radio btns to adjust focus projects generated
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
+- Win/Lose Meditation
 
 ## Nice to have
 

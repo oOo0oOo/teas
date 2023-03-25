@@ -260,7 +260,7 @@ var START_STATE = {
     ],
 
     // MEDITATION
-    'meditation_width': [0.24, 0.21, 0.18],                // How wide is the meditation target window
+    'meditation_width': [0.24, 0.21, 0.19],                // How wide is the meditation target window
     'meditation_price': [30, 60, 75],                 // Focus to stop a wheel
     'meditation_win': [60, 125, 155],                   // Focus to win if within target
     'meditation_try_cost': [10, 20, 25],              // How much do you lose for each time you try
