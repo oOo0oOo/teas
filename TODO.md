@@ -19,16 +19,31 @@ Ceremony:
 
 - Ende (stats und Aussicht)
 - Donate/Community/Idee für nächste Phase/Newletter
+* Special Focus Projects (shorter, more intense)
+- Connect phase 1 and 2
+- Win/Lose Meditation
 
 ## Oli
 
 - Open source publish
 - Save geflickt
-- Connect phase 1 and 2
+* Job: Leader
+    * Clean up focus projects (btn with progress bar / cooldown)
+    * Toggle/radio btns to adjust focus projects generated
+* Job: Meditator, Meditator 2
+* Special Focus Projects (increase teas, temporary worker, doubling teas)
+* Special Focus Projects (double cult bonus)
 
 ## Nice to have
 
 - SoundFX
+
+## Extra Features Phase 2
+
+- Special Focus Projects (slower meditation)
+? Meditation speed reduced (via job or project, ...)
+- Temple roulette
+? Reward for full cult bonus (spend it?)
 
 ## Done
 
