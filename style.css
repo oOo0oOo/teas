@@ -729,7 +729,7 @@ input:checked + .compost-slider:before {
   width: 100%;
   height: 80px;
   justify-content: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   border-bottom: 3px solid rgb(200,200,200);
 }
 
@@ -843,6 +843,8 @@ input:checked + .compost-slider:before {
   display: none;
 }
 
+
+
 #meditation_target_bg {
   height: 40px;
   width: 300px;
@@ -857,12 +859,14 @@ input:checked + .compost-slider:before {
 }
 
 .meditation_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70px;
   height: 70px;
   background-color: #3f3f3f;
-
-  border-color: #fff;
-  border: 2px solid;
+  border: solid 3px rgb(200,200,200);
+  border-style: outset;
 }
 
 .meditation_box.done {
@@ -871,7 +875,13 @@ input:checked + .compost-slider:before {
 }
 
 .meditation_box_container {
-  display: none;
+  display: flex;
+  justify-content: center;
+}
+
+.meditation_btn {
+  min-height: 48px;
+  margin: 15px auto;
 }
 
 #meditation_box0 {
@@ -939,7 +949,7 @@ input:checked + .compost-slider:before {
 }
 
 #meditation_win, #meditation_lose {
-  margin-top: 90px;
+  margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
   font-size: 16pt;

@@ -629,52 +629,58 @@
         <div id="ui_meditation" class="row box">
           <b>Meditation<span id="meditation_inactive"> requires cultists</span></b><br><br>
           <div class="row" id="start_meditation">
-            <div class="small-6 columns">
-              <button class="meditation_btn" onclick="action('start_meditation')">
-                <img src="static/img/monk.png" width="24px"><br>
+            <div class="small-6 columns center">
+              <button class="meditation_btn btn_light" onclick="action('start_meditation')">
+                <!-- <img src="static/img/monk.png" width="24px"><br> -->
                 <span id="meditation_price"></span>
-                <img src='static/img/focus_dark.png' style='width:24px'></img>
+                <img src='static/img/focus_light.png' style='width:24px'></img>
               </button>
             </div>
-            <div class="small-6 columns">
-              <button class="meditation_btn" onclick="action('start_practice')">
-                <img src="static/img/monk.png" width="24px"><br>
+            <div class="small-6 columns center">
+              <button class="meditation_btn btn_light" onclick="action('start_practice')">
+                <!-- <img src="static/img/monk.png" width="24px"><br> -->
                 pratice
               </button>
             </div>
           </div>
-          <div id="meditation_target_container">
-            <div class="stacked" id="meditation_target_bg"></div>
-            <div class="stacked" id="meditation_target"></div>
-            <div class="stacked" id="meditation_current"></div>
-            <div class="stacked" id="meditation_line"></div>
-            <div class="stacked meditation_try" id="meditation_try0"></div>
-            <div class="stacked meditation_try" id="meditation_try1"></div>
-            <div class="stacked meditation_try" id="meditation_try2"></div>
+          <!-- meditation bar -->
+            <div id="meditation_target_container">
+              <div class="stacked" id="meditation_target_bg"></div>
+              <div class="stacked" id="meditation_target"></div>
+              <div class="stacked" id="meditation_current"></div>
+              <div class="stacked" id="meditation_line"></div>
+              <div class="stacked meditation_try" id="meditation_try0"></div>
+              <div class="stacked meditation_try" id="meditation_try1"></div>
+              <div class="stacked meditation_try" id="meditation_try2"></div>
+            </div>
+          
+          <!-- try boxes -->
+          <div class="row" id="meditation_boxes">
+            <div id="meditation_box_container0" class="small-4 columns meditation_box_container">
+              <div onclick="action('try_meditation', 0)" class="meditation_box" id="meditation_box0">
+                <img id="meditation_try_monk0" src="static/img/monk.png" width="40px">
+              </div>
+            </div>
+            <div id="meditation_box_container1" class="small-4 columns meditation_box_container">
+              <div onclick="action('try_meditation', 1)" class="meditation_box" id="meditation_box1">
+                <img id="meditation_try_monk1" src="static/img/monk.png" width="40px">
+              </div>
+            </div>
+            <div onclick="action('try_meditation', 2)" id="meditation_box_container2" class="small-4 columns meditation_box_container">
+              <div class="meditation_box" id="meditation_box2">
+                <img id="meditation_try_monk1" src="static/img/monk.png" width="40px">
+              </div>
+            </div>
           </div>
+
+          <!-- meditation result -->
           <div id="meditation_win">
             <img src="static/img/meditation_win.png" width="40px">  + <span id="meditation_amount"></span> <img src='static/img/focus_dark.png'>
           </div>
           <div id="meditation_lose">
             <img src="static/img/meditation_lose.png" width="40px">
           </div>
-          <div class="row" id="meditation_boxes">
-            <div id="meditation_box_container0" class="small-4 columns meditation_box_container">
-              <div onclick="action('try_meditation', 0)" class="meditation_box" id="meditation_box0">
-                <img id="meditation_try_monk0" src="static/img/monk.png" width="24px">
-              </div>
-            </div>
-            <div id="meditation_box_container1" class="small-4 columns meditation_box_container">
-              <div onclick="action('try_meditation', 1)" class="meditation_box" id="meditation_box1">
-                <img id="meditation_try_monk1" src="static/img/monk.png" width="24px">
-              </div>
-            </div>
-            <div onclick="action('try_meditation', 2)" id="meditation_box_container2" class="small-4 columns meditation_box_container">
-              <div class="meditation_box" id="meditation_box2">
-                <img id="meditation_try_monk1" src="static/img/monk.png" width="24px">
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
       <button onclick="action('refresh_focus_project')"></button>
