@@ -166,7 +166,7 @@ class EnginePhase1 extends BaseEngine {
                 // Check if we can perform the effect
                 var ok = true;
                 for (var key in eff){
-                    if (eff[key] < 0 && s[key] < eff[key]){
+                    if (eff[key] < 0 && s[key] < -1 * eff[key]){
                         ok = false;
                         break
                     } else if (eff[key] > 0 && s[key] + eff[key] > s[key + '_max']){
