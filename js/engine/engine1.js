@@ -287,11 +287,33 @@ class EnginePhase1 extends BaseEngine {
     shift_worker(type, amount){
         if (this.state['workers'] - amount >= 0){
             if (this.state[type] + amount >= 0 && this.state[type] + amount <= this.state[type + '_max']){
+                
+                // Only allow shifting meditators if meditation is not active
+                if (type == "meditators" && this.state['meditation_active'] != -1){
+                    return false;
+                }
+                
                 this.state[type] += amount;
                 this.state['workers'] -= amount;
 
                 if (type == "monks") {
                     this.update_num_monks();
+                }
+
+                // Update the meditation box depending on the number of meditators
+                if (type == "meditators"){
+                    if (this.state['meditators'] > 0){
+                        $("#start_meditation").show();
+                        $("#meditation_inactive").hide();
+
+                        // Update the meditation price
+                        var price = this.state['meditation_price'][this.state['meditators'] - 1];
+                        $("#meditation_price").html(price);
+
+                    } else {
+                        $("#start_meditation").hide();
+                        $("#meditation_inactive").show();
+                    }
                 }
 
                 return true;
@@ -318,7 +340,7 @@ class EnginePhase1 extends BaseEngine {
             return
         }
 
-        if (!practice && s['focus'] < s['meditation_price']){
+        if (!practice && s['focus'] < s['meditation_price'][s['meditators'] - 1]){
             return
         }
 
@@ -326,7 +348,7 @@ class EnginePhase1 extends BaseEngine {
         this.update_free_workers();
 
         if (!practice){
-            s['focus'] -= s['meditation_price'];
+            s['focus'] -= s['meditation_price'][s['meditators'] - 1];
         }
 
         s['meditation_practice'] = practice;
@@ -344,7 +366,7 @@ class EnginePhase1 extends BaseEngine {
         $("#meditation_try1").hide();
         $("#meditation_try2").hide();
 
-        target.width(s["meditation_width"] * 300 + "px");
+        target.width(s["meditation_width"][s["meditators"] - 1] * 300 + "px");
 
         target.show();
         $("#start_meditation").hide();
@@ -407,9 +429,9 @@ class EnginePhase1 extends BaseEngine {
             // Check if target is hit
             var diff = Math.abs(s['meditation_target'] - cur);
 
-            if (diff < s['meditation_width'] / 2){
+            if (diff < s['meditation_width'][s["meditators"] - 1] / 2){
 
-                var win_amount = s['meditation_win'] - (num_tries + 1) * s['meditation_try_cost'];
+                var win_amount = s['meditation_win'][s['meditators'] - 1] - (num_tries + 1) * s['meditation_try_cost'][s['meditators'] - 1];
                 
                 if(s['meditation_practice']){
                     win_amount = 0;
@@ -460,6 +482,17 @@ class EnginePhase1 extends BaseEngine {
 
     reset_meditation() {
         // Reset the whole minigame (we need to use engine because this is sometimes called after timeout)
+        if (engine.state['meditators'] > 0){
+            $("#start_meditation").show();
+            $("#meditation_inactive").hide();
+
+            // Update the meditation price
+            var price = engine.state['meditation_price'][engine.state['meditators'] - 1];
+            $("#meditation_price").html(price);
+        } else {
+            $("#start_meditation").hide();
+            $("#meditation_inactive").show();
+        }
 
         // Return the workers
         if (engine.state['meditation_active'] !== -1){
@@ -474,7 +507,6 @@ class EnginePhase1 extends BaseEngine {
         $(".meditation_box_container").hide();
         $("#meditation_target").hide();
         $("#meditation_current").hide();
-        $("#start_meditation").show();
         $("#meditation_win").hide();
         $("#meditation_lose").hide();
         $("#meditation_target_container").hide();
@@ -491,7 +523,7 @@ class EnginePhase1 extends BaseEngine {
         $(".meditation_box").removeClass("done");
         
         // Write correct price in button
-        $("#meditation_price").html(engine.state['meditation_price']);
+        $("#meditation_price").html(engine.state['meditation_price'][engine.state['meditators'] - 1]);
     }
 
     render_status_text(production_rates = false){
@@ -503,12 +535,16 @@ class EnginePhase1 extends BaseEngine {
         $("#processors1").html(num_to_mega(s["processors"]));
         $("#farmers1").html(num_to_mega(s["farmers"]));
         $("#monks").html(num_to_mega(s["monks"]));
+        $("#meditators").html(num_to_mega(s["meditators"]));
+        $("#leaders").html(num_to_mega(s["leaders"]));
         $("#workers").html(num_to_mega(s["workers"]));
         $("#focus").html(num_to_mega(s["focus"]));
 
         $("#farmers_max").html(s["farmers_max"]);
         $("#processors_max").html(s["processors_max"]);
         $("#monks_max").html(s["monks_max"]);
+        $("#meditators_max").html(s["meditators_max"]);
+        $("#leaders_max").html(s["leaders_max"]);
 
         // Focus resources levels
         var fertilizer_perc = s['fertilizer'] / s['fertilizer_max'];

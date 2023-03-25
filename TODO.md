@@ -21,7 +21,6 @@ Ceremony:
 - Donate/Community/Idee für nächste Phase/Newletter
 * Special Focus Projects (shorter, more intense)
 - Connect phase 1 and 2
-- Win/Lose Meditation
 
 ## Oli
 
@@ -30,9 +29,9 @@ Ceremony:
 * Job: Leader
     * Clean up focus projects (btn with progress bar / cooldown)
     * Toggle/radio btns to adjust focus projects generated
-* Job: Meditator, Meditator 2
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
+- Win/Lose Meditation
 
 ## Nice to have
 
@@ -69,6 +68,7 @@ x focus_project: converter needs arrow and centering
 - Meditation practice mode
 - Move images to static folder
 - Sound & Fullscreen in phase 2
+* Job: Meditator, Meditator 2
 
 =================== OLD ===================
 
