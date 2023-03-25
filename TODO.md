@@ -19,6 +19,7 @@
 - mid: cost 1-2 monks, mainly focus, some garden & processing
 - end: cost 2-3, some 1 monk, mainly processing, mid focus, some garden
 - check for similarities in project descriptions
+- focus-project for greenhouse and brewing slightly stronger
 
 ## Simi
 
@@ -35,11 +36,6 @@ Ceremony:
 
 ## Oli
 
-- project "focus project 2" adds cult-bonus-bars to the UI
-- project "focus project 2" adds greenhouse and brewing generators
-- focus-project for greenhouse and brewing slightly stronger
-- converters are working,  eventough the resource isn't available
-- focus_project: get rid of button-look when active
 - Meditation initial design
 - Meditation practice mode
 - Open source publish
@@ -53,6 +49,7 @@ Ceremony:
 
 - Season Warning
 - project "tea ceremony" adds the worker-placement-option "monks"
+- converters are working,  eventough the resource isn't available
 
 
 =================== OLD ===================
