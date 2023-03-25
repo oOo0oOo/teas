@@ -756,7 +756,7 @@ input:checked + .compost-slider:before {
 }
 
 .leader_box {
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
@@ -772,6 +772,10 @@ input:checked + .compost-slider:before {
 .leader_box input[type='radio']:checked + label{
   background-color: rgba(248,248,248,.3);
   box-shadow: 0px 0px 5px 4px rgba(248,248,248, .1);
+}
+
+#leader_strategies_box {
+  opacity: 0;
 }
 
 .btn_leader {

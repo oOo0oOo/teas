@@ -606,20 +606,20 @@
           <div class="leader_box">
             <div class="flex-column">
               <div class="small_price_tag pb-xsmall">-2<img src="static/img/focus_light.png"/></div>
-              <button id="clean_focus_project" class="btn_light btn_leader">
+              <button onclick="action('refresh_focus_project')" class="btn_light btn_leader">
                 <img src="static/img/reload.png"/>
               </button>
             </div>
-            <div class="flex-column">
+            <div id="leader_strategies_box" class="flex-column">
               <span class="center pb-small">Focus:</span>
               <div id="leader_strategies">
-                <input type="radio" id="strat_herbs" name="leader_strategy" value="herbs">
+                <input type="radio" id="strat_herbs" name="leader_strategy" value="fertilizer">
                 <label for="strat_herbs" class="btn_light btn_leader"><img src="static/img/fertilizer_light.png"/></label>
-                <input type="radio" id="strat_processing" name="leader_strategy" value="processing">
-                <label for="strat_processing" class="btn_light btn_leader"><img src="static/img/processing_light.png"/></label>
+                <input type="radio" id="strat_processing" name="leader_strategy" value="power">
+                <label for="strat_processing" class="btn_light btn_leader"><img src="static/img/power_light.png"/></label>
                 <input type="radio" id="strat_focus" name="leader_strategy" value="focus">
                 <label for="strat_focus" class="btn_light btn_leader"><img src="static/img/focus_light.png"/></label>
-                <input type="radio" id="strat_none" name="leader_strategy" value="none">
+                <input type="radio" id="strat_none" name="leader_strategy" value="none" checked>
                 <label for="strat_none" class="btn_light btn_leader"><img src="static/img/x-icon.png"/></label>
               </div>
             </div>
@@ -677,7 +677,6 @@
           </div>
         </div>
       </div>
-      <button onclick="action('refresh_focus_project')"></button>
       <!-- right column -->
       <div class="small-4 columns main_column">
         <!-- projects box -->
