@@ -568,7 +568,7 @@ input:checked + .compost-slider:before {
 /*Focus Projects*/
 #ui_focus {
   background-color: #152222;
-  color: #EEE;
+  color: #bdccd4;
 }
 
 .fp-slot {
@@ -765,34 +765,40 @@ input:checked + .compost-slider:before {
 
 #ui_meditation {
   display: none;
+  background-color: #152222;
+  color: #bdccd4;
 }
 
 #meditation_target_bg {
-  height: 24px;
+  height: 40px;
   width: 300px;
   background-image: linear-gradient(to right, #303030, #ffe);
+  border: 2px solid #fff;
 }
 
 #meditation_target_container {
     display: none;
+    margin-top: 0px;
+    margin-bottom: 60px;
 }
 
 .meditation_box {
   width: 70px;
-  height: 80px;
+  height: 70px;
   background-color: #3f3f3f;
 
   border-color: #fff;
   border: 2px solid;
 }
 
+.meditation_box.done {
+  border: 0px;
+  box-shadow: 0 0 8px 2px #fff;
+}
+
 .meditation_box_container {
   display: none;
 }
-
-/*#meditation_target_container {
-  display: none;
-}*/
 
 #meditation_box0 {
   animation: CycleColors 0.5s alternate linear infinite;
@@ -811,32 +817,38 @@ input:checked + .compost-slider:before {
 
 #meditation_target {
   width: 20px;
-  height: 28px;
+  height: 36px;
   background-color: none;
-  border: 2px solid;
-  border-color: #fff;
-  transform: translateY(-2px) translateX(-50%);
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.75);
+  clip-path: inset(0px -15px 0px -15px);
+    transform: translateY(2px) translateX(-50%);
   display: none;
 }
 
 #meditation_current {
-  width: 4px;
+  width: 16px;
   height: 16px;
-  background-color: #fff;
-  transform: translateY(5px) translateX(-50%);
+  border-radius: 50%;
+  background-color: #f09e07;
+  transform: translateY(13px) translateX(-50%);
   z-index: 10;
   display: none;
 }
 
+#meditation_line {
+  height: 4px;
+  width: 100px;
+  background-color: #f09e07;
+  transform: translateY(19px);
+}
+
 .meditation_try {
-  width: 0; 
-  height: 0; 
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #84bb6d;
+  width: 4px; 
+  height: 16px; 
+  background-color: #f09e07;
   display: none;
   z-index: 10;
-  transform: translateY(17px) translateX(-50%);
+  transform: translateY(13px) translateX(-50%);
 }
 
 .stacked {

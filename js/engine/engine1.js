@@ -57,6 +57,9 @@ class EnginePhase1 extends BaseEngine {
                 case 'start_meditation':
                     this.start_meditation();
                     break;
+                case 'start_practice':
+                    this.start_meditation(true);
+                    break;
                 case 'try_meditation':
                     this.try_meditation(action[1]);
                     break;
@@ -308,16 +311,25 @@ class EnginePhase1 extends BaseEngine {
     }
 
     // MEDITATION
-    start_meditation(){
+    start_meditation(practice=false){
         var s = this.state;
         // Use 1 worker
-        if (s['workers'] < 1 || s['meditation_active'] != -1 || s['focus'] < s['meditation_price']){
+        if (s['workers'] < 1){
+            return
+        }
+
+        if (!practice && s['focus'] < s['meditation_price']){
             return
         }
 
         s['workers'] -= 1;
         this.update_free_workers();
-        s['focus'] -= s['meditation_price'];
+
+        if (!practice){
+            s['focus'] -= s['meditation_price'];
+        }
+
+        s['meditation_practice'] = practice;
 
         $("#meditation_target_container").show();
 
@@ -335,12 +347,7 @@ class EnginePhase1 extends BaseEngine {
         target.width(s["meditation_width"] * 300 + "px");
 
         target.show();
-        // $("#meditation_target_container").show();
         $("#start_meditation").hide();
-
-        // Show price
-        // var img = " <img src='static/focus_dark.png' class='img_project_resource'>"
-        // $(".btn_try_meditation").html(s['meditation_price'] + img);
 
         // Start the first color cycle
         this.activate_meditation_box(0);
@@ -372,6 +379,25 @@ class EnginePhase1 extends BaseEngine {
                 $("#meditation_current").show();
             }
 
+            if (num_tries >= 1){
+                var line = $("#meditation_line");
+                // Draw the line from the lowest try to the highest
+                var arr = s['meditation_current'].slice(0, num_tries + 1);
+                var min = Math.min(...arr);
+                var max = Math.max(...arr);
+                var left = 300 * min;
+                var right = 300 * max;
+                line.css("margin-left", left + "px");
+                line.width(right - left + "px");
+                line.show();
+            }
+
+            // Hide the monk on the button
+            $("#meditation_try_monk" + num_tries).hide();
+
+            // Add the done class to the box
+            box.addClass("done");
+
             // Hide the color box
             $("#btn_try_meditation" + num_tries).hide();
             var cur = this.update_meditation_current(val);
@@ -384,6 +410,11 @@ class EnginePhase1 extends BaseEngine {
             if (diff < s['meditation_width'] / 2){
 
                 var win_amount = s['meditation_win'] - (num_tries + 1) * s['meditation_try_cost'];
+                
+                if(s['meditation_practice']){
+                    win_amount = 0;
+                };
+                
                 s['focus'] += win_amount;
 
                 $("#meditation_amount").html(win_amount);
@@ -424,12 +455,6 @@ class EnginePhase1 extends BaseEngine {
         var el = $("#meditation_current");
         el.css("margin-left", "" + dist + "px");
 
-        // Indicator color
-        if (color > 0.5){
-            el.css("background-color", "#303030");
-        } else {
-            el.css("background-color", "#ffe");
-        }
         return tot / num;
     }
 
@@ -454,10 +479,19 @@ class EnginePhase1 extends BaseEngine {
         $("#meditation_lose").hide();
         $("#meditation_target_container").hide();
 
+        // Show all the monks
+        $("#meditation_try_monk0").show();
+        $("#meditation_try_monk1").show();
+        $("#meditation_try_monk2").show();
+
+        // Hide the meditation line
+        $("#meditation_line").hide();
+
+        // Remove done class from all meditation boxes
+        $(".meditation_box").removeClass("done");
         
         // Write correct price in button
-        var price = "1 Worker<br><br>" + engine.state['meditation_price'] + "<img src='static/focus_dark.png' style='width:24px'></img>";
-        $("#start_meditation").html(price);
+        $("#meditation_price").html(engine.state['meditation_price']);
     }
 
     render_status_text(production_rates = false){

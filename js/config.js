@@ -260,7 +260,8 @@ var START_STATE = {
     'meditation_price': 30,                 // Focus to stop a wheel
     'meditation_win': 60,                   // Focus to win if within target
     'meditation_try_cost': 10,              // How much do you lose for each time you try
-
+    
+    'meditation_practice': false,
     'meditation_active': -1,
     'meditation_target': 0,
 
