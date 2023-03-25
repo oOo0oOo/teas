@@ -99,7 +99,7 @@ var START_STATE = {
 
     'price_greenhouse_speed':       [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
     'price_factory_speed':          [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
-    'price_factory_efficiency':     [1e5, 5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
+    'price_factory_efficiency':     [3e5, 5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
     'price_greenhouse_use':         [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
     'price_factory_use':            [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
 
@@ -130,14 +130,71 @@ var START_STATE = {
         {
             'name': 'Focus generator',
             'effect': {
-                'focus': [0.01, 0.02]
+                'focus': [0.01, 0.02, 0.04]
             },
-            'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [1, 2],
-            'rarity': [0.8, 0.8],
+            'duration': [700, 800, 600],                  // Ticks (20 / s)
+            'focus_action': [1, 2, 4],
+            'rarity': [0.8, 0.6, 0.2],
             'level': [
                 [0, 1, 2],
-                [1, 2, 3, 4]
+                [1, 2, 3, 4],
+                [3, 4]
+            ],
+        },
+        {
+            'name': 'Nature generator',
+            'effect': {
+                'fertilizer': [0.008, 0.013, 0.02],
+            },
+            'duration': [600, 700, 800],                  // Ticks (20 / s)
+            'focus_action': [1, 2, 3],
+            'rarity': [0.3, 0.3, 0.3],
+            'level': [
+                [1,2],
+                [1, 2, 3],
+                [2, 3, 4]
+            ],
+        },
+        {
+            'name': 'Processing generator',
+            'effect': {
+                'power': [0.007, 0.011, 0.02],
+            },
+            'duration': [600, 700, 800],                  // Ticks (20 / s)
+            'focus_action': [1, 2, 3],
+            'rarity': [0.3, 0.3, 0.4],
+            'level': [
+                [1,2],
+                [1, 2, 3],
+                [2, 3, 4]
+            ],
+        },
+        {
+            'name': 'Generate focus and nature',
+            'effect': {
+                'focus': [0.01, 0.02],
+                'fertilizer': [0.01, 0.02],
+            },
+            'duration': [700, 800],                  // Ticks (20 / s)
+            'focus_action': [3, 4],
+            'rarity': [0.2, 0.2],
+            'level': [
+                [2, 3],
+                [3, 4]
+            ],
+        },
+        {
+            'name': 'Generate focus and processing',
+            'effect': {
+                'focus': [0.01, 0.02],
+                'power': [0.01, 0.03],
+            },
+            'duration': [700, 800],                  // Ticks (20 / s)
+            'focus_action': [3, 4],
+            'rarity': [0.2, 0.2],
+            'level': [
+                [2, 3],
+                [3, 4]
             ],
         },
         {
@@ -150,33 +207,7 @@ var START_STATE = {
             'focus_action': [1, 2],
             'rarity': [0.5, 0.5],
             'level': [
-                [1, 2],
-                [1, 2, 3, 4]
-            ],
-        },
-        {
-            'name': 'Nature generator',
-            'effect': {
-                'fertilizer': [0.013, 0.02],
-            },
-            'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [2, 3],
-            'rarity': [0.3, 0.3],
-            'level': [
-                [1, 2, 3],
-                [2, 3, 4]
-            ],
-        },
-        {
-            'name': 'Processing generator',
-            'effect': {
-                'power': [0.011, 0.02],
-            },
-            'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [2, 3],
-            'rarity': [0.3, 0.3],
-            'level': [
-                [1, 2, 3],
+                [2, 3],
                 [2, 3, 4]
             ],
         },
@@ -202,21 +233,21 @@ var START_STATE = {
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [1, 2],
-            'rarity': [0.5, 0.5],
+            'rarity': [0.1, 0.1],
             'level': [
                 [2, 3],
                 [3, 4]
             ],
         },
         {
-            'name': 'Generate nature and focus',
+            'name': 'Processing to Nature',
             'effect': {
-                'focus': [0.01, 0.02],
-                'fertilizer': [0.01, 0.02],
+                'fertilizer': [0.015, 0.025],
+                'power': [-0.005, -0.006],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
-            'focus_action': [3, 4],
-            'rarity': [0.2, 0.2],
+            'focus_action': [1, 2],
+            'rarity': [0.1, 0.1],
             'level': [
                 [2, 3],
                 [3, 4]
