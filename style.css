@@ -731,7 +731,7 @@ input:checked + .compost-slider:before {
 
 .monk-bg {
     overflow: hidden;
-    height: 90%;
+    height: 100%;
     filter: contrast(1000%) sepia(100%) saturate(10000%) hue-rotate(-30deg) brightness(95%);
 }
 
