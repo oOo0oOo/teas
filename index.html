@@ -384,6 +384,26 @@
               &emsp;<span id="monks"></span> / <span id="monks_max"></span>
             </div>
           </div>
+          <div class="worker_leaders row">
+            <div class="small-4 columns">
+              Leaders
+            </div>
+            <div class="small-8 columns">
+              <button id="remove_worker_leader" class="btn_buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
+              <button id="add_worker_leader" class="btn_buy" onclick="action('shift_worker', ['leaders', 1])">+</button>
+              &emsp;<span id="leaders"></span> / <span id="leaders_max"></span>
+            </div>
+          </div>
+          <div class="worker_meditators row">
+            <div class="small-4 columns">
+              Cultists
+            </div>
+            <div class="small-8 columns">
+              <button id="remove_worker_meditator" class="btn_buy minus" onclick="action('shift_worker', ['meditators', -1])">-</button>
+              <button id="add_worker_meditator" class="btn_buy" onclick="action('shift_worker', ['meditators', 1])">+</button>
+              &emsp;<span id="meditators"></span> / <span id="meditators_max"></span>
+            </div>
+          </div>
         </div>
         <!-- collecting box -->
         <div id="ui_collecting" class="row box relative">
