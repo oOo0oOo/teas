@@ -22,6 +22,12 @@ class BaseEngine{
             $("#ui_projects").show();
         }
 
+        if (this.state['game_phase'] != 0){
+            var p = $("#projects_list").clone();
+            $("#projects_list").remove();
+            $("#ui_projects" + this.state['game_phase']).append(p);
+        }
+
         this.farmers = s['farmers'];
         this.field = s['field'];
         this.composts = s['composts'];
