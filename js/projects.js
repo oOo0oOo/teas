@@ -267,6 +267,11 @@ var projects = [
 		}
 	},
 
+
+
+
+
+
 	//================== phase 2 ==================//
 	{
 		id: "focus",
@@ -287,7 +292,7 @@ var projects = [
 		id: "focus_level2",
 		title: "Monk Focus",
 		trigger: function(state){return engine.project_done('focus')},
-        cost: {focus: 20, teabags: 150000},
+        cost: {focus: 15, teabags: 150000},
 		game_phase: 1,
 		description: "Your monks discover new ceremonies to improve tea production.",
 		effect: function(state){
@@ -298,26 +303,15 @@ var projects = [
 		}
 	},
 	{
-		id: "focus_level3",
-		title: "Techniques of Focus",
-		trigger: function(state){return engine.project_done('focus_level2') && engine.project_done('fertilizer_use') && engine.project_done('power_use') && engine.project_done('increase_monks')},
-        cost: {focus: 40, teabags: 500000},
+		id: "more_workers",
+		title: "Add Worker",
+		trigger: function(state){return engine.project_done('focus')},
+        cost: {focus: 25, teabags: 250000},
 		game_phase: 1,
-		description: "Can you believe it? Your monks have found even more ceremonies to improve tea production!",
+		description: 'You gain control over one more "normal" human.',
 		effect: function(state){
-			state['focus_project_level'] = 2;
-			return state
-		}
-	},
-	{
-		id: "focus_level4",
-		title: "Library of Focus",
-		trigger: function(state){return engine.project_done('focus_level3') && engine.project_done('more_focus_projects')},
-        cost: {focus: 80, teabags: 2500000},
-		game_phase: 1,
-		description: "As your tea knowledge grows you can establish a library with even more tea ceremonies.",
-		effect: function(state){
-			state['focus_project_level'] = 3;
+			state['workers'] += 1;
+            update_free_workers();
 			return state
 		}
 	},
@@ -325,25 +319,17 @@ var projects = [
 		id: "temple_leader",
 		title: "Temple Leader",
 		trigger: function(state){return engine.project_done('focus_level2')},
-        cost: {focus: 20, teabags: 200000},
+        cost: {focus: 40},
 		game_phase: 1,
 		description: "A temple leader will help your monks to focus on the right projects.",
 		effect: function(state){
 			$("#worker_leaders").show();
 			$(".leader_box").css("display", "flex");
 			$(".leader_box").hide();
-			return state
-		}
-	},
-	{
-		id: "temple_leader_focus",
-		title: "Temple Leader Focus",
-		trigger: function(state){return engine.project_done('temple_leader') && engine.project_done('focus_level3')},
-        cost: {focus: 50, teabags: 500000},
-		game_phase: 1,
-		description: "Your temple leader can now decide a focus for all your ceremonies.",
-		effect: function(state){
-			$("#leader_strategies_box").css("opacity", "1");
+
+			state['workers'] += 1;
+			update_free_workers();
+
 			return state
 		}
 	},
@@ -378,10 +364,22 @@ var projects = [
 		}
 	},
 	{
+		id: "increase_monks",
+		title: "Temple Expansion",
+		trigger: function(state){return engine.project_done('temple_leader') && engine.project_done('more_workers')},
+        cost: {focus: 45},
+		game_phase: 1,
+		description: "Make room for an additional monk.",
+		effect: function(state){
+			state['monks_max'] += 1;
+			return state
+		}
+	},
+	{
 		id: "increase_farm",
 		title: "New Field",
 		trigger: function(state){return engine.project_done('fertilizer_use')},
-        cost: {focus: 30, teabags: 350000},
+        cost: {teabags: 600000},
 		game_phase: 1,
 		description: "More members of your tea cult can work on the farm.",
 		effect: function(state){
@@ -393,7 +391,7 @@ var projects = [
 		id: "increase_factory",
 		title: "Extra Brewing Room",
 		trigger: function(state){return engine.project_done('power_use')},
-        cost: {focus: 30, teabags: 400000},
+        cost: {teabags: 700000},
 		game_phase: 1,
 		description: "The brew house has room for an extra worker.",
 		effect: function(state){
@@ -402,21 +400,59 @@ var projects = [
 		}
 	},
 	{
-		id: "increase_monks",
-		title: "Temple Expansion",
-		trigger: function(state){return engine.project_done('more_workers')},
-        cost: {focus: 50, teabags: 300000},
+		id: "more_focus_projects",
+		title: "Better Focus",
+		trigger: function(state){return engine.project_done('temple_leader')},
+        cost: {focus: 50},
 		game_phase: 1,
-		description: "Make room for an additional monk.",
+		description: "Due to repeated ceremonies, your consciousness expands and more focus options are available.",
 		effect: function(state){
-			state['monks_max'] += 1;
+			state['focus_projects_max'] = 5;
+			engine.generate_level();
+			return state
+		}
+	},
+	{
+		id: "more_workers1_a_half",
+		title: "Add Another Worker",
+		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('fertilizer_use') && engine.project_done('power_use')},
+        cost: {focus: 45, teabags: 500000},
+		game_phase: 1,
+		description: 'You gain control over one more "normal" human.',
+		effect: function(state){
+			state['workers'] += 1;
+            update_free_workers();
+			return state
+		}
+	},
+	{
+		id: "focus_level3",
+		title: "Techniques of Focus",
+		trigger: function(state){return engine.project_done('temple_leader') && engine.project_done('fertilizer_use') && engine.project_done('power_use') && engine.project_done('increase_monks')},
+        cost: {focus: 40, teabags: 500000},
+		game_phase: 1,
+		description: "Can you believe it? Your monks have found even more ceremonies to improve tea production!",
+		effect: function(state){
+			state['focus_project_level'] = 2;
+			return state
+		}
+	},
+	{
+		id: "temple_leader_focus",
+		title: "Temple Leader Focus",
+		trigger: function(state){return engine.project_done('temple_leader') && engine.project_done('focus_level3')},
+        cost: {focus: 50, teabags: 500000},
+		game_phase: 1,
+		description: "Your temple leader can now decide a focus for all your ceremonies.",
+		effect: function(state){
+			$("#leader_strategies_box").css("opacity", "1");
 			return state
 		}
 	},
 	{
 		id: "greenhouse_manager",
 		title: "Greenhouse Manager",
-		trigger: function(state){return engine.project_done('increase_farm') && engine.project_done('power_use')},
+		trigger: function(state){return engine.project_done('increase_farm') && engine.project_done('power_use') && engine.project_done('focus_level3')},
         cost: {focus: 45, teabags: 800000},
 		game_phase: 1,
 		description: "By introducing a new manager, who is also part of the tea-cult, your collectors will work more efficient.",
@@ -429,7 +465,7 @@ var projects = [
 	{
 		id: "factory_manager",
 		title: "Brew Specialist",
-		trigger: function(state){return engine.project_done('increase_factory') && engine.project_done('fertilizer_use')},
+		trigger: function(state){return engine.project_done('increase_factory') && engine.project_done('fertilizer_use') && engine.project_done('focus_level3')},
         cost: {focus: 50, teabags: 1000000},
 		game_phase: 1,
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
@@ -441,14 +477,91 @@ var projects = [
 		}
 	},
 	{
+		id: "more_focus_projects2",
+		title: "Laser Focus",
+		trigger: function(state){return engine.project_done('more_focus_projects')},
+        cost: {focus: 75},
+		game_phase: 1,
+		description: "Due to your incredible tea experiments, your monks will have even more focus options.",
+		effect: function(state){
+			state['focus_projects_max'] = 6;
+			state['focus_middle_generator'] = 1.0;
+			engine.generate_level();
+			return state
+		}
+	},
+	{
+		id: "meditation",
+		title: "Meditation",
+		trigger: function(state){return engine.project_done('factory_manager') && engine.project_done('greenhouse_manager') && engine.project_done('more_focus_projects')},
+        cost: {focus: 80},
+		game_phase: 1,
+		description: "You discover secret tea techniques - for devoted members only!",
+		effect: function(state){
+			$("#ui_meditation").show();
+			$("#worker_meditators").show();
+            reset_meditation();
+			return state
+		}
+	},
+	{
+		id: "power_bonus_max",
+		title: "Brewing Dance",
+		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
+        cost: {focus: 40, teabags: 3000000},
+		game_phase: 1,
+		description: "Get more brewing done with your cult bonus.",
+		effect: function(state){
+			state['power_effect'] = 6;
+			return state
+		}
+	},
+	{
 		id: "fertilizer_bonus_max",
 		title: "Herb Circle",
 		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
-        cost: {focus: 70, teabags: 3000000},
+        cost: {focus: 30, teabags: 4000000},
 		game_phase: 1,
 		description: "This fertilizer ritual increases effect of your cult on the herb production.",
 		effect: function(state){
 			state['fertilizer_effect'] = 7;
+			return state
+		}
+	},
+	{
+		id: "more_workers2",
+		title: "Add Two Workers",
+		trigger: function(state){return engine.project_done('more_workers1_a_half')},
+        cost: {focus: 50, teabags: 1500000},
+		game_phase: 1,
+		description: 'You gain control over some more "normal" humans.',
+		effect: function(state){
+			state['workers'] += 2;
+            update_free_workers();
+			return state
+		}
+	},
+	{
+		id: "focus_level4",
+		title: "Library of Focus",
+		trigger: function(state){return engine.project_done('meditation') && engine.project_done('more_focus_projects')},
+        cost: {focus: 80, teabags: 2500000},
+		game_phase: 1,
+		description: "As your tea knowledge grows you can establish a library with even more tea ceremonies.",
+		effect: function(state){
+			state['focus_project_level'] = 3;
+			return state
+		}
+	},	
+	{
+		id: "increase_monks2",
+		title: "Spiritual Leader",
+		trigger: function(state){return engine.project_done('focus_level4')},
+        cost: {focus: 120, teabags: 5000000},
+		game_phase: 1,
+		description: "You become a spiritual leader and increase the number of monks.",
+		effect: function(state){
+			state['monks_max'] += 1;
 			return state
 		}
 	},
@@ -465,18 +578,6 @@ var projects = [
 		}
 	},
 	{
-		id: "power_bonus_max",
-		title: "Brewing Dance",
-		trigger: function(state){return engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
-        cost: {focus: 60, teabags: 3000000},
-		game_phase: 1,
-		description: "Get more brewing done with your cult bonus.",
-		effect: function(state){
-			state['power_effect'] = 6;
-			return state
-		}
-	},
-	{
 		id: "power_bonus_max2",
 		title: "Brewing Ritual",
 		trigger: function(state){return engine.project_done('power_bonus_max')},
@@ -485,97 +586,6 @@ var projects = [
 		description: "The effect of your cult bonus on the brewing process is increased.",
 		effect: function(state){
 			state['power_effect'] = 9;
-			return state
-		}
-	},
-	{
-		id: "increase_workers_both",
-		title: "Break Room",
-		trigger: function(state){return engine.project_done('more_workers2') && engine.project_done('fertilizer_bonus_max') && engine.project_done('power_bonus_max')},
-        cost: {focus: 100, teabags: 5000000},
-		game_phase: 1,
-		description: "A break room increases the number of workers in both the farm and the brew house.",
-		effect: function(state){
-			state['farmers_max'] += 1;
-			state['processors_max'] += 1;
-			return state
-		}
-	},
-	{
-		id: "more_focus_projects",
-		title: "Better Focus",
-		trigger: function(state){return engine.project_done('focus_level2')},
-        cost: {focus: 50},
-		game_phase: 1,
-		description: "Due to repeated ceremonies, your consciousness expands and more focus options are available.",
-		effect: function(state){
-			state['focus_projects_max'] = 5;
-			engine.generate_level();
-			return state
-		}
-	},	
-	{
-		id: "more_focus_projects2",
-		title: "Laser Focus",
-		trigger: function(state){return engine.project_done('more_focus_projects')},
-        cost: {focus: 75},
-		game_phase: 1,
-		description: "Due to your incredible tea experiments, your monks will have even more focus options.",
-		effect: function(state){
-			state['focus_projects_max'] = 6;
-			state['focus_middle_generator'] = 1.0;
-			engine.generate_level();
-			return state
-		}
-	},	
-	{
-		id: "increase_monks2",
-		title: "Spiritual Leader",
-		trigger: function(state){return engine.project_done('more_focus_projects')  && engine.project_done('focus_level3')},
-        cost: {focus: 120, teabags: 5000000},
-		game_phase: 1,
-		description: "You become a spiritual leader and increase the number of monks.",
-		effect: function(state){
-			state['monks_max'] += 1;
-			return state
-		}
-	},
-	{
-		id: "more_workers",
-		title: "Add Worker",
-		trigger: function(state){return engine.project_done('focus')},
-        cost: {focus: 30, teabags: 250000},
-		game_phase: 1,
-		description: 'You gain control over one more "normal" human.',
-		effect: function(state){
-			state['workers'] += 1;
-            update_free_workers();
-			return state
-		}
-	},
-	{
-		id: "more_workers1.5",
-		title: "Add Another Worker",
-		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('fertilizer_use') && engine.project_done('power_use')},
-        cost: {focus: 40, teabags: 500000},
-		game_phase: 1,
-		description: 'You gain control over one more "normal" human.',
-		effect: function(state){
-			state['workers'] += 1;
-            update_free_workers();
-			return state
-		}
-	},
-	{
-		id: "more_workers2",
-		title: "Add Two Workers",
-		trigger: function(state){return engine.project_done('more_workers1.5')},
-        cost: {focus: 50, teabags: 1500000},
-		game_phase: 1,
-		description: 'You gain control over some more "normal" humans.',
-		effect: function(state){
-			state['workers'] += 2;
-            update_free_workers();
 			return state
 		}
 	},
@@ -593,6 +603,32 @@ var projects = [
 		}
 	},
 	{
+		id: "increase_workers_both",
+		title: "Break Room",
+		trigger: function(state){return engine.project_done('more_workers2') && engine.project_done('fertilizer_bonus_max') && engine.project_done('power_bonus_max')},
+        cost: {focus: 100, teabags: 5000000},
+		game_phase: 1,
+		description: "A break room increases the number of workers in both the farm and the brew house.",
+		effect: function(state){
+			state['farmers_max'] += 1;
+			state['processors_max'] += 1;
+			return state
+		}
+	},
+	{
+		id: "meditation2",
+		title: "Trance Meditation",
+		trigger: function(state){return engine.project_done('focus_level4')},
+        cost: {focus: 170, teabags: 200000000},
+		game_phase: 1,
+		description: "Your master's secret meditation techniques start to make more sense.",
+		effect: function(state){
+			state['meditators_max'] = 2;
+            reset_meditation();
+			return state
+		}
+	},
+	{
 		id: "more_workers4",
 		title: "Add Two Workers",
 		trigger: function(state){return engine.project_done('more_workers3')},
@@ -602,33 +638,6 @@ var projects = [
 		effect: function(state){
 			state['workers'] += 2;
             update_free_workers();
-			return state
-		}
-	},
-	{
-		id: "meditation",
-		title: "Meditation",
-		trigger: function(state){return engine.project_done('more_workers') && engine.project_done('factory_manager') && engine.project_done('greenhouse_manager') && engine.project_done('more_focus_projects')},
-        cost: {focus: 85},
-		game_phase: 1,
-		description: "You discover secret tea techniques - for devoted members only!",
-		effect: function(state){
-			$("#ui_meditation").show();
-			$("#worker_meditators").show();
-            reset_meditation();
-			return state
-		}
-	},
-	{
-		id: "meditation2",
-		title: "Trance Meditation",
-		trigger: function(state){return engine.project_done('meditation')},
-        cost: {focus: 170, teabags: 200000000},
-		game_phase: 1,
-		description: "Your master's secret meditation techniques start to make more sense.",
-		effect: function(state){
-			state['meditators_max'] = 2;
-            reset_meditation();
 			return state
 		}
 	},
