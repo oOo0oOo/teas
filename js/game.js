@@ -68,7 +68,7 @@ function run_engine(save_state){
         engine.init_game(save_state)
         tick_game();
     }
-    $(document).foundation();
+    // $(document).foundation();   // I am not sure why this was needed. Will remove for now until foundation starts braking?
 }
 
 function reset_meditation(){

@@ -616,7 +616,7 @@ var projects = [
 		}
 	},
 	{
-		id: "meditation2",
+id: "meditation2",
 		title: "Trance Meditation",
 		trigger: function(state){return engine.project_done('focus_level4')},
         cost: {focus: 170, teabags: 200000000},
@@ -629,7 +629,7 @@ var projects = [
 		}
 	},
 	{
-		id: "more_workers4",
+id: "more_workers4",
 		title: "Add Two Workers",
 		trigger: function(state){return engine.project_done('more_workers3')},
         cost: {focus: 200, teabags: 100000000},
