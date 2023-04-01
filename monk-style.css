@@ -33,15 +33,19 @@
     height: 100vh;
 }
 
+#img-monk {
+    filter:url(#wellig);
+}
+
 .monk {
     position: relative;
     width: 10em;
     height: 12em; 
     border: 2px solid red; 
-    background-image: url('static/monk.png');
+    /* background-image: url('./static/img/monk.png'); */
     background-size: cover;
     top: 20px;
-    /* opacity: 1; */
+    opacity: 1;
 
     
 }

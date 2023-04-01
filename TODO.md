@@ -11,9 +11,6 @@
 
 ## Simi
 
-- focus points only animated, when active
-- gif focus points white
-- design progressbars
 - reorder elements in gardening and processing tab
 Ceremony:
 
@@ -24,6 +21,7 @@ Ceremony:
 
 ## Oli
 
+- focus points only animated, when active
 - Open source publish
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
@@ -45,6 +43,8 @@ Ceremony:
 - project "tea ceremony" adds the worker-placement-option "monks"
 - converters are working,  eventough the resource isn't available
 
+x gif focus points white
+x design progressbars
 x 400k & 500k for advanced brewing & farming too much?
 x project order: "more monks" before "focus projects 3" because 3 monks are neccesary
 x focus-project greenhouse -> processing doesn't make sense
