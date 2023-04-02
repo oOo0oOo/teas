@@ -573,7 +573,7 @@ input:checked + .compost-slider:before {
   margin: 0px;
   padding: 0px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #205038;
 }
 
 /* Progressbar */
