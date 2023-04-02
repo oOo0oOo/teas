@@ -925,7 +925,6 @@
 
   <script id="focus-project-template" type="text/x-handlebars-template">
   <div class='focus_project relative' onclick="action('activate_focus_project', '{{id}}')" id='focus_project{{id}}'>
-  
     <div id="focus_monks{{id}}" class="focus_actions_container">
         {{#if_eq focus_action 1}}
         <img src="static/img/monk.png" class="icon_focus_actions">
@@ -954,9 +953,8 @@
         {{#if_eq ftype 'generator'}}
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/img/mandala.gif">
         {{/if_eq}}
-        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn">
+        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn inactive">
           <div class="focus_icons">
-            <!-- {{focus_action}}  -->
             {{#each effect}}
             <img src="static/img/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
             {{#if @first}}

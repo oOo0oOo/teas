@@ -189,6 +189,13 @@ class EnginePhase1 extends BaseEngine {
                         }
                     }
                 }
+            } else {
+                // Check if this project is possible now
+                if (s['focus_action'] >= project['focus_action']){
+                    $("#focus_btn" + project["id"]).removeClass("inactive");
+                } else {
+                    $("#focus_btn" + project["id"]).addClass("inactive");
+                }
             }
         };
 

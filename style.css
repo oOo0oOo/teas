@@ -663,6 +663,11 @@ input:checked + .compost-slider:before {
   border-style: inset;
 }
 
+.btn_light.inactive {
+    border: solid 3px rgb(60,60,60);
+    background-color: rgba(248,248,248,.04);
+}
+
 .focus_actions_container {
   position: absolute;
   top: 0;
