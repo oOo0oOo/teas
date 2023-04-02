@@ -11,38 +11,29 @@
 
         <div class="monk">
             
-            <svg>
+            <svg width="101" height="123">
                 <!-- <rect id="overlay" x="0" y="0" width="101" height="123" fill="red" /> -->
-                <filter id="wellig" height="50%" style="color-interpolation-filters:sRGB">
-                    <feGaussianBlur stdDeviation="3" result="result5" in="SourceGraphic"/>
-                    <feTurbulence baseFrequency="0.02" seed="0" result="result1" numOctaves="3" type="fractalNoise"/>
-                    <feDisplacementMap scale="30" yChannelSelector="G" in2="result1" result="result3" xChannelSelector="R" in="SourceGraphic"/>
-                    <feComposite operator="out" result="result4" in2="result1" in="result3"/>
-                    <feComposite in2="result4" k3="0.3" k2="1" k1="0.3" result="result6" operator="arithmetic"/>
-                    <feComposite operator="over" in2="result5" in="result6"/>
-                </filter>
-                <filter id="progress" >
-                    <!-- <feColorMatrix
-                        height="30%"
-                        type="matrix"
-                        values=".2 0 0 0 0
-                                0 .2 0 0 0
-                                0 0 .2 0 0
-                                0 0 0 .2 0" /> -->
+                <filter id="glow" style="color-interpolation-filters:sRGB">
+                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
+                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
                     <feColorMatrix
-                        y="40%"
-                        height="60%"
                         type="matrix"
-                        values="1 0 0 0 0
-                                0 1 0 0 0
-                                0 0 1 0 0
+                        values="1 0 0 0 0.4
+                                0.1 0.8 -0.6 0.5 0.4
+                                0 0 1 0 -0.4
                                 0 0 0 1 0" />
                 </filter>
-                <filter id="blend">
-                    <feBlend in="img-monk_bg" in2="overlay" mode="multiply" />
-                </filter>
-                <!-- <image href="./static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"/> -->
-                <image href="./static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" filter="url(#progress)" />
+
+                <defs>
+                    <mask id="mask">
+                        
+                        <rect x="0" y="0" width="101" height="100%" fill="white" />
+                        <!-- animate height of #progress -->
+                        <rect id="progress" x="0" y="0" width="101" height="0%" fill="#343434" />
+                    </mask>
+                  </defs>
+                <image id="fullCharge" href="./static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
+                <image href="./static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask)"/>
             </svg>
         </div>
 
@@ -50,3 +41,4 @@
     
 </body>
 </html>
+
