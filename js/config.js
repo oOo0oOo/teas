@@ -87,13 +87,13 @@ var START_STATE = {
     'factory_efficiency': 0,
     'factory_use': 0,
     'factory_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],          // Use less power, factor for 'power_use' (cult bonus)
-    'factory_speeds': [55, 110, 220, 440, 880, 1760, 3520, 7040, 14080, 28160],             // How much is processed per processor
+    'factory_speeds': [55, 110, 192, 333, 581, 1011, 1760, 3065, 5336, 9290],             // How much is processed per processor
     'factory_efficiencies': [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 3, 5],      // Make more teabags then use up herbs
 
     'greenhouse_speed': 0,
     'greenhouse_use': 0,
     'greenhouse_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],  // Use less fertilizer, factor for 'fertilizer_use' (cult bonus)
-    'greenhouse_speeds': [50, 100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600],       // How much is collected per farmer
+    'greenhouse_speeds': [50, 100, 175, 303, 528, 919, 1600, 2786, 4850, 8445],       // How much is collected per farmer
 
     // 'greenhouse_num': [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],               // How many farmers per worker
 
