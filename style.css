@@ -557,8 +557,10 @@ input:checked + .compost-slider:before {
 
 
 .free_workers_highlight {
-    color: rgb(255, 63, 4);
-    font-size: 10pt;
+    color: rgb(255, 30, 4);
+    font-size: 11pt;
+    padding-top: 5px;
+    animation: blinker 0.8s alternate linear infinite;
 }
 
 #worker_monks {
