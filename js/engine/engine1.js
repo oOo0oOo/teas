@@ -189,6 +189,13 @@ class EnginePhase1 extends BaseEngine {
                         }
                     }
                 }
+            } else {
+                // Check if this project is possible now
+                if (s['focus_action'] >= project['focus_action']){
+                    $("#focus_btn" + project["id"]).removeClass("inactive");
+                } else {
+                    $("#focus_btn" + project["id"]).addClass("inactive");
+                }
             }
         };
 
@@ -405,17 +412,9 @@ class EnginePhase1 extends BaseEngine {
     // MEDITATION
     start_meditation(practice=false){
         var s = this.state;
-        // Use 1 worker
-        if (s['workers'] < 1){
-            return
-        }
-
         if (!practice && s['focus'] < s['meditation_price'][s['meditators'] - 1]){
             return
         }
-
-        s['workers'] -= 1;
-        this.update_free_workers();
 
         if (!practice){
             s['focus'] -= s['meditation_price'][s['meditators'] - 1];
@@ -562,12 +561,6 @@ class EnginePhase1 extends BaseEngine {
         } else {
             $("#start_meditation").hide();
             $("#meditation_inactive").show();
-        }
-
-        // Return the workers
-        if (engine.state['meditation_active'] !== -1){
-            engine.state['workers'] += 1;
-            engine.update_free_workers();
         }
 
         engine.state['meditation_active'] = -1;

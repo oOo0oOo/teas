@@ -356,7 +356,10 @@
           </div>
           <div class= "row">
             <div class="small-4 columns">
-              Farmers
+              Farmers 
+              <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Farmers will collect herbs for you. In summer they are collecting much more than in winter." data-position="right" data-alignment="center">
+                i
+              </button>
             </div>
             <div class="small-8 columns">
               <button id="remove_worker_greenhouse" class="btn_buy minus" onclick="action('shift_worker', ['farmers', -1])">-</button>
@@ -366,7 +369,10 @@
           </div>
           <div class="row">
             <div class="small-4 columns">
-              Brewers
+              Brewers 
+              <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Brewers process herbs into tea. They can get more efficient later on." data-position="right" data-alignment="center">
+                i
+              </button>
             </div>
             <div class="small-8 columns">
               <button id="remove_worker_factory" class="btn_buy minus" onclick="action('shift_worker', ['processors', -1])">-</button>
@@ -376,7 +382,10 @@
           </div>
           <div id="worker_monks" class="row">
             <div class="small-4 columns">
-              Monks
+              Monks 
+              <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Monks will allow you to perform special ceremonies. More monks will charge faster." data-position="right" data-alignment="center">
+                i
+              </button>
             </div>
             <div class="small-8 columns">
               <button id="remove_worker_monk" class="btn_buy minus" onclick="action('shift_worker', ['monks', -1])">-</button>
@@ -386,7 +395,10 @@
           </div>
           <div id="worker_leaders" class="row">
             <div class="small-4 columns">
-              Leader
+              Leader  
+              <button class="button info-btn" type="button" data-tooltip tabindex="1" title="The leader can exchange ceremonies and focus on specific ones. Only use a leader when you need her!" data-position="right" data-alignment="center">
+                i
+              </button>
             </div>
             <div class="small-8 columns">
               <button id="remove_worker_leader" class="btn_buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
@@ -396,7 +408,10 @@
           </div>
           <div id="worker_meditators" class="row">
             <div class="small-4 columns">
-              Cultists
+              Cultists 
+              <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Cultists can increase your focus with their special meditation technique." data-position="right" data-alignment="center">
+                i
+              </button>
             </div>
             <div class="small-8 columns">
               <button id="remove_worker_meditator" class="btn_buy minus" onclick="action('shift_worker', ['meditators', -1])">-</button>
@@ -442,7 +457,7 @@
 
           <div id="ui_greenhouse_use" class="row more_line_height">
             <div class="small-4 columns">
-              Bonus Use
+              Bonus Decay
             </div>
             <div class="small-2 columns">
               <span id="greenhouse_use"></span>
@@ -499,7 +514,7 @@
 
           <div id="ui_factory_use" class="row more_line_height">
             <div class="small-4 columns">
-              Bonus Use
+              Bonus Decay
             </div>
             <div class="small-3 columns">
               <span id="factory_use"></span>
@@ -910,7 +925,6 @@
 
   <script id="focus-project-template" type="text/x-handlebars-template">
   <div class='focus_project relative' onclick="action('activate_focus_project', '{{id}}')" id='focus_project{{id}}'>
-  
     <div id="focus_monks{{id}}" class="focus_actions_container">
         {{#if_eq focus_action 1}}
         <img src="static/img/monk.png" class="icon_focus_actions">
@@ -939,9 +953,8 @@
         {{#if_eq ftype 'generator'}}
         <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/img/mandala.gif">
         {{/if_eq}}
-        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn">
+        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn inactive">
           <div class="focus_icons">
-            <!-- {{focus_action}}  -->
             {{#each effect}}
             <img src="static/img/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
             {{#if @first}}
