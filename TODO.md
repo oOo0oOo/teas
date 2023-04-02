@@ -21,6 +21,7 @@ Ceremony:
 
 ## Oli
 
+- monk animation (example in css): #progress for charge-level (!! 0% = 100% and opposite); #fullCharge -> set opacity to 1 when fully charged
 - focus points only animated, when active
 - Open source publish
 * Special Focus Projects (increase teas, temporary worker, doubling teas)

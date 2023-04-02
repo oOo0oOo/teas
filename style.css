@@ -763,15 +763,24 @@ input:checked + .compost-slider:before {
   width: 100%;
   height: 80px;
   justify-content: center;
+  align-items: flex-end;
   margin: 0 0 10px 0;
   border-bottom: 3px solid rgb(200,200,200);
 }
 
 .monk {
     width: 18%;
-    padding: 2px;
+    padding: 0px;
     float: left;
     position: relative;
+}
+
+#progress {
+  height: 0%;  
+}
+
+#fullCharge {
+  opacity: 0;
 }
 
 .monk-bg {
