@@ -199,6 +199,8 @@ function stay_in_game_phase_0(){
 }
 
 function switch_to_game_phase_1(){
+    $("#intro_popup_phase1").foundation('close');
+    
     // Hide all remaining projects
     $(".project").hide();
 

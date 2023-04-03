@@ -17,11 +17,9 @@ Ceremony:
 - Ende (stats und Aussicht)
 - Donate/Community/Idee für nächste Phase/Newletter
 * Special Focus Projects (shorter, more intense)
-- Connect phase 1 and 2
 
 ## Oli
 
-- monk animation (example in css): #progress for charge-level (!! 0% = 100% and opposite); #fullCharge -> set opacity to 1 when fully charged
 - focus points only animated, when active
 - Open source publish
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
@@ -44,7 +42,6 @@ Ceremony:
 - Season Warning
 - project "tea ceremony" adds the worker-placement-option "monks"
 - converters are working,  eventough the resource isn't available
-
 x gif focus points white
 x design progressbars
 x 400k & 500k for advanced brewing & farming too much?
@@ -60,7 +57,6 @@ x focus projects overthink in which phase, which ones are possible:
 x design generator vs. converter
 x show how many monks are necessary for a ceremony
 x focus_project: converter needs arrow and centering
-
 - Meditation initial design
 - Meditation practice mode
 - Move images to static folder
@@ -72,6 +68,8 @@ x focus_project: converter needs arrow and centering
     Toggle/radio btns to adjust focus projects generated
 - Project descriptions
 - Save geflickt
+- monk animation (example in css): #progress for charge-level (!! 0% = 100% and opposite); #fullCharge -> set opacity to 1 when fully charged
+- Connect phase 1 and 2
 
 =================== OLD ===================
 

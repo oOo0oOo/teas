@@ -276,7 +276,7 @@ var projects = [
 	{
 		id: "focus",
 		title: "Tea Ceremony",
-		trigger: function(state){return engine.project_done('worker_placement') && state["game_phase"] == 1},
+		trigger: function(state){return engine.project_done('worker_placement') && state["game_phase"] == 1 && state["teabags"] >= 10000},
         cost: {teabags: 50000},
 		game_phase: 1,
 		description: "You gained more time to focus on the important aspects of tea - the ceremonies - and are now proud member of a tea-cult!",

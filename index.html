@@ -297,15 +297,14 @@
     <div id="ui_game_phase1" class="row">
       
       <!-- Intro popup phase 1 (= end popup phase 0) -->
-      <div class="reveal popup" id="intro_popup_phase1" data-reveal>
+      <div class="reveal popup" id="intro_popup_phase1" data-reveal data-close-on-click="false">
         <h2>You reached the <b>TEA</b>rvana!!</h2>
+        <br>
         <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
         <p>Stop micromanaging your workers and start medita<b>tea</b>ing!</p>
         <br>
-        <p>We are currently finishing up the next chapter of your epic tea journey.<br>
-        Check back at the <b>end of march</b> to unlock new content.</p>
         <button onclick="stay_in_game_phase_0()">Keep playing</button>
-        <button onclick="reset_save()">Restart</button>
+        <button onclick="switch_to_game_phase_1()">Continue the journey</button>
       </div>
 
       <!-- Season warning: Winter is coming! -->
