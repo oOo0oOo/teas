@@ -544,7 +544,7 @@ var projects = [
 	{
 		id: "focus_level4",
 		title: "Library of Focus",
-		trigger: function(state){return engine.project_done('meditation') && engine.project_done('more_focus_projects2'), engine.project_done('fertilizer_bonus_max') && engine.project_done('power_bonus_max')},
+		trigger: function(state){return engine.project_done('more_focus_projects2'), engine.project_done('fertilizer_bonus_max') && engine.project_done('power_bonus_max')},
         cost: {focus: 80, teabags: 2500000},
 		game_phase: 1,
 		description: "As your tea knowledge grows you can establish a library with even more tea ceremonies.",
@@ -566,9 +566,22 @@ var projects = [
 		}
 	},
 	{
+		id: "more_workers3",
+		title: "Add Worker",
+		trigger: function(state){return engine.project_done('more_workers2') && engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
+        cost: {focus: 90, teabags: 2500000},
+		game_phase: 1,
+		description: 'You gain control over one more "normal" human.',
+		effect: function(state){
+			state['workers'] += 1;
+            update_free_workers();
+			return state
+		}
+	},
+	{
 		id: "fertilizer_bonus_max2",
 		title: "Fertilizer Ceremony",
-		trigger: function(state){return engine.project_done('fertilizer_bonus_max')},
+		trigger: function(state){return engine.project_done('focus_level4') && engine.project_done('more_workers3')},
         cost: {focus: 90, teabags: 100000000},
 		game_phase: 1,
 		description: "Further increase the effects of your ceremonies on herb production.",
@@ -580,25 +593,12 @@ var projects = [
 	{
 		id: "power_bonus_max2",
 		title: "Brewing Ritual",
-		trigger: function(state){return engine.project_done('power_bonus_max')},
+		trigger: function(state){return engine.project_done('focus_level4') && engine.project_done('more_workers3')},
         cost: {focus: 85, teabags: 100000000},
 		game_phase: 1,
 		description: "The effect of your cult bonus on the brewing process is increased.",
 		effect: function(state){
 			state['power_effect'] = 9;
-			return state
-		}
-	},
-	{
-		id: "more_workers3",
-		title: "Add Worker",
-		trigger: function(state){return engine.project_done('more_workers2') && engine.project_done('greenhouse_manager') && engine.project_done('factory_manager')},
-        cost: {focus: 90, teabags: 2500000},
-		game_phase: 1,
-		description: 'You gain control over one more "normal" human.',
-		effect: function(state){
-			state['workers'] += 1;
-            update_free_workers();
 			return state
 		}
 	},
