@@ -74,8 +74,6 @@ button, select {
   background-color: red;
 }
 
-
-
 .slider-handle {
   background-color: var(--bright-mid-color);
   border-radius:5px;
@@ -103,8 +101,6 @@ button, select {
   border-width: 2px;
   white-space: nowrap;
   position: absolute;
-/*  left: 0px;
-  top: 0px; */
   z-index: 1;
   transition: visibility 0s;
 }
@@ -116,7 +112,6 @@ button, select {
   display: none;
 }
 /*end of style for tooltip */
-
 
 .main_column {
   padding: 0px 7px 0px 7px;
@@ -174,9 +169,6 @@ button, select {
 }
 
 .map {
-    /*border: solid;
-    border-width: 0px;*/
-
     /* This is needed for equal aspect ratio */
     width: 100%;
     height: 100%;
@@ -275,27 +267,10 @@ button, select {
   transform: translate(-120%, -1.2rem);
 }
 
-#select_strategy {
-  height: 24px;
-  max-height: 24px;
-  line-height: 10px;
-  width:100px;
-  margin-top: 8px;
-  padding-top:5px;
-  font-size: var(--button_size)
-
-}
-
 #make_teabag {
   margin-bottom: 5px;
 }
 
-
-/*.box_garden {
-  margin-left: 5px !important;
-  margin-right: 5px !important;
-}
-*/
 button {
   color: var(--dark-color);
   background-color: var(--bright-color);
@@ -354,7 +329,6 @@ button:focus {
 .project_price {
   font-size: var(--norm_size);
   font-weight:bold;
-  /*float: right;*/
   width: 100%;
   text-align: right;
   margin-top: 8px;
@@ -379,26 +353,10 @@ button:focus {
 #strategies {
   text-align: center;
 }
-/* BUYABLE */
-/*.btn_buy.buyable {
-  background-color: #ddd;
-}
-
-.project.buyable {
-  background-color: #ddd;
-}
-
-.btn_set_compost.buyable {
-  background-color: #ddd;
-}
-*/
-/*background-color: rgba(253, 256, 220, 0.8);*/
 
 .buyable, .buyable:hover {
   background-color: rgba(211, 209, 167, 0.5);
 }
-
-
 
 #strategy-smart, #strategy-home {
   opacity: 0.0;
@@ -409,7 +367,7 @@ button:focus {
   display: none;
 }
 
-#ui_processors1, #ui_processors2, #ui_rates1, #ui_rates2, #ui_collectors, #ui_collectors2, #ui_map_fertilizer {
+#ui_processors1, #ui_processors2, #ui_collectors, #ui_collectors2, #ui_map_fertilizer {
     display: none;
 }
 
@@ -593,16 +551,10 @@ input:checked + .compost-slider:before {
   align-items: center;
 }
 
-
 /*Focus Projects*/
 #ui_focus {
   background-color: #152222;
   color: #bdccd4;
-}
-
-
-.fp-slot {
-    /* padding-top: 20px; */
 }
 
 .focus_project {
@@ -618,20 +570,13 @@ input:checked + .compost-slider:before {
   align-items: center;
 }
 
-.focus_project.level1 {
-
-}
-
-.focus_project.level2 {
-
-}
-
 .img_focus_project {
   height: 22px;
   width: auto;
   padding-left: 2px;
   padding-right: 2px;
 }
+
 .arrow_focus_project {
   height: 22px;
   width: auto;
@@ -683,7 +628,6 @@ input:checked + .compost-slider:before {
   padding-right: 4px;
 }
 
-
 .focus_swirl {
   position: absolute;
   width: 120px;
@@ -702,8 +646,6 @@ input:checked + .compost-slider:before {
 }
 
 .focus_swirl.generator {
-  /* left: -1.7rem;
-  top: 0rem; */
   -webkit-animation: rotation linear 10s infinite;
 }
 
@@ -718,34 +660,11 @@ input:checked + .compost-slider:before {
 
 .img_project_resource{
   width: 25px;
-  /* transform: translateY(-2px); */
 }
 
 .btn_cheat {
   background-color: var(--bright-color);
   color: var(--dark-color);
-}
-
-/* unused */
-.focus_worker { 
-  font-size: var(--norm_size);
-  font-weight: bold;
-}
-
-.focus_text {
-  font-size: var(--norm_size);
-}
-
-.focus_active {
-  display: none;
-}
-
-.focus_project_progress {
-  transform-origin: -10% 100%;
-  transform: rotate(-90deg);
-
-  width: 85px;
-  height: 3px;
 }
 
 .focus_header {
@@ -767,10 +686,6 @@ input:checked + .compost-slider:before {
     padding: 0px;
     float: left;
     position: relative;
-}
-
-#progress {
-  height: 0%;  
 }
 
 #fullCharge0, #fullCharge1, #fullCharge2, #fullCharge3, #fullCharge4 {
@@ -828,15 +743,9 @@ input:checked + .compost-slider:before {
 .pb-small {
   padding-bottom: 12px;
 }
+
 .pb-xsmall {
   padding-bottom: 6px;
-}
-
-.img_focus_arrow {
-  width: 20px;
-  padding-top: 0px;
-  margin-left: 7px;
-  margin-right: 8px;
 }
 
 #progress_season {
@@ -855,7 +764,7 @@ input:checked + .compost-slider:before {
  
 /* MEDITATION */
 
-#worker_meditators {
+#worker_meditators, #start_meditation {
   display: none;
 }
 
@@ -864,12 +773,6 @@ input:checked + .compost-slider:before {
   background-color: #152222;
   color: #bdccd4;
 }
-
-#start_meditation {
-  display: none;
-}
-
-
 
 #meditation_target_bg {
   height: 40px;
@@ -925,6 +828,15 @@ input:checked + .compost-slider:before {
   animation-play-state: paused;
 }
 
+@keyframes CycleColors {
+    0% {
+        background-color: #303030;
+    }
+    100% {
+        background-color: #ffe;
+    }
+}
+
 #meditation_target {
   width: 20px;
   height: 36px;
@@ -965,15 +877,6 @@ input:checked + .compost-slider:before {
   position: absolute;
 }
 
-@keyframes CycleColors {
-  0% {
-    background-color: #303030;
-  }
-  100% {
-    background-color: #ffe;
-  }
-}
-
 #meditation_win, #meditation_lose {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -991,227 +894,3 @@ input:checked + .compost-slider:before {
     transform: scale(1.6);
   }
 }
-
-
-/* GAME PHASE 2 */
-
-.teapet {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
-}
-
-.ceremony {
-  text-align: center;
-}
-
-.ceremony.inactive {
-  opacity: 0.5;
-}
-
-#ceremony_running {
-  display: none;
-}
-
-
-
-#ceremony_container { /*640, 580*/
-  width: 640px;
-  height: 580px;
-  position: relative;
-}
-
-#ceremony_bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(248,248,243);
-  background: linear-gradient(180deg, rgba(248,248,243,1) 0%, rgba(171,149,74,1) 74%);
-}
-
-#ceremony_top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(static/img/ceiling_fire.png);
-  background-repeat: repeat-x;
-}
-
-#ceremony_pillar_left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 64px;
-  height: 512px;
-  background-repeat: no-repeat;
-  background-image: url(static/img/pillar_simple.png);
-}
-
-#ceremony_pillar_right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 64px;
-  height: 512px;
-  background-repeat: no-repeat;
-  background-image: url(static/img/pillar_simple.png);
-}
-
-#ceremony_decor_left {
-  position: absolute;
-  top: 52%;
-  left: 19%;
-  width: 64px;
-  height: 128px;
-  background-repeat: no-repeat;
-  background-image: url(static/img/fire_pot.png);
-}
-
-#ceremony_decor_right {
-  position: absolute;
-  top: 52%;
-  right: 19%;
-  width: 64px;
-  height: 128px;
-  background-repeat: no-repeat;
-  background-image: url(static/img/fire_pot.png);
-}
-
-#ceremony_bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 256px;
-  background-image: url(static/img/floor_fire.png);
-}
-
-#ceremony_fire {
-  position: absolute;
-  bottom: 160px;
-  left: 200px;
-  color: #ecd;
-}
-
-#ceremony_nature {
-  position: absolute;
-  bottom: 160px;
-  left: 315px;
-  color: #ecd;
-}
-
-#ceremony_water {
-  position: absolute;
-  bottom: 160px;
-  left: 400px;
-  color: #ecd;
-}
-
-#ceremony_icon_fire {
-  position: absolute;
-  bottom: 180px;
-  left: 220px;
-}
-
-#ceremony_icon_nature {
-  position: absolute;
-  bottom: 180px;
-  left: 315px;
-}
-
-#ceremony_icon_water {
-  position: absolute;
-  bottom: 180px;
-  left: 410px;
-}
-
-#pick_bag {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  bottom: 30px;
-  left: 85px;
-}
-
-#abort_ceremony {
-  position: absolute;
-  width: 90px;
-  height: 35px;
-  bottom: 90px;
-  right: 85px;
-}
-
-#picked_teapet_text {
-  position: absolute;
-  top: 25%;
-  left: 80px;
-}
-
-#progress_explosion {
-  position: absolute;
-  top: 335px;
-  left: 230px;
-  height: 15px;
-  width: 180px;
-}
-
-#waterfall {
-  position: absolute;
-  top: 30px;
-  left: 220px;
-  display: none;
-}
-
-#picked_teapet {
-  position: absolute;
-  top: 200px;
-  left: 245px;
-}
-
-#picked_teapet.animate0 {
-  animation: animate0 2s forwards;
-}
-
-#picked_teapet.animate1 {
-  animation: animate1 2s forwards;
-}
-
-#picked_teapet.animate2 {
-  animation: animate2 2s forwards;
-}
-
-@keyframes animate0{
-    from{
-        transform: scale(0.25);
-    }
-    to{
-        transform: scale(0.6);
-        top: 38%;
-    }
-}
-
-@keyframes animate1{
-    from{
-        transform: scale(0.25);
-    }
-    to{
-        transform: scale(0.8);
-        top: 36%;
-    }
-}
-
-@keyframes animate2{
-    from{
-        transform: scale(0.25);
-    }
-    to{
-        transform: scale(1.0);
-        top: 34%;
-    }
-}
-
-/* ADDED */
