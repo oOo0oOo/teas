@@ -134,17 +134,18 @@ class EnginePhase1 extends BaseEngine {
         s['focus_action'] += s['monk_focus_action_generate'] * s['monks'];
         s['focus_action'] = Math.min(s['focus_action'], s['monks']);
 
-        // Each monk has a separate progress bar
-
         // Loop through all monks
         for (var i=0;i<s['monks'];i++){
             if (s['focus_action'] >= i + 1){
                 $("#monkfg" + i).css("height", "0%");
+                $("#fullCharge" + i).css("opacity", "1");
             } else if (s['focus_action'] >= i){
                 let perc = (i + 1 - s['focus_action']) * 100;
                 $("#monkfg" + i).css("height", perc + "%");
+                $("#fullCharge" + i).css("opacity", "0");
             } else {
                 $("#monkfg" + i).css("height", "100%");
+                $("#fullCharge" + i).css("opacity", "0");
             }
         }
     }

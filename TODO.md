@@ -26,6 +26,7 @@ Ceremony:
 - Open source publish
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
+- Cleanup: E.g. No unnecessary css
 
 ## Nice to have
 
