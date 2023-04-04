@@ -20,7 +20,8 @@
 	"spec-char-escape": true,
 	"text-ignore-regex": false,
 	"tag-bans": [
-		"style"
+		"style",
+        "i"
 	],
 	"tag-close": true,
 	"tag-name-lowercase": true,
@@ -43,13 +44,13 @@
 	"class-no-dup": true,
 	"class-style": false,
 	"id-class-ignore-regex": false,
-	"img-req-alt": false,
-	"img-req-src": true,
+	"img-req-alt": true,
+	"img-req-src": false,
 	"html-valid-content-model": true,
 	"head-valid-content-model": true,
 	"href-style": false,
 	"link-req-noopener": true,
-	"label-req-for": true,
+	"label-req-for": false,
 	"line-end-style": "lf",
 	"line-no-trailing-whitespace": true,
 	"line-max-len": false,

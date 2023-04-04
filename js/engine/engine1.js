@@ -138,14 +138,14 @@ class EnginePhase1 extends BaseEngine {
         for (var i=0;i<s['monks'];i++){
             if (s['focus_action'] >= i + 1){
                 $("#monkfg" + i).css("height", "0%");
-                $("#fullCharge" + i).css("opacity", "1");
+                $("#full-charge" + i).css("opacity", "1");
             } else if (s['focus_action'] >= i){
                 let perc = (i + 1 - s['focus_action']) * 100;
                 $("#monkfg" + i).css("height", perc + "%");
-                $("#fullCharge" + i).css("opacity", "0");
+                $("#full-charge" + i).css("opacity", "0");
             } else {
                 $("#monkfg" + i).css("height", "100%");
-                $("#fullCharge" + i).css("opacity", "0");
+                $("#full-charge" + i).css("opacity", "0");
             }
         }
     }

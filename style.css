@@ -217,6 +217,7 @@ select {
 
 .img-focus {
   margin-bottom: 16px;
+  width: 40px;
 }
 
 /*STANDARD UI ELEMENTS*/
@@ -743,11 +744,11 @@ input:checked + .compost-slider:before {
   position: relative;
 }
 
-#fullCharge0,
-#fullCharge1,
-#fullCharge2,
-#fullCharge3,
-#fullCharge4 {
+#full-charge0,
+#full-charge1,
+#full-charge2,
+#full-charge3,
+#full-charge4 {
   opacity: 0;
 }
 
@@ -953,4 +954,24 @@ input:checked + .compost-slider:before {
   100% {
     transform: scale(1.6);
   }
+}
+
+.focus-icon-meditation {
+    width: 24px;
+}
+
+.meditation-try-monk {
+    width: 40px;
+}
+
+.meditation-outcome-icon {
+    width: 40px;
+}
+
+#glow {
+    color-interpolation-filters: sRGB;
+}
+
+.fmonk-width {
+    width: 101px;
 }

@@ -19,13 +19,13 @@
         <h3>I feel like having a tea!
         </h3>
         <br>
-        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="teas">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon">
         <br>
         <br>
         <button class="btn-big" onclick="switch_to_game_phase_0()"><b>Check out garden</b></button>
       </center>
       <div id="credits">
-        Made with  <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
+        Made with  <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon">  by Simon Wüthrich & Oliver Dressler.
       </div>
     </div>
     <!-- phase0 starts here -->
@@ -38,9 +38,9 @@
         <p>A gardener is walking around collecting <b>herbs</b>.</p>
         <p>With these herbs you can brew <b>tea</b>.</p>
         <p>Tea is the most important thing in life.</p>
-        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon">
         <p>Oh look! </p>
-        <p>They already brought some herbs into your storage.</p> 
+        <p>They already brought some herbs into your storage.</p>
         <p>Start brewing!</p>
       </div>
 
@@ -55,7 +55,7 @@
             </div>
             <div class="small-6 columns tea-container">
               <span id="teabags"></span>
-              <img class="tea-icon-main" src="static/img/tea_icon.png">
+              <img class="tea-icon-main" src="static/img/tea_icon.png" alt="Tea icon">
               <br><br>
             </div>
           </div>
@@ -69,9 +69,9 @@
           </div>
         </div>
         <!-- collecting box -->
-        <div id="ui-collecting" class="row box relative">
+        <div class="row box relative">
           <div class="title-tab">
-            <img src="static/img/greenhouse_tab.png">
+            <img src="static/img/greenhouse_tab.png" alt="Garden tab">
           </div>
           <div class="row more-line-height">
             <div class="small-4 columns">
@@ -110,9 +110,9 @@
         <!-- processing box -->
         <div id="ui-processing" class="row box relative">
           <div class="title-tab">
-            <img src="static/img/processing_tab.png">
+            <img src="static/img/processing_tab.png" alt="Brewing tab">
           </div>
-          <button id="make-teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/img/tea_icon.png" class="tea-icon"></button>
+          <button id="make-teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/img/tea_icon.png" class="tea-icon" alt="Tea icon"></button>
           <br>
           <div id="ui-processors1" class="row more-line-height">
             <div class="small-4 columns">
@@ -142,16 +142,16 @@
         <!-- fertilizer box-->
         <div id="ui-garden" class="row box relative">
           <div class="title-tab">
-            <img src="static/img/garden_tab.png">
+            <img src="static/img/garden_tab.png" alt="Garden tab">
           </div>
           <div id="ui-garden1" class="row">
-            <div class="small-4 columns more-line-height"">
+            <div class="small-4 columns more-line-height">
               <b>Garden</b>
             </div>
-            <div class="small-3 columns more-line-height"">
+            <div class="small-3 columns more-line-height">
               Size <span id="garden-size"></span>
             </div>
-            <div class="small-5 columns more-line-height"">
+            <div class="small-5 columns more-line-height">
               <button class="btn-buy" id="buy-garden-size" onclick="action('buy_upgrade', 'garden_size')">+</button>
               <span id="price-garden-size"></span>
             </div>
@@ -159,54 +159,54 @@
             <br><br>
           </div>
           <b>Compost</b>
-          <div id='ui-compost' class="row">
+          <div id="ui-compost" class="row">
             <div id="ui-compost0" class="small-4 columns more-line-height">
               Bucket<br>
               <div id="auto-compost-box0" class="auto-compost">
-                <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto-compost0" class="debug-red"> 
+                <label class="switch">
+                  <input type="checkbox" id="auto-compost0" class="debug-red">
                   <span class="compost-slider"></span>
                 </label>
               </div>
               <div id="price-compost0" class="compost-price-tag"></div>
               <div id="progress-compost0" class="success progress compost">
-                <div id="meter-compost0" class="progress-meter" style="width:0%"></div>
+                <div id="meter-compost0" class="progress-meter"></div>
               </div>
               <button class="btn-compost btn-buy" id="btn-compost0" onclick="action('start_compost', 0)">+</button>
-              <button id="btn-set-compost0" class="btn-set-compost buyable" onclick="action('set_compost', 0)"><img src="static/img/compost0.png" width="32px"></img></button>
+              <button id="btn-set-compost0" class="btn-set-compost buyable" onclick="action('set_compost', 0)"><img src="static/img/compost0.png" alt="Compost 0"></img></button>
               <span class="compost-active" id="compost-active0">Click Map</span>
             </div>
             <div id="ui-compost1" class="small-4 columns more-line-height">
               Barrel<br>
               <div id="auto-compost-box1" class="auto-compost">
-                <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto-compost1" class="debug-red"> 
+                <label class="switch">
+                  <input type="checkbox" id="auto-compost1" class="debug-red">
                   <span class="compost-slider"></span>
                 </label>
               </div>
               <div id="price-compost1" class="compost-price-tag"></div>
               <div id="progress-compost1" class="success progress compost">
-                <div id="meter-compost1" class="progress-meter" style="width:0%"></div>
+                <div id="meter-compost1" class="progress-meter"></div>
               </div>
               <button class="btn-compost btn-buy" id="btn-compost1" onclick="action('start_compost', 1)">+</button>
-              <button id="btn-set-compost1" class="btn-set-compost buyable" onclick="action('set_compost', 1)"><img src="static/img/compost1.png" width="32px"></img></button>
+              <button id="btn-set-compost1" class="btn-set-compost buyable" onclick="action('set_compost', 1)"><img src="static/img/compost1.png" alt="Compost 1"></img></button>
               <span class="compost-active" id="compost-active1">Click Map</span>
             </div>
             <div id="ui-compost2" class="small-4 columns more-line-height">
               Silo<br>
               <div id="auto-compost-box2" class="auto-compost">
-                <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto-compost2" class="debug-red"> 
+                <label class="switch">
+                  <input type="checkbox" id="auto-compost2" class="debug-red">
                   <span class="compost-slider"></span>
                 </label>
               </div>
               <div id="price-compost2" class="compost-price-tag"></div>
               <div id="progress-compost2" class="success progress compost">
-                <div id="meter-compost2" class="progress-meter" style="width:0%"></div>
+                <div id="meter-compost2" class="progress-meter"></div>
               </div>
 
               <button class="btn-compost btn-buy" id="btn-compost2" onclick="action('start_compost', 2)">+</button>
-              <button id="btn-set-compost2" class="btn-set-compost buyable" onclick="action('set_compost', 2)"><img src="static/img/compost2.png" width="32px"></img></button>
+              <button id="btn-set-compost2" class="btn-set-compost buyable" onclick="action('set_compost', 2)"><img src="static/img/compost2.png" alt="Compost 2"></img></button>
               <span class="compost-active" id="compost-active2">Click Map</span>
             </div>
           </div>
@@ -238,7 +238,7 @@
         </div>
         <div class="row box menu-box">
           <b>Options</b><br><br>
-          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" onclick="reset_save()">Restart</button>
         </div>
         <!-- cheat box -->
         <div class="row box debug-box">
@@ -247,7 +247,7 @@
           &nbsp;
           <button class="btn-cheat" id="void-teabags" onclick="void_teabags()">Void</button>
           &nbsp;
-          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" onclick="reset_save()">Restart</button>
           &nbsp;
           <button class="btn-cheat" onclick="switch_to_game_phase_1()">To Phase 2</button>
         </div>
@@ -265,18 +265,18 @@
         <div id="ui-coll-strategy" class="row box">
           <div id="strategies">
             <div class="info-exists">
-              <img onclick="action('strategy_home')" id="strategy-home" title="Call your workers home.">
+              <img onclick="action('strategy_home')" id="strategy-home" title="Call your workers home." alt="Call your workers home.">
               <span class="info">Workers move home.</span>
             </div>
-            <img onclick="action('strategy_up')" id="strategy-up" title="All workers move north.">
+            <img onclick="action('strategy_up')" id="strategy-up" title="All workers move north." alt="All workers move north.">
             &emsp;&emsp;&emsp;&emsp;&emsp;
             <br>
-            <img onclick="action('strategy_left')" id="strategy-left" title="All workers move west.">
-            <img onclick="action('strategy_random')" id="strategy-random">
-            <img onclick="action('strategy_right')" id="strategy-right" title="All workers move east.">
+            <img onclick="action('strategy_left')" id="strategy-left" title="All workers move west." alt="All workers move west.">
+            <img onclick="action('strategy_random')" id="strategy-random" title="All workers move randomly." alt="All workers move randomly.">
+            <img onclick="action('strategy_right')" id="strategy-right" title="All workers move east." alt="All workers move east.">
             <br>
-            <img onclick="action('strategy_smart')" id="strategy-smart" title="Workers pick the best option.">
-            <img onclick="action('strategy_down')" id="strategy-down" title="All workers move south.">
+            <img onclick="action('strategy_smart')" id="strategy-smart" title="Workers pick the best option." alt="Workers pick the best option.">
+            <img onclick="action('strategy_down')" id="strategy-down" title="All workers move south." alt="All workers move south.">
             &emsp;&emsp;&emsp;&emsp;&emsp;
           </div>
         </div>
@@ -293,12 +293,11 @@
 
     <!-- phase1 starts here -->
     <div id="ui-game-phase1" class="row">
-      
       <!-- Intro popup phase 1 (= end popup phase 0) -->
       <div class="reveal popup" id="intro-popup-phase1" data-reveal data-close-on-click="false">
         <h2>You reached the <b>TEA</b>rvana!!</h2>
         <br>
-        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="Tea icon">
         <p>Stop micromanaging your workers and start medita<b>tea</b>ing!</p>
         <br>
         <button onclick="stay_in_game_phase_0()">Keep playing</button>
@@ -322,7 +321,7 @@
             </div>
             <div class="small-6 columns tea-container">
               <span id="teabags1"></span>
-              <img class="tea-icon-main" src="static/img/tea_icon.png">
+              <img class="tea-icon-main" src="static/img/tea_icon.png" alt="Tea icon">
               <br><br>
             </div>
           </div>
@@ -331,13 +330,11 @@
           <br><br>
           <div class="row">
             <div class="small-6 columns">
-            It is <span id="season"></span>.
-            <!-- Add a progress bar on the same line -->
-            
-            <div id="progress-season" class="success progress">
-                <div id="meter-season" class="progress-meter" style="width:50%"></div>
-            </div>
-
+              It is <span id="season"></span>.
+              <!-- Add a progress bar on the same line -->
+              <div id="progress-season" class="success progress">
+                <div id="meter-season" class="progress-meter"></div>
+              </div>
             </div>
             <div class="small-6 columns tea-container">
               <span id="teabags-rate1"></span>/s<br>
@@ -353,7 +350,7 @@
           </div>
           <div class= "row">
             <div class="small-4 columns">
-              Farmers 
+              Farmers
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Farmers will collect herbs for you. In summer they are collecting much more than in winter." data-position="right" data-alignment="center">
                 i
               </button>
@@ -366,7 +363,7 @@
           </div>
           <div class="row">
             <div class="small-4 columns">
-              Brewers 
+              Brewers
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Brewers process herbs into tea. They can get more efficient later on." data-position="right" data-alignment="center">
                 i
               </button>
@@ -379,7 +376,7 @@
           </div>
           <div id="worker-monks" class="row">
             <div class="small-4 columns">
-              Monks 
+              Monks
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Monks will allow you to perform special ceremonies. More monks will charge faster." data-position="right" data-alignment="center">
                 i
               </button>
@@ -392,7 +389,7 @@
           </div>
           <div id="worker-leaders" class="row">
             <div class="small-4 columns">
-              Leader  
+              Leader
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="The leader can exchange ceremonies and focus on specific ones. Only use a leader when you need her!" data-position="right" data-alignment="center">
                 i
               </button>
@@ -405,7 +402,7 @@
           </div>
           <div id="worker-meditators" class="row">
             <div class="small-4 columns">
-              Cultists 
+              Cultists
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Cultists can increase your focus with their special meditation technique." data-position="right" data-alignment="center">
                 i
               </button>
@@ -418,10 +415,10 @@
           </div>
         </div>
         <!-- collecting box -->
-        <div id="ui-collecting" class="row box relative">
+        <div class="row box relative">
           <!-- little title tab -->
           <div class="title-tab">
-            <img src="static/img/greenhouse_tab.png">
+            <img src="static/img/greenhouse_tab.png" alt="Garden tab">
           </div>
           <div class="row">
             <div class="small-12 columns">
@@ -444,7 +441,7 @@
                 </div>
                 <div class="small-5 columns">
                   <div id="progress-fertilizer" class="success progress">
-                    <div id="meter-fertilizer" class="progress-meter" style="width:50%"></div>
+                    <div id="meter-fertilizer" class="progress-meter"></div>
                   </div>
                 </div>
               </div>
@@ -488,7 +485,7 @@
         <!-- processing box -->
         <div class="row box relative">
           <div class="title-tab">
-            <img src="static/img/processing_tab.png">
+            <img src="static/img/processing_tab.png" alt="Brewery tab">
           </div>
           <div class="row">
             <div class="small-12 columns">
@@ -501,7 +498,7 @@
                 </div>
                 <div class="small-5 columns">
                   <div id="progress-power" class="success progress">
-                    <div id="meter-power" class="progress-meter" style="width:100%"></div>
+                    <div id="meter-power" class="progress-meter"></div>
                   </div>
                 </div>
               </div>
@@ -548,29 +545,27 @@
           </div>
         </div>
         <div class="row box menu-box">
-          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" onclick="reset_save()">Restart</button>
         </div>
         <!-- cheat box -->
         <div class="row box debug-box">
           <b>Debug</b><br><br>
-          <button class="btn-cheat" id="cheat" onclick="cheat()">Cheat</button>
+          <button class="btn-cheat" onclick="cheat()">Cheat</button>
           &nbsp;
-          <button class="btn-cheat" id="void-teabags" onclick="void_teabags()">Void</button>
+          <button class="btn-cheat" onclick="void_teabags()">Void</button>
           &nbsp;
-          <button class="btn-cheat" id="give-worker" onclick="give_worker()">+ Worker</button>
+          <button class="btn-cheat" onclick="give_worker()">+ Worker</button>
           &nbsp;
-          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" onclick="reset_save()">Restart</button>
         </div>
       </div>
-
       <!-- middle column starts here -->
       <div class="small-4 columns main-column">
         <!-- focus box -->
         <div id="ui-focus" class="row box">
           <div class="row center focus-header">
-            <img src="static/img/focus_animated.gif" class="img-focus" width="40px"> <span id="focus"></span>
+            <img src="static/img/focus_animated.gif" class="img-focus" alt="Focus points icon"> <span id="focus"></span>
           </div>
-          
           <div class="row focus-projects">
             <div id="focus-project-slot0" class="fp-slot small-4 columns"></div>
             <div id="focus-project-slot1" class="fp-slot small-4 columns"></div>
@@ -586,138 +581,108 @@
           <div id="monks-focus-box" class="row">
             <div id="monk0" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
-                <filter id="glow" style="color-interpolation-filters:sRGB">
-                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
-                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
-                    <feColorMatrix
-                        type="matrix"
-                        values="1 0 0 0 0.4
-                                0.1 0.8 -0.6 0.5 0.4
-                                0 0 1 0 -0.4
-                                0 0 0 1 0" />
+                <filter id="glow0">
+                  <fedisplacementmap scale="-2" ychannelselector="G" result="result1" xchannelselector="R" in="SourceGraphic"></fedisplacementmap>
+                  <fegaussianblur stddeviation="3" result="result2" in="result1"></fegaussianblur>
+                  <fecolormatrix type="matrix" values="1 0 0 0 0.4 0.1 0.8 -0.6 0.5 0.4 0 0 1 0 -0.4 0 0 0 1 0"></fecolormatrix>
                 </filter>
                 <defs>
-                    <mask id="mask0">
-                        <rect x="0" y="0" width="101" height="100%" fill="white" />
-                        <!-- animate height of #progress -->
-                        <rect id="monkfg0" x="0" y="0" width="101" height="50%" fill="#343434" />
-                    </mask>
+                  <mask id="mask0">
+                    <rect class="fmonk-width" height="100%" fill="white" />
+                    <rect class="fmonk-width" id="monkfg0" fill="#343434" />
+                  </mask>
                 </defs>
-                <image id="fullCharge0" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask0)"/>
+                <image id="full-charge0" class="fmonk-width" href="static/img/monk.png" filter="url(#glow0)"></image>
+                <image href="static/img/monk.png" class="fmonk-width" mask="url(#mask0)"></image>
               </svg>
             </div>
-            <div id="monk1", class="monk small-12 columns">
+            <div id="monk1" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
-                <filter id="glow" style="color-interpolation-filters:sRGB">
-                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
-                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
-                    <feColorMatrix
-                        type="matrix"
-                        values="1 0 0 0 0.4
-                                0.1 0.8 -0.6 0.5 0.4
-                                0 0 1 0 -0.4
-                                0 0 0 1 0" />
+                <filter id="glow1">
+                  <fedisplacementmap scale="-2" ychannelselector="G" result="result1" xchannelselector="R" in="SourceGraphic"></fedisplacementmap>
+                  <fegaussianblur stddeviation="3" result="result2" in="result1"></fegaussianblur>
+                  <fecolormatrix type="matrix" values="1 0 0 0 0.4 0.1 0.8 -0.6 0.5 0.4 0 0 1 0 -0.4 0 0 0 1 0"></fecolormatrix>
                 </filter>
                 <defs>
-                    <mask id="mask1">
-                        <rect x="0" y="0" width="101" height="100%" fill="white" />
-                        <!-- animate height of #progress -->
-                        <rect id="monkfg1" x="0" y="0" width="101" height="50%" fill="#343434" />
-                    </mask>
+                  <mask id="mask1">
+                    <rect class="fmonk-width" height="100%" fill="white" />
+                    <rect class="fmonk-width" id="monkfg1" fill="#343434" />
+                  </mask>
                 </defs>
-                <image id="fullCharge1" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask1)"/>
+                <image id="full-charge1" class="fmonk-width" href="static/img/monk.png" filter="url(#glow1)"></image>
+                <image href="static/img/monk.png" class="fmonk-width" mask="url(#mask1)"></image>
               </svg>
             </div>
-            <div id="monk2", class="monk small-12 columns">
+            <div id="monk2" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
-                <filter id="glow" style="color-interpolation-filters:sRGB">
-                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
-                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
-                    <feColorMatrix
-                        type="matrix"
-                        values="1 0 0 0 0.4
-                                0.1 0.8 -0.6 0.5 0.4
-                                0 0 1 0 -0.4
-                                0 0 0 1 0" />
+                <filter id="glow2">
+                  <fedisplacementmap scale="-2" ychannelselector="G" result="result1" xchannelselector="R" in="SourceGraphic"></fedisplacementmap>
+                  <fegaussianblur stddeviation="3" result="result2" in="result1"></fegaussianblur>
+                  <fecolormatrix type="matrix" values="1 0 0 0 0.4 0.1 0.8 -0.6 0.5 0.4 0 0 1 0 -0.4 0 0 0 1 0"></fecolormatrix>
                 </filter>
                 <defs>
-                    <mask id="mask2">
-                        <rect x="0" y="0" width="101" height="100%" fill="white" />
-                        <!-- animate height of #progress -->
-                        <rect id="monkfg2" x="0" y="0" width="101" height="50%" fill="#343434" />
-                    </mask>
+                  <mask id="mask2">
+                    <rect class="fmonk-width" height="100%" fill="white" />
+                    <rect class="fmonk-width" id="monkfg2" fill="#343434" />
+                  </mask>
                 </defs>
-                <image id="fullCharge2" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask2)"/>
+                <image id="full-charge2" class="fmonk-width" href="static/img/monk.png" filter="url(#glow2)"></image>
+                <image href="static/img/monk.png" class="fmonk-width" mask="url(#mask2)"></image>
               </svg>
             </div>
-            <div id="monk3", class="monk small-12 columns">
+            <div id="monk3" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
-                <filter id="glow" style="color-interpolation-filters:sRGB">
-                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
-                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
-                    <feColorMatrix
-                        type="matrix"
-                        values="1 0 0 0 0.4
-                                0.1 0.8 -0.6 0.5 0.4
-                                0 0 1 0 -0.4
-                                0 0 0 1 0" />
+                <filter id="glow3">
+                  <fedisplacementmap scale="-2" ychannelselector="G" result="result1" xchannelselector="R" in="SourceGraphic"></fedisplacementmap>
+                  <fegaussianblur stddeviation="3" result="result2" in="result1"></fegaussianblur>
+                  <fecolormatrix type="matrix" values="1 0 0 0 0.4 0.1 0.8 -0.6 0.5 0.4 0 0 1 0 -0.4 0 0 0 1 0"></fecolormatrix>
                 </filter>
                 <defs>
-                    <mask id="mask3">
-                        <rect x="0" y="0" width="101" height="100%" fill="white" />
-                        <!-- animate height of #progress -->
-                        <rect id="monkfg3" x="0" y="0" width="101" height="50%" fill="#343434" />
-                    </mask>
+                  <mask id="mask3">
+                    <rect class="fmonk-width" height="100%" fill="white" />
+                    <rect class="fmonk-width" id="monkfg3" fill="#343434" />
+                  </mask>
                 </defs>
-                <image id="fullCharge3" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask3)"/>
+                <image id="full-charge3" class="fmonk-width" href="static/img/monk.png" filter="url(#glow3)"></image>
+                <image href="static/img/monk.png" class="fmonk-width" mask="url(#mask3)"></image>
               </svg>
             </div>
-            <div id="monk4", class="monk small-12 columns">
+            <div id="monk4" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
-                <filter id="glow" style="color-interpolation-filters:sRGB">
-                    <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
-                    <feGaussianBlur stdDeviation="3" result="result2" in="result1"/>
-                    <feColorMatrix
-                        type="matrix"
-                        values="1 0 0 0 0.4
-                                0.1 0.8 -0.6 0.5 0.4
-                                0 0 1 0 -0.4
-                                0 0 0 1 0" />
+                <filter id="glow4">
+                  <fedisplacementmap scale="-2" ychannelselector="G" result="result1" xchannelselector="R" in="SourceGraphic"></fedisplacementmap>
+                  <fegaussianblur stddeviation="3" result="result2" in="result1"></fegaussianblur>
+                  <fecolormatrix type="matrix" values="1 0 0 0 0.4 0.1 0.8 -0.6 0.5 0.4 0 0 1 0 -0.4 0 0 0 1 0"></fecolormatrix>
                 </filter>
                 <defs>
-                    <mask id="mask4">
-                        <rect x="0" y="0" width="101" height="100%" fill="white" />
-                        <!-- animate height of #progress -->
-                        <rect id="monkfg4" x="0" y="0" width="101" height="50%" fill="#343434" />
-                    </mask>
+                  <mask id="mask4">
+                    <rect class="fmonk-width" height="100%" fill="white" />
+                    <rect class="fmonk-width" id="monkfg4" fill="#343434" />
+                  </mask>
                 </defs>
-                <image id="fullCharge4" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask4)"/>
+                <image id="full-charge4" class="fmonk-width" href="static/img/monk.png" filter="url(#glow4)"></image>
+                <image href="static/img/monk.png" class="fmonk-width" mask="url(#mask4)"></image>
               </svg>
             </div>
           </div>
           <div class="leader-box">
             <div class="flex-column">
-              <div class="small-price-tag pb-xsmall">-2<img src="static/img/focus_light.png"/></div>
+              <div class="small-price-tag pb-xsmall">-2<img src="static/img/focus_light.png" alt="Focus points icon"></div>
               <button onclick="action('refresh_focus_project')" class="btn-light btn-leader">
-                <img src="static/img/reload.png"/>
+                <img src="static/img/reload.png" alt="Refresh icon">
               </button>
             </div>
             <div id="leader-strategies-box" class="flex-column">
               <span class="center pb-small">Focus:</span>
               <div id="leader-strategies">
                 <input type="radio" id="strat-herbs" name="leader_strategy" value="fertilizer">
-                <label for="strat-herbs" class="btn-light btn-leader"><img src="static/img/fertilizer_light.png"/></label>
+                <label for="strat-herbs" class="btn-light btn-leader"><img src="static/img/fertilizer_light.png" alt="Garden icon"></label>
                 <input type="radio" id="strat-processing" name="leader_strategy" value="power">
-                <label for="strat-processing" class="btn-light btn-leader"><img src="static/img/power_light.png"/></label>
+                <label for="strat-processing" class="btn-light btn-leader"><img src="static/img/power_light.png" alt="Brewing icon"></label>
                 <input type="radio" id="strat-focus" name="leader_strategy" value="focus">
-                <label for="strat-focus" class="btn-light btn-leader"><img src="static/img/focus_light.png"/></label>
+                <label for="strat-focus" class="btn-light btn-leader"><img src="static/img/focus_light.png" alt="Focus points icon"></label>
                 <input type="radio" id="strat-none" name="leader_strategy" value="none" checked>
-                <label for="strat-none" class="btn-light btn-leader"><img src="static/img/x_icon.png"/></label>
+                <label for="strat-none" class="btn-light btn-leader"><img src="static/img/x_icon.png" alt="No focus selected icon"></label>
               </div>
             </div>
           </div>
@@ -730,7 +695,7 @@
               <button class="meditation-btn btn-light" onclick="action('start_meditation')">
                 <!-- <img src="static/img/monk.png" width="24px"><br> -->
                 <span id="meditation-price"></span>
-                <img src='static/img/focus_light.png' style='width:24px'></img>
+                <img src="static/img/focus_light.png" class="focus-icon-meditation" alt="Focus points icon"></img>
               </button>
             </div>
             <div class="small-6 columns center">
@@ -741,41 +706,40 @@
             </div>
           </div>
           <!-- meditation bar -->
-            <div id="meditation-target-container">
-              <div class="stacked" id="meditation-target-bg"></div>
-              <div class="stacked" id="meditation-target"></div>
-              <div class="stacked" id="meditation-current"></div>
-              <div class="stacked" id="meditation-line"></div>
-              <div class="stacked meditation-try" id="meditation-try0"></div>
-              <div class="stacked meditation-try" id="meditation-try1"></div>
-              <div class="stacked meditation-try" id="meditation-try2"></div>
-            </div>
-          
+          <div id="meditation-target-container">
+            <div class="stacked" id="meditation-target-bg"></div>
+            <div class="stacked" id="meditation-target"></div>
+            <div class="stacked" id="meditation-current"></div>
+            <div class="stacked" id="meditation-line"></div>
+            <div class="stacked meditation-try" id="meditation-try0"></div>
+            <div class="stacked meditation-try" id="meditation-try1"></div>
+            <div class="stacked meditation-try" id="meditation-try2"></div>
+          </div>
           <!-- try boxes -->
           <div class="row" id="meditation-boxes">
             <div id="meditation-box-container0" class="small-4 columns meditation-box-container">
               <div onclick="action('try_meditation', 0)" class="meditation-box" id="meditation-box0">
-                <img id="meditation-try-monk0" src="static/img/monk.png" width="40px">
+                <img id="meditation-try-monk0" class="meditation-try-monk" src="static/img/monk.png" alt="Monk icon">
               </div>
             </div>
             <div id="meditation-box-container1" class="small-4 columns meditation-box-container">
               <div onclick="action('try_meditation', 1)" class="meditation-box" id="meditation-box1">
-                <img id="meditation-try-monk1" src="static/img/monk.png" width="40px">
+                <img id="meditation-try-monk1" class="meditation-try-monk" src="static/img/monk.png" alt="Monk icon">
               </div>
             </div>
             <div onclick="action('try_meditation', 2)" id="meditation-box-container2" class="small-4 columns meditation-box-container">
               <div class="meditation-box" id="meditation-box2">
-                <img id="meditation-try-monk1" src="static/img/monk.png" width="40px">
+                <img id="meditation-try-monk2" class="meditation-try-monk" src="static/img/monk.png" alt="Monk icon">
               </div>
             </div>
           </div>
 
           <!-- meditation result -->
           <div id="meditation-win">
-            <img src="static/img/meditation_win.png" width="40px">  + <span id="meditation-amount"></span> <img src='static/img/focus_dark.png'>
+            <img src="static/img/meditation_win.png" class="meditation-outcome-icon" alt="Meditation win!">  + <span id="meditation-amount"></span> <img src="static/img/focus_dark.png" alt="Focus points icon">
           </div>
           <div id="meditation-lose">
-            <img src="static/img/meditation_lose.png" width="40px">
+            <img src="static/img/meditation_lose.png" class="meditation-outcome-icon" alt="Meditation lose!">
           </div>
 
         </div>
@@ -790,7 +754,7 @@
     </footer>
     <audio loop id="audio">
       <source src="static/bg.mp3" type="audio/mpeg">
-    </audio> 
+    </audio>
     <script>
       $(document).foundation();
     </script>
