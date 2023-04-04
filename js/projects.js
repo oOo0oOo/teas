@@ -5,7 +5,7 @@ var projects = [
 		title: "Enjoy the Moment",
 		trigger: function(state){
 			if (state['teabags'] >= 8){
-				$("#ui_projects").show();
+				$("#ui-projects").show();
                 return true;
 			}
 			return false;
@@ -28,7 +28,7 @@ var projects = [
 		game_phase: 0,
 		description: "Tell your farmers where to go.",
 		effect: function(state){
-			$("#ui_coll_strategy").show();
+			$("#ui-coll-strategy").show();
 			return state
 		}
 	},
@@ -40,8 +40,8 @@ var projects = [
 		game_phase: 0,
 		description: "What might happen if you reuse these herbs for a different purpose?",
 		effect: function(state){
-			$("#ui_garden").show();
-			$("#ui_compost").show();
+			$("#ui-garden").show();
+			$("#ui-compost").show();
 			engine.start_compost(0, true);
 			return state
 		}
@@ -78,7 +78,7 @@ var projects = [
 		game_phase: 0,
 		description: "Gardening together is more fun.",
 		effect: function(state){
-			$("#ui_collectors").show();
+			$("#ui-collectors").show();
 			state['farmers'] += 1
 			return state
 		}
@@ -91,7 +91,7 @@ var projects = [
 		game_phase: 0,
 		description: "Expand your territory.",
 		effect: function(state){
-			$("#ui_garden1").show();
+			$("#ui-garden1").show();
 			engine.buy_upgrade('garden_size', true);
 			return state
 		}
@@ -105,7 +105,7 @@ var projects = [
 		description: "Why are you doing it by hand?!",
 		effect: function(state){
 			state['processors'] += 1;
-			$("#ui_processors1").show();
+			$("#ui-processors1").show();
 			return state
 		}
 	},
@@ -117,7 +117,7 @@ var projects = [
 		game_phase: 0,
 		description: "After drinking some tea, you gain more insight into those changing numbers.",
 		effect: function(state){
-			$(".ui_rates").show();
+			$(".ui-rates").show();
 			return state
 		}
 	},
@@ -129,7 +129,7 @@ var projects = [
 		game_phase: 0,
 		description: "A bucket is nice but you need more!",
 		effect: function(state){
-			$("#ui_compost1").show();
+			$("#ui-compost1").show();
 			engine.start_compost(1, true);
 			return state
 		}
@@ -142,9 +142,9 @@ var projects = [
 		game_phase: 0,
 		description: "Automatically buy composts if possible!",
 		effect: function(state){
-			$("#auto_compost_box0").show();
-			$("#auto_compost_box1").show();
-			$("#auto_compost_box2").show();
+			$("#auto-compost-box0").show();
+			$("#auto-compost-box1").show();
+			$("#auto-compost-box2").show();
 			return state
 		}
 	},
@@ -169,7 +169,7 @@ var projects = [
 		description: "Brew your teas faster and more efficiently.",
 		effect: function(state){
 			state['proc_efficiency'] = 1;
-			$("#ui_processors2").show();
+			$("#ui-processors2").show();
 			return state
 		}
 	},
@@ -194,7 +194,7 @@ var projects = [
 		game_phase: 0,
 		description: "Equip your farmers with fertilizer",
 		effect: function(state){
-			$("#ui_map_fertilizer").show();
+			$("#ui-map-fertilizer").show();
 			return state
 		}
 	},
@@ -207,7 +207,7 @@ var projects = [
 		description: "Improve your herb collection by using tools!",
 		effect: function(state){
 			state['coll_efficiency'] = 1;
-			$("#ui_collectors2").show();
+			$("#ui-collectors2").show();
 			return state
 		}
 	},
@@ -219,11 +219,11 @@ var projects = [
 		game_phase: 0,
 		description: "Get a fertilizer-silo! This is the best option on the market.",
 		effect: function(state){
-			$("#ui_compost2").show();
+			$("#ui-compost2").show();
 
 			// Hide bucket and unset checkbox
-			$("#ui_compost0").css("opacity", 0.0);
-			$("#auto_compost0").prop("checked", false);
+			$("#ui-compost0").css("opacity", 0.0);
+			$("#auto-compost0").prop("checked", false);
 			
 			engine.start_compost(2, true);
 			return state
@@ -262,7 +262,7 @@ var projects = [
 		description: "You've heard about this ceremony, which needs a stupid amount of teas. It is rumored that it leads to unexpected influences on your tea production. Are you sure?!",
 		effect: function(state){
 			// Open tutorial popup (reveal)
-			$("#intro_popup_phase1").foundation('open');
+			$("#intro-popup-phase1").foundation('open');
 			return state
 		}
 	},
@@ -283,8 +283,8 @@ var projects = [
 		effect: function(state){
 			state['workers'] += 1;
             update_free_workers();
-			$("#ui_focus").show();
-			$("#worker_monks").show();
+			$("#ui-focus").show();
+			$("#worker-monks").show();
 			return state
 		}
 	},
@@ -297,8 +297,8 @@ var projects = [
 		description: "Your monks discover new ceremonies to improve tea production.",
 		effect: function(state){
 			state['focus_project_level'] = 1;
-			$("#ui_greenhouse_bonus").css('display', 'flex');
-			$("#ui_factory_bonus").css('display', 'flex');
+			$("#ui-greenhouse-bonus").css('display', 'flex');
+			$("#ui-factory-bonus").css('display', 'flex');
 			return state
 		}
 	},
@@ -323,9 +323,9 @@ var projects = [
 		game_phase: 1,
 		description: "A temple leader will help your monks to focus on the right projects.",
 		effect: function(state){
-			$("#worker_leaders").show();
-			$(".leader_box").css("display", "flex");
-			$(".leader_box").hide();
+			$("#worker-leaders").show();
+			$(".leader-box").css("display", "flex");
+			$(".leader-box").hide();
 
 			state['workers'] += 1;
 			update_free_workers();
@@ -342,7 +342,7 @@ var projects = [
 		description: "Use the sacred tea from your ceremonies to fertilize the greenhouses.",
 		effect: function(state){
 			state['greenhouse_use'] += 1;
-			$("#ui_greenhouse_use").show();
+			$("#ui-greenhouse-use").show();
 			engine.generate_level();
 			return state
 		}
@@ -356,9 +356,7 @@ var projects = [
 		description: "Use divine fumes to boost your brewing process.",
 		effect: function(state){
 			state['factory_use'] += 1;
-
-			$("#ui_factory_use").show();
-
+			$("#ui-factory-use").show();
 			engine.generate_level();
 			return state
 		}
@@ -445,7 +443,7 @@ var projects = [
 		game_phase: 1,
 		description: "Your temple leader can now decide a focus for all your ceremonies.",
 		effect: function(state){
-			$("#leader_strategies_box").css("opacity", "1");
+			$("#leader-strategies-box").css("opacity", "1");
 			return state
 		}
 	},
@@ -457,8 +455,8 @@ var projects = [
 		game_phase: 1,
 		description: "You discover secret tea techniques - for devoted members only!",
 		effect: function(state){
-			$("#ui_meditation").show();
-			$("#worker_meditators").show();
+			$("#ui-meditation").show();
+			$("#worker-meditators").show();
             reset_meditation();
 			return state
 		}
@@ -472,7 +470,7 @@ var projects = [
 		description: "By introducing a new manager, who is also part of the tea-cult, your collectors will work more efficient.",
 		effect: function(state){
 			state['greenhouse_speed'] += 1;
-			$("#ui_greenhouse_speed").show();
+			$("#ui-greenhouse-speed").show();
 			return state
 		}
 	},
@@ -485,8 +483,8 @@ var projects = [
 		description: "In the tea-cult you met this guy, who claims to increase the output per herb for all your factories.",
 		effect: function(state){
 			state['factory_speed'] += 1;
-			$("#ui_factory_speed").show();
-			$("#ui_factory_efficiency").show();
+			$("#ui-factory-speed").show();
+			$("#ui-factory-efficiency").show();
 			return state
 		}
 	},

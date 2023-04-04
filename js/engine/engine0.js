@@ -21,28 +21,28 @@ class EnginePhase0 extends BaseEngine {
                 // Check if we have already fullfilled the project. This feels hacky...
                 if (this.project_done("compost" + i)){
                     // hide all ui elements
-                    var el = ["progress_compost", "btn_compost", "btn_set_compost", "compost_active", "price_compost"];
+                    var el = ["progress-compost", "btn-compost", "btn-set-compost", "compost-active", "price-compost"];
                     for (var j=0;j<3;j++){
                         $("#" + el[j] + i).hide();
                     }
 
                     // Show selectively
                     if (this.state['compost_ready'][i]){
-                        $("#btn_set_compost" + i).show();
+                        $("#btn-set-compost" + i).show();
                     } else if (this.state['compost_timer'][i] > 0){
-                        $("#progress_compost" + i).show();
+                        $("#progress-compost" + i).show();
                     } else if (set == i) {
-                        $("#compost_active" + i).show();
+                        $("#compost-active" + i).show();
                     } else {
-                        $("#btn_compost" + i).show();
-                        $("#price_compost" + i).show();
+                        $("#btn-compost" + i).show();
+                        $("#price-compost" + i).show();
                     }
                 }
             }
 
             // Make sure all autocompost checkboxes are not checked
             for (var i=0;i<3;i++){
-                $("#auto_compost" + i).prop("checked", false);
+                $("#auto-compost" + i).prop("checked", false);
             }
         }
 
@@ -64,11 +64,11 @@ class EnginePhase0 extends BaseEngine {
         this.num_tiles = s['num_tiles'][s['garden_size']];
 
         // Resize the canvas
-        var width = $("#map_container0").width();
+        var width = $("#map-container0").width();
         this.tile_size = width / this.num_tiles;
         width = this.tile_size * this.num_tiles;
 
-        $("#map_container0").width(width);
+        $("#map-container0").width(width);
         canvas.width = width;
         canvas.height = width;
 
@@ -412,7 +412,7 @@ class EnginePhase0 extends BaseEngine {
     update_farmers(){
         var s = this.state;
 
-        var ratio = $("#map_fertilizer_ratio").val() / 100;
+        var ratio = $("#map-fertilizer-ratio").val() / 100;
 
         // Some farmers are fertilizers (i know it's lazy to do this here)
         var num_farmers = this.farmers.length;
@@ -583,9 +583,9 @@ class EnginePhase0 extends BaseEngine {
         var tb_required = s['compost_teabags'][id];
         if (s['teabags'] >= tb_required || free){
             // Hide button, show progress bar
-            $("#btn_compost" + id).hide();
-            $("#price_compost" + id).hide();
-            $("#progress_compost" + id).show();
+            $("#btn-compost" + id).hide();
+            $("#price-compost" + id).hide();
+            $("#progress-compost" + id).show();
             var time_required = s['compost_times'][id];
             if (!free){
                 this.state['teabags'] -= tb_required;
@@ -604,17 +604,17 @@ class EnginePhase0 extends BaseEngine {
                 this.state['compost_ready'][i] = true;
 
                 // Hide progress, show spade
-                $("#progress_compost" + i).hide();
-                $("#btn_set_compost" + i).show();
+                $("#progress-compost" + i).hide();
+                $("#btn-set-compost" + i).show();
             }
             // The timer is running
             else if (s['compost_timer'][i] > 0){
                 s['compost_timer'][i] -= 1;
                 var perc = 100.0 * s['compost_timer'][i] / s['compost_times'][i];
-                $("#meter_compost" + i).css('width', '' + perc + '%');
+                $("#meter-compost" + i).css('width', '' + perc + '%');
             } else if (s['compost_set_active'] == -1) {
                 // If auto-compost is enabled and player has enough tea bags start a new compost
-                var auto = $("#auto_compost" + i).prop('checked');
+                var auto = $("#auto-compost" + i).prop('checked');
                 if (auto && s['teabags'] >= s['compost_teabags'][i]){
                     this.start_compost(i);
                 }
@@ -627,8 +627,8 @@ class EnginePhase0 extends BaseEngine {
         if (s['compost_ready'][id] && s['compost_set_active'] == -1){
             this.state['compost_set_active'] = id;
             s['compost_ready'][id] = false;
-            $("#compost_active" + id).show();
-            $("#btn_set_compost" + id).hide();
+            $("#compost-active" + id).show();
+            $("#btn-set-compost" + id).hide();
         }
     }
 
@@ -648,9 +648,9 @@ class EnginePhase0 extends BaseEngine {
         ]);
         this.state['compost_set_active'] = -1;
         // Hide click, show button again
-        $("#compost_active" + id).hide();
-        $("#btn_compost" + id).show();
-        $("#price_compost" + id).show();
+        $("#compost-active" + id).hide();
+        $("#btn-compost" + id).show();
+        $("#price-compost" + id).show();
         this.render_tile(x, y);
     }
 
@@ -681,7 +681,7 @@ class EnginePhase0 extends BaseEngine {
         ["farmers", "processors", "proc_efficiency", "garden_size", "coll_efficiency"].forEach(function(item, index){
             // Check if purchase is possible
             var price = s['price_' + item][s[item]];
-            var obj = $("#buy_" + item);
+            var obj = $("#buy-" + to_css_id(item));
             if (s['teabags'] >= price){
                 if (!obj.hasClass("buyable")){
                     obj.addClass("buyable");
@@ -699,7 +699,7 @@ class EnginePhase0 extends BaseEngine {
 
         var price = s['compost_teabags'];
         [0, 1, 2].forEach(function(item){
-            var obj = $("#btn_compost" + item);
+            var obj = $("#btn-compost" + item);
             if (s['teabags'] >= price[item]){
                 if (!obj.hasClass("buyable")){
                     obj.addClass("buyable");
@@ -714,7 +714,7 @@ class EnginePhase0 extends BaseEngine {
 
     // RENDERING
     render_farmers(){
-        var ratio = $("#map_fertilizer_ratio").val() / 100;
+        var ratio = $("#map-fertilizer-ratio").val() / 100;
         var num_farmers = this.farmers.length;
         var num_fertilizers = Math.floor(num_farmers * ratio);
 
@@ -779,12 +779,12 @@ class EnginePhase0 extends BaseEngine {
         var p;
         for (p in up){
             p = up[p];
-            $("#" + p).html(num_to_mega(s[p]));
-            $("#price_" + p).html(this.get_price(p));
+            $("#" + to_css_id(p)).html(num_to_mega(s[p]));
+            $("#price-" + to_css_id(p)).html(this.get_price(p));
         }
 
         for (p in [0, 1, 2]){
-            $("#price_compost" + p).html(this.state["compost_teabags"][p] + ' <img src="static/img/tea_icon.png" class="tea-icon">');
+            $("#price-compost" + p).html(this.state["compost_teabags"][p] + ' <img src="static/img/tea_icon.png" class="tea-icon">');
         }
     }
 
@@ -803,8 +803,8 @@ class EnginePhase0 extends BaseEngine {
         // Rates
         if (production_rates !== false){
             // var tooltip = num_to_mega(production_rates[0]);
-            $("#herbs_rate").html(num_to_mega(production_rates[0], true));
-            $("#teabags_rate").html(num_to_mega(production_rates[1], true));
+            $("#herbs-rate").html(num_to_mega(production_rates[0], true));
+            $("#teabags-rate").html(num_to_mega(production_rates[1], true));
         }
 
     }

@@ -19,13 +19,13 @@ class BaseEngine{
         this.state = s['state'];
 
         if (this.state['project_status'][0] == 2){
-            $("#ui_projects").show();
+            $("#ui-projects").show();
         }
 
         if (this.state['game_phase'] != 0){
-            var p = $("#projects_list").clone();
-            $("#projects_list").remove();
-            $("#ui_projects" + this.state['game_phase']).append(p);
+            var p = $("#projects-list").clone();
+            $("#projects-list").remove();
+            $("#ui-projects" + this.state['game_phase']).append(p);
         }
 
         this.farmers = s['farmers'];
@@ -42,13 +42,13 @@ class BaseEngine{
             var status = this.state['project_status'][i];
             if (project['game_phase'] == this.state['game_phase']) {
                 if (status == 1){
-                    $("#project_" + project["id"]).show();
+                    $("#project-" + project["id"]).show();
                 } else if (status == 2){
                     this.state = project.effect(this.state);
-                    $("#project_" + project["id"]).hide();
+                    $("#project-" + project["id"]).hide();
                 }
             } else {
-                $("#project_" + project["id"]).hide();
+                $("#project-" + project["id"]).hide();
             }
         }
         this.state = orig_state;
@@ -112,7 +112,7 @@ class BaseEngine{
             var project = projects[i];
 
             // Add a project
-            var obj = $("#project_" + project["id"]);
+            var obj = $("#project-" + project["id"]);
             var status = this.state['project_status'][i];
             if (status == 0 && project.trigger(this.state) && project['game_phase'] == this.state['game_phase']){
                 this.state['project_status'][i] = 1;
@@ -161,7 +161,7 @@ class BaseEngine{
         if (this.project_buyable(project, true)){
             this.state = project.effect(this.state);
             this.state['project_status'][projectInd] = 2;
-            $("#project_" + id).hide();
+            $("#project-" + id).hide();
         }
         this.render_status_text();
         this.update_projects();

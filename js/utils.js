@@ -105,3 +105,7 @@ function gradient_value(color){
 function lerp(fraction, min, max){
     return Math.round(min + fraction * (max - min));
 }
+
+function to_css_id(id){
+    return id.replaceAll("_", "-");
+}

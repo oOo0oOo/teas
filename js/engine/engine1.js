@@ -24,9 +24,9 @@ class EnginePhase1 extends BaseEngine {
             var project = this.generate_focus_project();
             this.focus_projects.push(project);
 
-            $('#focus_project_slot' + i).empty();
-            $('#focus_project_slot' + i).append(focus_project_template(project));
-            $("#focus_project_slot" + i).foundation();
+            $('#focus-project-slot' + i).empty();
+            $('#focus-project-slot' + i).append(focus_project_template(project));
+            $("#focus-project-slot" + i).foundation();
         }
 
         this.update_num_monks();
@@ -78,21 +78,21 @@ class EnginePhase1 extends BaseEngine {
         var season_state = this.state['season_tick'] / this.state['season_duration'];
 
         var remaining = season_state - Math.floor(season_state);
-        $("#meter_season").css("width", (remaining * 100) + "%");
+        $("#meter-season").css("width", (remaining * 100) + "%");
 
         this.state['season'] = Math.floor(season_state) % 4;
 
         // Show the warning during the first fall season
         if (this.state['season_tick'] == this.state['season_duration'] * 2.5){
-            $("#season_popup").foundation('open');
+            $("#season-popup").foundation('open');
         };
     }
 
     update_free_workers(){
         if (this.state['workers'] > 0){
-            $("#free_workers_display").addClass("free_workers_highlight");
+            $("#free-workers-display").addClass("free-workers-highlight");
         } else {
-            $("#free_workers_display").removeClass("free_workers_highlight");
+            $("#free-workers-display").removeClass("free-workers-highlight");
         }
     }
 
@@ -193,9 +193,9 @@ class EnginePhase1 extends BaseEngine {
             } else {
                 // Check if this project is possible now
                 if (s['focus_action'] >= project['focus_action']){
-                    $("#focus_btn" + project["id"]).removeClass("inactive");
+                    $("#focus-btn" + project["id"]).removeClass("inactive");
                 } else {
-                    $("#focus_btn" + project["id"]).addClass("inactive");
+                    $("#focus-btn" + project["id"]).addClass("inactive");
                 }
             }
         };
@@ -209,9 +209,9 @@ class EnginePhase1 extends BaseEngine {
             var project = this.generate_focus_project();
             this.focus_projects.splice(ind, 1, project);
 
-            var html = "<div class='fp-slot small-4 columns' id='focus_project_slot" + ind + "'>" + focus_project_template(project) + "</div>";
-            $("#focus_project_slot" + ind).replaceWith(html);
-            $("#focus_project_slot" + ind).foundation();
+            var html = "<div class='fp-slot small-4 columns' id='focus-project-slot" + ind + "'>" + focus_project_template(project) + "</div>";
+            $("#focus-project-slot" + ind).replaceWith(html);
+            $("#focus-project-slot" + ind).foundation();
         }
 
         // Update the fertilizer and power (cult bonus)
@@ -314,11 +314,11 @@ class EnginePhase1 extends BaseEngine {
             if (this.state['focus_action'] - project['focus_action'] >= 0 && !project['active']){
                 project['active'] = true;
                 this.state['focus_action'] -= project['focus_action'];
-                $("#focus_swirl" + project['id']).show();
-                $("#focus_project" + project['id']).css("color", "#ddd");
-                $("#focus_monks" + project['id']).hide();
-                $("#focus_btn" + project['id']).css("background-color", "#00000000");
-                $("#focus_btn" + project['id']).css("border", "0px solid");
+                $("#focus-swirl" + project['id']).show();
+                $("#focus-project" + project['id']).css("color", "#ddd");
+                $("#focus-monks" + project['id']).hide();
+                $("#focus-btn" + project['id']).css("background-color", "#00000000");
+                $("#focus-btn" + project['id']).css("border", "0px solid");
                 project['lifetime'] = project['duration'];
             }
         }
@@ -372,25 +372,25 @@ class EnginePhase1 extends BaseEngine {
                 // Update the meditation box depending on the number of meditators
                 if (type == "meditators"){
                     if (this.state['meditators'] > 0){
-                        $("#start_meditation").show();
-                        $("#meditation_inactive").hide();
+                        $("#start-meditation").show();
+                        $("#meditation-inactive").hide();
 
                         // Update the meditation price
                         var price = this.state['meditation_price'][this.state['meditators'] - 1];
-                        $("#meditation_price").html(price);
+                        $("#meditation-price").html(price);
 
                     } else {
-                        $("#start_meditation").hide();
-                        $("#meditation_inactive").show();
+                        $("#start-meditation").hide();
+                        $("#meditation-inactive").show();
                     }
                 }
 
                 // Only show the leader box if you have a leader
                 if (type == "leaders"){
                     if (this.state['leaders'] > 0){
-                        $(".leader_box").show();
+                        $(".leader-box").show();
                     } else {
-                        $(".leader_box").hide();
+                        $(".leader-box").hide();
                     }
                 }
 
@@ -423,23 +423,23 @@ class EnginePhase1 extends BaseEngine {
 
         s['meditation_practice'] = practice;
 
-        $("#meditation_target_container").show();
+        $("#meditation-target-container").show();
 
         // Set the target color
         var color = 0.2 + 0.6 * Math.random();
         s['meditation_target'] = color;
         s['meditation_current'] = [-1, -1, -1];
 
-        var target = $("#meditation_target");
+        var target = $("#meditation-target");
         target.css("margin-left", "" + 300 * color + "px");
-        $("#meditation_try0").hide();
-        $("#meditation_try1").hide();
-        $("#meditation_try2").hide();
+        $("#meditation-try0").hide();
+        $("#meditation-try1").hide();
+        $("#meditation-try2").hide();
 
         target.width(s["meditation_width"][s["meditators"] - 1] * 300 + "px");
 
         target.show();
-        $("#start_meditation").hide();
+        $("#start-meditation").hide();
 
         // Start the first color cycle
         this.activate_meditation_box(0);
@@ -449,8 +449,8 @@ class EnginePhase1 extends BaseEngine {
         this.state['meditation_active'] = id;
 
         // Start animation
-        $('#meditation_box' + id).css('animation-play-state', 'running');
-        $("#meditation_box_container" + id).show();
+        $('#meditation-box' + id).css('animation-play-state', 'running');
+        $("#meditation-box-container" + id).show();
     }
 
     try_meditation(num_tries){
@@ -458,7 +458,7 @@ class EnginePhase1 extends BaseEngine {
         if (s['meditation_active'] == num_tries){
 
             // Stop animation
-            var box = $('#meditation_box' + num_tries);
+            var box = $('#meditation-box' + num_tries);
             box.css('animation-play-state', 'paused');
 
             // Update the current color
@@ -468,11 +468,11 @@ class EnginePhase1 extends BaseEngine {
             s['meditation_current'][num_tries] = val;
 
             if (num_tries == 0){
-                $("#meditation_current").show();
+                $("#meditation-current").show();
             }
 
             if (num_tries >= 1){
-                var line = $("#meditation_line");
+                var line = $("#meditation-line");
                 // Draw the line from the lowest try to the highest
                 var arr = s['meditation_current'].slice(0, num_tries + 1);
                 var min = Math.min(...arr);
@@ -485,16 +485,16 @@ class EnginePhase1 extends BaseEngine {
             }
 
             // Hide the monk on the button
-            $("#meditation_try_monk" + num_tries).hide();
+            $("#meditation-try-monk" + num_tries).hide();
 
             // Add the done class to the box
             box.addClass("done");
 
             // Hide the color box
-            $("#btn_try_meditation" + num_tries).hide();
+            $("#btn-try-meditation" + num_tries).hide();
             var cur = this.update_meditation_current(val);
             
-            $("#meditation_try" + num_tries).css("margin-left", 300 * val + "px").show();
+            $("#meditation-try" + num_tries).css("margin-left", 300 * val + "px").show();
 
             // Check if target is hit
             var diff = Math.abs(s['meditation_target'] - cur);
@@ -509,9 +509,9 @@ class EnginePhase1 extends BaseEngine {
                 
                 s['focus'] += win_amount;
 
-                $("#meditation_amount").html(win_amount);
-                $(".meditation_box_container").hide();
-                $("#meditation_win").show();
+                $("#meditation-amount").html(win_amount);
+                $(".meditation-box-container").hide();
+                $("#meditation-win").show();
 
                 // Reset in 3 seconds
                 setTimeout(this.reset_meditation, 3000);
@@ -520,8 +520,8 @@ class EnginePhase1 extends BaseEngine {
                 this.activate_meditation_box(num_tries + 1);
 
             } else if (num_tries === 2) {
-                $(".meditation_box_container").hide();
-                $("#meditation_lose").show();
+                $(".meditation-box-container").hide();
+                $("#meditation-lose").show();
 
                 // Reset in 3 seconds
                 setTimeout(this.reset_meditation, 3000);
@@ -544,7 +544,7 @@ class EnginePhase1 extends BaseEngine {
 
         // Position
         var dist = color * 300;
-        var el = $("#meditation_current");
+        var el = $("#meditation-current");
         el.css("margin-left", "" + dist + "px");
 
         return tot / num;
@@ -553,41 +553,41 @@ class EnginePhase1 extends BaseEngine {
     reset_meditation() {
         // Reset the whole minigame (we need to use engine because this is sometimes called after timeout)
         if (engine.state['meditators'] > 0){
-            $("#start_meditation").show();
-            $("#meditation_inactive").hide();
+            $("#start-meditation").show();
+            $("#meditation-inactive").hide();
 
             // Update the meditation price
             var price = engine.state['meditation_price'][engine.state['meditators'] - 1];
-            $("#meditation_price").html(price);
+            $("#meditation-price").html(price);
         } else {
-            $("#start_meditation").hide();
-            $("#meditation_inactive").show();
+            $("#start-meditation").hide();
+            $("#meditation-inactive").show();
         }
 
         engine.state['meditation_active'] = -1;
         engine.state['meditation_current'] = [-1, -1, -1];
 
-        $(".btn_try_meditation").show();
-        $(".meditation_box_container").hide();
-        $("#meditation_target").hide();
-        $("#meditation_current").hide();
-        $("#meditation_win").hide();
-        $("#meditation_lose").hide();
-        $("#meditation_target_container").hide();
+        $(".btn-try-meditation").show();
+        $(".meditation-box-container").hide();
+        $("#meditation-target").hide();
+        $("#meditation-current").hide();
+        $("#meditation-win").hide();
+        $("#meditation-lose").hide();
+        $("#meditation-target-container").hide();
 
         // Show all the monks
-        $("#meditation_try_monk0").show();
-        $("#meditation_try_monk1").show();
-        $("#meditation_try_monk2").show();
+        $("#meditation-try-monk0").show();
+        $("#meditation-try-monk1").show();
+        $("#meditation-try-monk2").show();
 
         // Hide the meditation line
-        $("#meditation_line").hide();
+        $("#meditation-line").hide();
 
         // Remove done class from all meditation boxes
-        $(".meditation_box").removeClass("done");
+        $(".meditation-box").removeClass("done");
         
         // Write correct price in button
-        $("#meditation_price").html(engine.state['meditation_price'][engine.state['meditators'] - 1]);
+        $("#meditation-price").html(engine.state['meditation_price'][engine.state['meditators'] - 1]);
     }
 
     render_status_text(production_rates = false){
@@ -604,25 +604,25 @@ class EnginePhase1 extends BaseEngine {
         $("#workers").html(num_to_mega(s["workers"]));
         $("#focus").html(num_to_mega(s["focus"]));
 
-        $("#farmers_max").html(s["farmers_max"]);
-        $("#processors_max").html(s["processors_max"]);
-        $("#monks_max").html(s["monks_max"]);
-        $("#meditators_max").html(s["meditators_max"]);
-        $("#leaders_max").html(s["leaders_max"]);
+        $("#farmers-max").html(s["farmers_max"]);
+        $("#processors-max").html(s["processors_max"]);
+        $("#monks-max").html(s["monks_max"]);
+        $("#meditators-max").html(s["meditators_max"]);
+        $("#leaders-max").html(s["leaders_max"]);
 
         // Focus resources levels
         var fertilizer_perc = s['fertilizer'] / s['fertilizer_max'];
-        $("#meter_fertilizer").css('width', 100.0 * fertilizer_perc + '%');
+        $("#meter-fertilizer").css('width', 100.0 * fertilizer_perc + '%');
 
         var power_perc = s['power'] / s['power_max'];
-        $("#meter_power").css('width', 100.0 * power_perc + '%');
+        $("#meter-power").css('width', 100.0 * power_perc + '%');
 
         // Boni from focus projects
         var l = Math.round(100 * s['power_effect'] * power_perc);
-        $("#factory_bonus").html("+" + l + "%");
+        $("#factory-bonus").html("+" + l + "%");
 
         var l = Math.round(100 * s['fertilizer_effect'] * fertilizer_perc);
-        $("#farm_bonus").html("+" + l + "%");
+        $("#farm-bonus").html("+" + l + "%");
 
         // // Focus projects & progress bar
         for (var ind in this.focus_projects){
@@ -638,8 +638,8 @@ class EnginePhase1 extends BaseEngine {
 
         // Production Rates
         if (production_rates !== false){
-            $("#herbs_rate1").html(num_to_mega(production_rates[0]));
-            $("#teabags_rate1").html(num_to_mega(production_rates[1]));
+            $("#herbs-rate1").html(num_to_mega(production_rates[0]));
+            $("#teabags-rate1").html(num_to_mega(production_rates[1]));
         }
 
         // Season
@@ -658,17 +658,17 @@ class EnginePhase1 extends BaseEngine {
                 var t = 100 * s['factory_efficiencies'][s[p]];
                 t = Math.round(t);
                 t = t + "%";
-                $("#" + p).html(t);
+                $("#" + to_css_id(p)).html(t);
             }
             else if (p.endsWith("_use")){
                 var t = 100 * s[p + "s"][s[p]];
                 t = t + "%";
-                $("#" + p).html(t);
+                $("#" + to_css_id(p)).html(t);
             }
             else {
-                $("#" + p).html(num_to_mega(s[p]));
+                $("#" + to_css_id(p)).html(num_to_mega(s[p]));
             }
-            $("#price_" + p).html(this.get_price(p));
+            $("#price-" + to_css_id(p)).html(this.get_price(p));
         }
     }
 }

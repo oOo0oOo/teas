@@ -1,0 +1,186 @@
+<!-- phase2 starts here -->
+<div id="ui-game-phase2" class="row">
+  <!-- left column -->
+  <div class="small-4 columns main-column">
+    <!-- teabag-stats box -->
+    <div class="row box">
+      <div class="row">
+        <div class="small-6 columns">
+          <h5>Teas</h5>
+        </div>
+        <div class="small-6 columns tea-container inf">
+          <span id="alef">&alefsym;</span><span id="teabags2">0</span>
+          <br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+        </div>
+        <div class="small-6 columns tea-container">
+          <span id="teabags-rate2"></span> &alefsym;/s<br>
+        </div>
+      </div>
+    </div>
+
+            <!-- collecting box -->
+    <div id="ui-teabageria" class="row box relative">
+      <!-- little title tab -->
+      <div class="title-tab">
+        <img src="static/img/greenhouse_tab.png">
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+
+          <div id="ui-teabageria-bonus" class="row more-line-height">
+            <div class="small-5 columns">
+              cult-bonus
+            </div>
+            <div class="small-2 columns">
+              <span id="teabageria-bonus"></span>
+            </div>
+
+          <div class="small-5 columns">
+             <div id="progress-teabageria" class="success progress">
+              <div id="meter-teabageria" class="progress-meter" style="width:50%"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div id="ui-teabageria-use" class="row more-line-height">
+        <div class="small-4 columns">
+          bonus use
+        </div>
+        <div class="small-2 columns">
+          <span id="teabageria-use"></span>
+        </div>
+        <div class="small-6 columns">
+          <button id="buy-teabageria-use" class="btn-buy" onclick="action('buy_upgrade', 'teabageria_use')">+</button>
+          <span id="price-teabageria-use"></span>
+        </div>
+      </div>
+      <br>
+
+      <div id="ui-teabageria-speed" class="row more-line-height">
+        <div class="small-4 columns">
+          Speed
+        </div>
+        <div class="small-2 columns">
+          <span id="teabageria-speed"></span>
+        </div>
+        <div class="small-6 columns">
+          <button id="buy-teabageria-speed" class="btn-buy" onclick="action('buy_upgrade', 'teabageria_speed')">+</button>
+          <span id="price-teabageria-speed"></span>
+        </div>
+      </div>
+
+      <br>
+    </div>
+
+    <div class="row box">
+      Focus: <span id="focus2"></span><br>
+      Moral: <span id="moral"></span> / 100
+    </div>
+    <div class="row box">
+      <button class="btn-cheat" id="cheat" onclick="cheat()">Cheat</button>
+      &nbsp;
+      <button class="btn-cheat" id="void-teabags" onclick="void_teabags()">Void</button>
+      &nbsp;
+      <button class="btn-cheat" id="give-worker" onclick="give_worker()">+ Worker</button>
+      <br><br>
+      <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
+    </div>
+  </div>
+
+  <div class="small-8 columns main-column">
+    <div id="ui-map" class="row box">
+      PICK YOUR ADVENTURE<br><br>
+      <div id="ceremonies"></div>
+    </div>
+    <div id="ui-selection" class="row box">
+      ASSEMBLE A TEAM FOR THIS CEREMONY<br><br>
+      <div class="row">
+        <div class="small-3 columns">
+          Fire<br><span class="fire-require"></span>
+        </div>
+        <div class="small-3 columns">
+          Nature<br><span class="nature-require"></span>
+        </div>
+        <div class="small-3 columns">
+          Water<br><span class="water-require"></span>
+        </div>
+        <div class="small-3 columns">
+          Max Explosion<br><span class="explosion-max"></span>
+        </div>
+      </div>
+      <br><br>
+      <div id="selection-container" class="row small-up-2 medium-up-3 large-up-4"></div>
+      <br><br>
+      <button id="start-ceremony" onclick="action('start-ceremony')">Start ceremony</button>
+      &emsp;<button id="cancel-selection" onclick="action('cancel-selection')">Cancel</button>
+    </div>
+    <div id="ui-reward" class="row box">
+      <div id="reward-text">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+      <br><br>
+      <button id="return-to-map" onclick="action('return-to-map')">Return to map</button>
+    </div>
+    <div id="ui-fight" class="row box">
+      <div id="ceremony-container">
+        <div id="ceremony-bg"></div>
+
+        <img id="waterfall" src="static/img/waterfall.gif">
+        <div id="ceremony-bottom"></div>
+        <div id="ceremony-decor-left"></div>
+        <div id="ceremony-decor-right"></div>
+        <div id="ceremony-pillar-left"></div>
+        <div id="ceremony-pillar-right"></div>
+        <div id="ceremony-top"></div>
+
+        <div id="ceremony-fire">
+          <span id="fire" class="counter"></span> / <span class="fire-require"></span>
+        </div>
+        <div id="ceremony-nature">
+          <span id="nature" class="counter"></span> / <span class="nature-require"></span>
+        </div>
+        <div id="ceremony-water">
+          <span id="water" class="counter"></span> / <span class="water-require"></span>
+        </div>
+        <img id="ceremony-icon-fire" src="static/img/fire.png">
+        <img id="ceremony-icon-nature" src="static/img/nature.png">
+        <img id="ceremony-icon-water" src="static/img/water.png">
+
+        <img id="ceremony-utensil1" src="static/img/water.png">
+
+        <div id="picked-teapet"><img id="picked-teapet-img"></div>
+
+        <a id="pick-bag" onclick="action('pick-bag')"><img src="static/img/gong.png"></a>
+        <button id="abort-ceremony" onclick="action('abort-ceremony')">ABORT!</button>
+
+        <div id="picked-teapet-text"></div>
+
+        <div id="progress-explosion" class="alert progress">
+          <div id="meter-explosion" class="progress-meter" style="width:50%"></div>
+        </div>
+
+      </div>
+      <br>
+      <div id="utensil-container"></div>
+      <br><br>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+  <script id="teapet-template" type="text/x-handlebars-template">
+  <div class='teapet clickable column' onclick="action('select_teapet', {{ zoo_id }})" id='teapet{{zoo_id}}'>
+    {{title}}
+  </div>
+  </script>
+
+  <script id="ceremony-template" type="text/x-handlebars-template">
+    <button class='clickable' onclick="action('start_selection', {{ list_id }})" id='ceremony{{list_id}}'>
+      {{title}}
+    </button>
+  </script>

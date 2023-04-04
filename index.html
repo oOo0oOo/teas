@@ -7,55 +7,53 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0-rc5/js/foundation.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0-rc5/css/foundation-float.min.css" type="text/css" />
-
     <link rel="stylesheet" href="style.css" type="text/css" />
-
     <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABIUlEQVRYhe2XsRWDIBCGf/IyiKVuYG9l5wgu4DQu4Ah2VvRuIKWbmOp8F+UQhcTGv0p8yPfl8AICT25I2dYLfX7fAZ60Wa/tBMq2XoamU7GhWzBlB+I3hIjYfi1l7sd1XiugbOtl0gZZkXqLEHBoOkX328LhwMEzQJPwyX3GS9nCAeBlG7gFTdpg0gZlWy98ic7EBhcFpHARaUxS5bvyS3DAsQRzP6qkyq2gK6WWcqoCPFIVzsABoQt4pCoQjLfbWTjgUYG5H9XRxEdL4or3XzGXoKq4qhNdQJLJijRI4vJDGCuPQLTd7koLAoEVCGm/KAIx8gg8At6ts91+Y50JnIOOjtS+ccmIp+JQqK+I9b0gNtgl8fXl13CbxO6Q8a+QxAdkSqxYTllAtwAAAABJRU5ErkJggg==">
   </head>
   <body>
     <div id="intro">
       <br><br><br><br><br><br><br>
       <center>
-        <img src="static/img/logo.png">
+        <img src="static/img/logo.png" alt="Infinitea Logo">
         <br><br><br>
         <h3>I feel like having a tea!
         </h3>
         <br>
-        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png" alt="teas">
         <br>
         <br>
-        <button class="btn_big" onclick="switch_to_game_phase_0()"><b>Check out garden</b></button>
+        <button class="btn-big" onclick="switch_to_game_phase_0()"><b>Check out garden</b></button>
       </center>
-      <div style="position: absolute; bottom: 10%; right: 50%;transform: translateX(50%)">
-        Made with  <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
+      <div id="credits">
+        Made with  <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">  by Simon Wüthrich & Oliver Dressler.
       </div>
     </div>
     <!-- phase0 starts here -->
-    <div id="ui_game_phase0" class="row">
+    <div id="ui-game-phase0" class="row">
 
       <!-- Intro popup with explanation -->
-      <div class="reveal popup" id="intro_popup_phase0" data-reveal>
+      <div class="reveal popup" id="intro-popup-phase0" data-reveal>
         <h2>This is Your Garden</h2>
         <br><br>
         <p>A gardener is walking around collecting <b>herbs</b>.</p>
         <p>With these herbs you can brew <b>tea</b>.</p>
         <p>Tea is the most important thing in life.</p>
-        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">
         <p>Oh look! </p>
         <p>They already brought some herbs into your storage.</p> 
         <p>Start brewing!</p>
       </div>
 
       <!--left column-->
-      <div class="large-4 small-6 columns main_column">
+      <div class="large-4 small-6 columns main-column">
         <!-- Teabag-Stats box -->
         <div class="row box">
           <div class="row">
             <div class="small-6 columns">
               <h3>Tea</h3>
-              <a class="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
+              <a class="fullscreen-btn" onclick="toggle_fullscreen()">Fullscreen</a><br>
             </div>
-            <div class="small-6 columns teabag_container">
+            <div class="small-6 columns tea-container">
               <span id="teabags"></span>
               <img class="tea-icon-main" src="static/img/tea_icon.png">
               <br><br>
@@ -63,28 +61,28 @@
           </div>
           <div class="row">
             <div class="small-6 columns">
-              <a class="musicBtn" onclick="togglePlay()">Play Music</a>
+              <a class="music-btn" onclick="toggle_play()">Play Music</a>
             </div>
-            <div class="small-6 columns teabag_container">
-              <b><span class="ui_rates"> <span id="teabags_rate"></span>/s</span></b><br>
+            <div class="small-6 columns tea-container">
+              <b><span class="ui-rates"> <span id="teabags-rate"></span>/s</span></b><br>
             </div>
           </div>
         </div>
         <!-- collecting box -->
-        <div id="ui_collecting" class="row box relative">
-          <div class="title_tab">
+        <div id="ui-collecting" class="row box relative">
+          <div class="title-tab">
             <img src="static/img/greenhouse_tab.png">
           </div>
-          <div class="row more_line_height">
+          <div class="row more-line-height">
             <div class="small-4 columns">
               <b>Herbs</b>
             </div>
             <div class="small-8 columns">
               <b><span id="herbs"></span></b>
-              <span class="ui_rates"> (<span id="herbs_rate"></span>/s)</span>
+              <span class="ui-rates"> (<span id="herbs-rate"></span>/s)</span>
             </div>
           </div>
-          <div id="ui_collectors" class="row more_line_height">
+          <div id="ui-collectors" class="row more-line-height">
             <div class="small-4 columns">
               Farmers
             </div>
@@ -92,31 +90,31 @@
               <span id="farmers"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_farmers" class="btn_buy" onclick="action('buy_upgrade', 'farmers')">+</button>
-              <span id="price_farmers"></span>
+              <button id="buy-farmers" class="btn-buy" onclick="action('buy_upgrade', 'farmers')">+</button>
+              <span id="price-farmers"></span>
             </div>
           </div>
-          <div id="ui_collectors2" class="row more_line_height">
+          <div id="ui-collectors2" class="row more-line-height">
             <div class="small-4 columns">
               Tools
             </div>
             <div class="small-3 columns">
-              <span id="coll_efficiency"></span>
+              <span id="coll-efficiency"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_coll_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'coll_efficiency')">+</button>
-              <span id="price_coll_efficiency"></span>
+              <button id="buy-coll-efficiency" class="btn-buy" onclick="action('buy_upgrade', 'coll_efficiency')">+</button>
+              <span id="price-coll-efficiency"></span>
             </div>
           </div>
         </div>
         <!-- processing box -->
-        <div id="ui_processing" class="row box relative">
-          <div class="title_tab">
+        <div id="ui-processing" class="row box relative">
+          <div class="title-tab">
             <img src="static/img/processing_tab.png">
           </div>
-          <button id="make_teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/img/tea_icon.png" class="tea-icon"></button>
+          <button id="make-teabag" onclick="action('make_tea')" onmousedown="action('make_tea_start')" onmouseup="action('make_tea_end')">Brew&emsp;<img src="static/img/tea_icon.png" class="tea-icon"></button>
           <br>
-          <div id="ui_processors1" class="row more_line_height">
+          <div id="ui-processors1" class="row more-line-height">
             <div class="small-4 columns">
               Brewers
             </div>
@@ -124,113 +122,113 @@
               <span id="processors"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_processors" class="btn_buy" onclick="action('buy_upgrade', 'processors')">+</button>
-              <span id="price_processors"></span>
+              <button id="buy-processors" class="btn-buy" onclick="action('buy_upgrade', 'processors')">+</button>
+              <span id="price-processors"></span>
             </div>
           </div>
-          <div id="ui_processors2" class="row more_line_height">
+          <div id="ui-processors2" class="row more-line-height">
             <div class="small-4 columns">
               Efficiency
             </div>
             <div class="small-3 columns">
-              <span id="proc_efficiency"></span>
+              <span id="proc-efficiency"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_proc_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'proc_efficiency')">+</button>
-              <span id="price_proc_efficiency"></span>
+              <button id="buy-proc-efficiency" class="btn-buy" onclick="action('buy_upgrade', 'proc_efficiency')">+</button>
+              <span id="price-proc-efficiency"></span>
             </div>
           </div>
         </div>
         <!-- fertilizer box-->
-        <div id="ui_garden" class="row box relative">
-          <div class="title_tab">
+        <div id="ui-garden" class="row box relative">
+          <div class="title-tab">
             <img src="static/img/garden_tab.png">
           </div>
-          <div id="ui_garden1" class="row">
-            <div class="small-4 columns more_line_height"">
+          <div id="ui-garden1" class="row">
+            <div class="small-4 columns more-line-height"">
               <b>Garden</b>
             </div>
-            <div class="small-3 columns more_line_height"">
-              Size <span id="garden_size"></span>
+            <div class="small-3 columns more-line-height"">
+              Size <span id="garden-size"></span>
             </div>
-            <div class="small-5 columns more_line_height"">
-              <button class="btn_buy" id="buy_garden_size" onclick="action('buy_upgrade', 'garden_size')">+</button>
-              <span id="price_garden_size"></span>
+            <div class="small-5 columns more-line-height"">
+              <button class="btn-buy" id="buy-garden-size" onclick="action('buy_upgrade', 'garden_size')">+</button>
+              <span id="price-garden-size"></span>
             </div>
             <br><br>
             <br><br>
           </div>
           <b>Compost</b>
-          <div id='ui_compost' class="row">
-            <div id="ui_compost0" class="small-4 columns more_line_height">
+          <div id='ui-compost' class="row">
+            <div id="ui-compost0" class="small-4 columns more-line-height">
               Bucket<br>
-              <div id="auto_compost_box0" class="auto-compost">
+              <div id="auto-compost-box0" class="auto-compost">
                 <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto_compost0" class="debug-red"> 
+                  <input type="checkbox" id="auto-compost0" class="debug-red"> 
                   <span class="compost-slider"></span>
                 </label>
               </div>
-              <div id="price_compost0" class="compost_price_tag"></div>
-              <div id="progress_compost0" class="success progress compost">
-                <div id="meter_compost0" class="progress-meter" style="width:0%"></div>
+              <div id="price-compost0" class="compost-price-tag"></div>
+              <div id="progress-compost0" class="success progress compost">
+                <div id="meter-compost0" class="progress-meter" style="width:0%"></div>
               </div>
-              <button class="btn_compost btn_buy" id="btn_compost0" onclick="action('start_compost', 0)">+</button>
-              <button id="btn_set_compost0" class="btn_set_compost buyable" onclick="action('set_compost', 0)"><img src="static/img/compost0.png" width="32px"></img></button>
-              <span class="compost_active" id="compost_active0">Click Map</span>
+              <button class="btn-compost btn-buy" id="btn-compost0" onclick="action('start_compost', 0)">+</button>
+              <button id="btn-set-compost0" class="btn-set-compost buyable" onclick="action('set_compost', 0)"><img src="static/img/compost0.png" width="32px"></img></button>
+              <span class="compost-active" id="compost-active0">Click Map</span>
             </div>
-            <div id="ui_compost1" class="small-4 columns more_line_height">
+            <div id="ui-compost1" class="small-4 columns more-line-height">
               Barrel<br>
-              <div id="auto_compost_box1" class="auto-compost">
+              <div id="auto-compost-box1" class="auto-compost">
                 <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto_compost1" class="debug-red"> 
+                  <input type="checkbox" id="auto-compost1" class="debug-red"> 
                   <span class="compost-slider"></span>
                 </label>
               </div>
-              <div id="price_compost1" class="compost_price_tag"></div>
-              <div id="progress_compost1" class="success progress compost">
-                <div id="meter_compost1" class="progress-meter" style="width:0%"></div>
+              <div id="price-compost1" class="compost-price-tag"></div>
+              <div id="progress-compost1" class="success progress compost">
+                <div id="meter-compost1" class="progress-meter" style="width:0%"></div>
               </div>
-              <button class="btn_compost btn_buy" id="btn_compost1" onclick="action('start_compost', 1)">+</button>
-              <button id="btn_set_compost1" class="btn_set_compost buyable" onclick="action('set_compost', 1)"><img src="static/img/compost1.png" width="32px"></img></button>
-              <span class="compost_active" id="compost_active1">Click Map</span>
+              <button class="btn-compost btn-buy" id="btn-compost1" onclick="action('start_compost', 1)">+</button>
+              <button id="btn-set-compost1" class="btn-set-compost buyable" onclick="action('set_compost', 1)"><img src="static/img/compost1.png" width="32px"></img></button>
+              <span class="compost-active" id="compost-active1">Click Map</span>
             </div>
-            <div id="ui_compost2" class="small-4 columns more_line_height">
+            <div id="ui-compost2" class="small-4 columns more-line-height">
               Silo<br>
-              <div id="auto_compost_box2" class="auto-compost">
+              <div id="auto-compost-box2" class="auto-compost">
                 <label class="switch">Auto-buy
-                  <input type="checkbox" id="auto_compost2" class="debug-red"> 
+                  <input type="checkbox" id="auto-compost2" class="debug-red"> 
                   <span class="compost-slider"></span>
                 </label>
               </div>
-              <div id="price_compost2" class="compost_price_tag"></div>
-              <div id="progress_compost2" class="success progress compost">
-                <div id="meter_compost2" class="progress-meter" style="width:0%"></div>
+              <div id="price-compost2" class="compost-price-tag"></div>
+              <div id="progress-compost2" class="success progress compost">
+                <div id="meter-compost2" class="progress-meter" style="width:0%"></div>
               </div>
 
-              <button class="btn_compost btn_buy" id="btn_compost2" onclick="action('start_compost', 2)">+</button>
-              <button id="btn_set_compost2" class="btn_set_compost buyable" onclick="action('set_compost', 2)"><img src="static/img/compost2.png" width="32px"></img></button>
-              <span class="compost_active" id="compost_active2">Click Map</span>
+              <button class="btn-compost btn-buy" id="btn-compost2" onclick="action('start_compost', 2)">+</button>
+              <button id="btn-set-compost2" class="btn-set-compost buyable" onclick="action('set_compost', 2)"><img src="static/img/compost2.png" width="32px"></img></button>
+              <span class="compost-active" id="compost-active2">Click Map</span>
             </div>
           </div>
           <br><br>
-          <div id="ui_map_fertilizer">
+          <div id="ui-map-fertilizer">
             <div class="row">
-              <div class="small-12 columns more_line_height">
+              <div class="small-12 columns more-line-height">
                 <b>Farmer Jobs</b>
               </div>
             </div>
             <div class="row">
-              <div class="small-3 columns more_line_height small-font">
+              <div class="small-3 columns more-line-height small-font">
                 All Collectors
               </div>
-              <div class="small-6 columns more_line_height">
+              <div class="small-6 columns more-line-height">
                 <div class="slider" data-slider data-initial-start="0" data-end="75">
                   <span class="slider-handle" data-slider-handle role="slider" tabindex="1" title="Some of your farmers can fertilize instead of harvest."></span>
                   <span class="slider-fill" data-slider-fill></span>
-                  <input id="map_fertilizer_ratio" type="hidden">
+                  <input id="map-fertilizer-ratio" type="hidden">
                 </div>
               </div>
-              <div class="small-3 columns more_line_height small-font">
+              <div class="small-3 columns more-line-height small-font">
                 All Fertilizers
               </div>
               <br><br>
@@ -240,31 +238,31 @@
         </div>
         <div class="row box menu-box">
           <b>Options</b><br><br>
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
         </div>
         <!-- cheat box -->
         <div class="row box debug-box">
           <b>Debug</b><br><br>
-          <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
+          <button class="btn-cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
-          <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
+          <button class="btn-cheat" id="void-teabags" onclick="void_teabags()">Void</button>
           &nbsp;
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
           &nbsp;
-          <button class="btn_cheat" onclick="switch_to_game_phase_1()">To Phase 2</button>
+          <button class="btn-cheat" onclick="switch_to_game_phase_1()">To Phase 2</button>
         </div>
       </div>
 
       <!-- middle column-->
-      <div class="large-4 small-6 columns main_column">
+      <div class="large-4 small-6 columns main-column">
         <!-- garden box -->
         <div class="row box">
-          <div class="equal_aspect_ratio" id="map_container0">
+          <div class="equal-aspect-ratio" id="map-container0">
             <canvas class="map" id="map0"></canvas>
           </div>
         </div>
 
-        <div id="ui_coll_strategy" class="row box">
+        <div id="ui-coll-strategy" class="row box">
           <div id="strategies">
             <div class="info-exists">
               <img onclick="action('strategy_home')" id="strategy-home" title="Call your workers home.">
@@ -284,23 +282,23 @@
         </div>
       </div>
       <!-- right column -->
-      <div class="large-4 small-12 columns main_column">
+      <div class="large-4 small-12 columns main-column">
         <!-- project box -->
-        <div id="ui_projects" class="row box">
+        <div id="ui-projects" class="row box">
           <br>
-          <div id="projects_list"></div>
+          <div id="projects-list"></div>
         </div>
       </div>
     </div>
 
     <!-- phase1 starts here -->
-    <div id="ui_game_phase1" class="row">
+    <div id="ui-game-phase1" class="row">
       
       <!-- Intro popup phase 1 (= end popup phase 0) -->
-      <div class="reveal popup" id="intro_popup_phase1" data-reveal data-close-on-click="false">
+      <div class="reveal popup" id="intro-popup-phase1" data-reveal data-close-on-click="false">
         <h2>You reached the <b>TEA</b>rvana!!</h2>
         <br>
-        <img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon_spacing" src="static/img/tea_icon.png">
+        <img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png"><img class="tea-icon-main icon-spacing" src="static/img/tea_icon.png">
         <p>Stop micromanaging your workers and start medita<b>tea</b>ing!</p>
         <br>
         <button onclick="stay_in_game_phase_0()">Keep playing</button>
@@ -308,48 +306,48 @@
       </div>
 
       <!-- Season warning: Winter is coming! -->
-      <div class="reveal popup" id="season_popup" data-reveal>
+      <div class="reveal popup" id="season-popup" data-reveal>
         <h2>Winter is coming soon!</h2>
         <br><br>
         <p>Your garden will provide less herbs.</p>
       </div>
 
       <!-- left column -->
-      <div class="small-4 columns main_column">
+      <div class="small-4 columns main-column">
         <!-- teabags-stats box -->
         <div class="row box">
           <div class="row">
             <div class="small-6 columns">
               <h3>Tea Cult</h3>
             </div>
-            <div class="small-6 columns teabag_container">
+            <div class="small-6 columns tea-container">
               <span id="teabags1"></span>
               <img class="tea-icon-main" src="static/img/tea_icon.png">
               <br><br>
             </div>
           </div>
-          <a class="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</a><br>
-          <a class="musicBtn" onclick="togglePlay()">Play Music</a>
+          <a class="fullscreen-btn" onclick="toggle_fullscreen()">Fullscreen</a><br>
+          <a class="music-btn" onclick="toggle_play()">Play Music</a>
           <br><br>
           <div class="row">
             <div class="small-6 columns">
             It is <span id="season"></span>.
             <!-- Add a progress bar on the same line -->
             
-            <div id="progress_season" class="success progress">
-                <div id="meter_season" class="progress-meter" style="width:50%"></div>
+            <div id="progress-season" class="success progress">
+                <div id="meter-season" class="progress-meter" style="width:50%"></div>
             </div>
 
             </div>
-            <div class="small-6 columns teabag_container">
-              <span id="teabags_rate1"></span>/s<br>
+            <div class="small-6 columns tea-container">
+              <span id="teabags-rate1"></span>/s<br>
             </div>
           </div>
         </div>
         <!-- worker box -->
         <div class="row box">
           <div class="row">
-            <div class="small-12 columns" id="free_workers_display">
+            <div class="small-12 columns" id="free-workers-display">
               Free Workers:&nbsp;<span id="workers"></span><br><br>
             </div>
           </div>
@@ -361,9 +359,9 @@
               </button>
             </div>
             <div class="small-8 columns">
-              <button id="remove_worker_greenhouse" class="btn_buy minus" onclick="action('shift_worker', ['farmers', -1])">-</button>
-              <button id="add_worker_greenhouse" class="btn_buy" onclick="action('shift_worker', ['farmers', 1])">+</button>
-              &emsp;<span id="farmers1"></span> / <span id="farmers_max"></span>
+              <button id="remove-worker-greenhouse" class="btn-buy minus" onclick="action('shift_worker', ['farmers', -1])">-</button>
+              <button id="add-worker-greenhouse" class="btn-buy" onclick="action('shift_worker', ['farmers', 1])">+</button>
+              &emsp;<span id="farmers1"></span> / <span id="farmers-max"></span>
             </div>
           </div>
           <div class="row">
@@ -374,12 +372,12 @@
               </button>
             </div>
             <div class="small-8 columns">
-              <button id="remove_worker_factory" class="btn_buy minus" onclick="action('shift_worker', ['processors', -1])">-</button>
-              <button id="add_worker_factory" class="btn_buy" onclick="action('shift_worker', ['processors', 1])">+</button>
-              &emsp;<span id="processors1"></span> / <span id="processors_max"></span>
+              <button id="remove-worker-factory" class="btn-buy minus" onclick="action('shift_worker', ['processors', -1])">-</button>
+              <button id="add-worker-factory" class="btn-buy" onclick="action('shift_worker', ['processors', 1])">+</button>
+              &emsp;<span id="processors1"></span> / <span id="processors-max"></span>
             </div>
           </div>
-          <div id="worker_monks" class="row">
+          <div id="worker-monks" class="row">
             <div class="small-4 columns">
               Monks 
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Monks will allow you to perform special ceremonies. More monks will charge faster." data-position="right" data-alignment="center">
@@ -387,12 +385,12 @@
               </button>
             </div>
             <div class="small-8 columns">
-              <button id="remove_worker_monk" class="btn_buy minus" onclick="action('shift_worker', ['monks', -1])">-</button>
-              <button id="add_worker_monk" class="btn_buy" onclick="action('shift_worker', ['monks', 1])">+</button>
-              &emsp;<span id="monks"></span> / <span id="monks_max"></span>
+              <button id="remove-worker-monk" class="btn-buy minus" onclick="action('shift_worker', ['monks', -1])">-</button>
+              <button id="add-worker-monk" class="btn-buy" onclick="action('shift_worker', ['monks', 1])">+</button>
+              &emsp;<span id="monks"></span> / <span id="monks-max"></span>
             </div>
           </div>
-          <div id="worker_leaders" class="row">
+          <div id="worker-leaders" class="row">
             <div class="small-4 columns">
               Leader  
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="The leader can exchange ceremonies and focus on specific ones. Only use a leader when you need her!" data-position="right" data-alignment="center">
@@ -400,12 +398,12 @@
               </button>
             </div>
             <div class="small-8 columns">
-              <button id="remove_worker_leader" class="btn_buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
-              <button id="add_worker_leader" class="btn_buy" onclick="action('shift_worker', ['leaders', 1])">+</button>
-              &emsp;<span id="leaders"></span> / <span id="leaders_max"></span>
+              <button id="remove-worker-leader" class="btn-buy minus" onclick="action('shift_worker', ['leaders', -1])">-</button>
+              <button id="add-worker-leader" class="btn-buy" onclick="action('shift_worker', ['leaders', 1])">+</button>
+              &emsp;<span id="leaders"></span> / <span id="leaders-max"></span>
             </div>
           </div>
-          <div id="worker_meditators" class="row">
+          <div id="worker-meditators" class="row">
             <div class="small-4 columns">
               Cultists 
               <button class="button info-btn" type="button" data-tooltip tabindex="1" title="Cultists can increase your focus with their special meditation technique." data-position="right" data-alignment="center">
@@ -413,17 +411,16 @@
               </button>
             </div>
             <div class="small-8 columns">
-              <button id="remove_worker_meditator" class="btn_buy minus" onclick="action('shift_worker', ['meditators', -1])">-</button>
-              <button id="add_worker_meditator" class="btn_buy" onclick="action('shift_worker', ['meditators', 1])">+</button>
-              &emsp;<span id="meditators"></span> / <span id="meditators_max"></span>
+              <button id="remove-worker-meditator" class="btn-buy minus" onclick="action('shift_worker', ['meditators', -1])">-</button>
+              <button id="add-worker-meditator" class="btn-buy" onclick="action('shift_worker', ['meditators', 1])">+</button>
+              &emsp;<span id="meditators"></span> / <span id="meditators-max"></span>
             </div>
           </div>
-          
         </div>
         <!-- collecting box -->
-        <div id="ui_collecting" class="row box relative">
+        <div id="ui-collecting" class="row box relative">
           <!-- little title tab -->
-          <div class="title_tab">
+          <div class="title-tab">
             <img src="static/img/greenhouse_tab.png">
           </div>
           <div class="row">
@@ -434,160 +431,160 @@
                   <b>Herbs</b>
                 </div>
                 <div class="small-7 columns">
-                  <b><span id="herbs1"></span></b>&nbsp;(<span id="herbs_rate1"></span>/s)
+                  <b><span id="herbs1"></span></b>&nbsp;(<span id="herbs-rate1"></span>/s)
                 </div>
               </div>
 
-              <div id="ui_greenhouse_bonus" class="row more_line_height flex-v-center">
+              <div id="ui-greenhouse-bonus" class="row more-line-height flex-v-center">
                 <div class="small-5 columns">
                   Cult Bonus
                 </div>
                 <div class="small-2 columns">
-                  <span id="farm_bonus"></span>
+                  <span id="farm-bonus"></span>
                 </div>
                 <div class="small-5 columns">
-                  <div id="progress_fertilizer" class="success progress">
-                    <div id="meter_fertilizer" class="progress-meter" style="width:50%"></div>
+                  <div id="progress-fertilizer" class="success progress">
+                    <div id="meter-fertilizer" class="progress-meter" style="width:50%"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div id="ui_greenhouse_use" class="row more_line_height">
+          <div id="ui-greenhouse-use" class="row more-line-height">
             <div class="small-4 columns">
               Bonus Decay
             </div>
             <div class="small-2 columns">
-              <span id="greenhouse_use"></span>
+              <span id="greenhouse-use"></span>
             </div>
             <div class="small-6 columns">
-              <button id="buy_greenhouse_use" class="btn_buy" onclick="action('buy_upgrade', 'greenhouse_use')">+</button>
-              <span id="price_greenhouse_use"></span>
+              <button id="buy-greenhouse-use" class="btn-buy" onclick="action('buy_upgrade', 'greenhouse_use')">+</button>
+              <span id="price-greenhouse-use"></span>
             </div>
           </div>
           <br>
 
-          <div id="ui_greenhouse_speed" class="row more_line_height">
+          <div id="ui-greenhouse-speed" class="row more-line-height">
             <div class="small-4 columns">
               Speed
             </div>
             <div class="small-2 columns">
-              <span id="greenhouse_speed"></span>
+              <span id="greenhouse-speed"></span>
             </div>
             <div class="small-6 columns">
-              <button id="buy_greenhouse_speed" class="btn_buy" onclick="action('buy_upgrade', 'greenhouse_speed')">+</button>
-              <span id="price_greenhouse_speed"></span>
+              <button id="buy-greenhouse-speed" class="btn-buy" onclick="action('buy_upgrade', 'greenhouse_speed')">+</button>
+              <span id="price-greenhouse-speed"></span>
             </div>
           </div>
 
           <br>
           <center>
-            <div class="equal_aspect_ratio" id="map_container1" hidden>
+            <div class="equal-aspect-ratio" id="map-container1" hidden>
               <canvas class="map" id="map1"></canvas>
             </div>
           </center>
         </div>
         <!-- processing box -->
         <div class="row box relative">
-          <div class="title_tab">
+          <div class="title-tab">
             <img src="static/img/processing_tab.png">
           </div>
           <div class="row">
             <div class="small-12 columns">
-              <div id="ui_factory_bonus" class="row more_line_height flex-v-center">
+              <div id="ui-factory-bonus" class="row more-line-height flex-v-center">
                 <div class="small-5 columns">
                   Cult Bonus
                 </div>
                 <div class="small-2 columns">
-                  <span id="factory_bonus"></span>
+                  <span id="factory-bonus"></span>
                 </div>
                 <div class="small-5 columns">
-                  <div id="progress_power" class="success progress">
-                    <div id="meter_power" class="progress-meter" style="width:100%"></div>
+                  <div id="progress-power" class="success progress">
+                    <div id="meter-power" class="progress-meter" style="width:100%"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div id="ui_factory_use" class="row more_line_height">
+          <div id="ui-factory-use" class="row more-line-height">
             <div class="small-4 columns">
               Bonus Decay
             </div>
             <div class="small-3 columns">
-              <span id="factory_use"></span>
+              <span id="factory-use"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_factory_use" class="btn_buy" onclick="action('buy_upgrade', 'factory_use')">+</button>
-              <span id="price_factory_use"></span>
+              <button id="buy-factory-use" class="btn-buy" onclick="action('buy_upgrade', 'factory_use')">+</button>
+              <span id="price-factory-use"></span>
             </div>
           </div>
           <br>
-          <div id="ui_factory_speed" class="row more_line_height">
+          <div id="ui-factory-speed" class="row more-line-height">
             <div class="small-4 columns">
               Speed
             </div>
             <div class="small-3 columns">
-              <span id="factory_speed"></span>
+              <span id="factory-speed"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_factory_speed" class="btn_buy" onclick="action('buy_upgrade', 'factory_speed')">+</button>
-              <span id="price_factory_speed"></span>
+              <button id="buy-factory-speed" class="btn-buy" onclick="action('buy_upgrade', 'factory_speed')">+</button>
+              <span id="price-factory-speed"></span>
             </div>
           </div>
 
-          <div id="ui_factory_efficiency" class="row more_line_height">
+          <div id="ui-factory-efficiency" class="row more-line-height">
             <div class="small-4 columns">
               Efficiency
             </div>
             <div class="small-3 columns">
-              <span id="factory_efficiency"></span>
+              <span id="factory-efficiency"></span>
             </div>
             <div class="small-5 columns">
-              <button id="buy_factory_efficiency" class="btn_buy" onclick="action('buy_upgrade', 'factory_efficiency')">+</button>
-              <span id="price_factory_efficiency"></span>
+              <button id="buy-factory-efficiency" class="btn-buy" onclick="action('buy_upgrade', 'factory_efficiency')">+</button>
+              <span id="price-factory-efficiency"></span>
             </div>
           </div>
         </div>
         <div class="row box menu-box">
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
         </div>
         <!-- cheat box -->
         <div class="row box debug-box">
           <b>Debug</b><br><br>
-          <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
+          <button class="btn-cheat" id="cheat" onclick="cheat()">Cheat</button>
           &nbsp;
-          <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
+          <button class="btn-cheat" id="void-teabags" onclick="void_teabags()">Void</button>
           &nbsp;
-          <button class="btn_cheat" id="give_worker" onclick="give_worker()">+ Worker</button>
+          <button class="btn-cheat" id="give-worker" onclick="give_worker()">+ Worker</button>
           &nbsp;
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
+          <button class="btn-cheat" id="reset" onclick="reset_save()">Restart</button>
         </div>
       </div>
 
       <!-- middle column starts here -->
-      <div class="small-4 columns main_column">
+      <div class="small-4 columns main-column">
         <!-- focus box -->
-        <div id="ui_focus" class="row box">
-          <div class="row center focus_header">
-            <img src="static/img/focus_animated.gif" class="img_focus" width="40px"> <span id="focus"></span>
+        <div id="ui-focus" class="row box">
+          <div class="row center focus-header">
+            <img src="static/img/focus_animated.gif" class="img-focus" width="40px"> <span id="focus"></span>
           </div>
           
-          <div class="row focus_projects">
-            <div id="focus_project_slot0" class="fp-slot small-4 columns"></div>
-            <div id="focus_project_slot1" class="fp-slot small-4 columns"></div>
-            <div id="focus_project_slot2" class="fp-slot small-4 columns"></div>
+          <div class="row focus-projects">
+            <div id="focus-project-slot0" class="fp-slot small-4 columns"></div>
+            <div id="focus-project-slot1" class="fp-slot small-4 columns"></div>
+            <div id="focus-project-slot2" class="fp-slot small-4 columns"></div>
           </div>
           <br><br>
           <div class="row">
-            <div id="focus_project_slot3" class="fp-slot small-4 columns"></div>
-            <div id="focus_project_slot4" class="fp-slot small-4 columns"></div>
-            <div id="focus_project_slot5" class="fp-slot small-4 columns"></div>
+            <div id="focus-project-slot3" class="fp-slot small-4 columns"></div>
+            <div id="focus-project-slot4" class="fp-slot small-4 columns"></div>
+            <div id="focus-project-slot5" class="fp-slot small-4 columns"></div>
           </div>
           <br><br>
-          <div id="monks_focus_box" class="row">
-            <div id="monk0", class="monk small-12 columns">
+          <div id="monks-focus-box" class="row">
+            <div id="monk0" class="monk small-12 columns">
               <svg viewbox="0 0 101 123">
                 <filter id="glow" style="color-interpolation-filters:sRGB">
                     <feDisplacementMap scale="-2" yChannelSelector="G" result="result1" xChannelSelector="R" in="SourceGraphic"/>
@@ -606,8 +603,8 @@
                         <rect id="monkfg0" x="0" y="0" width="101" height="50%" fill="#343434" />
                     </mask>
                 </defs>
-                <image id="fullCharge0" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask0)"/>
+                <image id="fullCharge0" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
+                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask0)"/>
               </svg>
             </div>
             <div id="monk1", class="monk small-12 columns">
@@ -629,8 +626,8 @@
                         <rect id="monkfg1" x="0" y="0" width="101" height="50%" fill="#343434" />
                     </mask>
                 </defs>
-                <image id="fullCharge1" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask1)"/>
+                <image id="fullCharge1" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
+                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask1)"/>
               </svg>
             </div>
             <div id="monk2", class="monk small-12 columns">
@@ -652,8 +649,8 @@
                         <rect id="monkfg2" x="0" y="0" width="101" height="50%" fill="#343434" />
                     </mask>
                 </defs>
-                <image id="fullCharge2" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask2)"/>
+                <image id="fullCharge2" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
+                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask2)"/>
               </svg>
             </div>
             <div id="monk3", class="monk small-12 columns">
@@ -675,8 +672,8 @@
                         <rect id="monkfg3" x="0" y="0" width="101" height="50%" fill="#343434" />
                     </mask>
                 </defs>
-                <image id="fullCharge3" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask3)"/>
+                <image id="fullCharge3" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
+                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask3)"/>
               </svg>
             </div>
             <div id="monk4", class="monk small-12 columns">
@@ -698,278 +695,96 @@
                         <rect id="monkfg4" x="0" y="0" width="101" height="50%" fill="#343434" />
                     </mask>
                 </defs>
-                <image id="fullCharge4" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_bg"  filter="url(#glow)"/>
-                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk_fg" mask="url(#mask4)"/>
+                <image id="fullCharge4" href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-bg"  filter="url(#glow)"/>
+                <image href="static/img/monk.png" x="0" y="0" width="101" height="123" id="img-monk-fg" mask="url(#mask4)"/>
               </svg>
             </div>
           </div>
-          <div class="leader_box">
+          <div class="leader-box">
             <div class="flex-column">
-              <div class="small_price_tag pb-xsmall">-2<img src="static/img/focus_light.png"/></div>
-              <button onclick="action('refresh_focus_project')" class="btn_light btn_leader">
+              <div class="small-price-tag pb-xsmall">-2<img src="static/img/focus_light.png"/></div>
+              <button onclick="action('refresh_focus_project')" class="btn-light btn-leader">
                 <img src="static/img/reload.png"/>
               </button>
             </div>
-            <div id="leader_strategies_box" class="flex-column">
+            <div id="leader-strategies-box" class="flex-column">
               <span class="center pb-small">Focus:</span>
-              <div id="leader_strategies">
-                <input type="radio" id="strat_herbs" name="leader_strategy" value="fertilizer">
-                <label for="strat_herbs" class="btn_light btn_leader"><img src="static/img/fertilizer_light.png"/></label>
-                <input type="radio" id="strat_processing" name="leader_strategy" value="power">
-                <label for="strat_processing" class="btn_light btn_leader"><img src="static/img/power_light.png"/></label>
-                <input type="radio" id="strat_focus" name="leader_strategy" value="focus">
-                <label for="strat_focus" class="btn_light btn_leader"><img src="static/img/focus_light.png"/></label>
-                <input type="radio" id="strat_none" name="leader_strategy" value="none" checked>
-                <label for="strat_none" class="btn_light btn_leader"><img src="static/img/x-icon.png"/></label>
+              <div id="leader-strategies">
+                <input type="radio" id="strat-herbs" name="leader_strategy" value="fertilizer">
+                <label for="strat-herbs" class="btn-light btn-leader"><img src="static/img/fertilizer_light.png"/></label>
+                <input type="radio" id="strat-processing" name="leader_strategy" value="power">
+                <label for="strat-processing" class="btn-light btn-leader"><img src="static/img/power_light.png"/></label>
+                <input type="radio" id="strat-focus" name="leader_strategy" value="focus">
+                <label for="strat-focus" class="btn-light btn-leader"><img src="static/img/focus_light.png"/></label>
+                <input type="radio" id="strat-none" name="leader_strategy" value="none" checked>
+                <label for="strat-none" class="btn-light btn-leader"><img src="static/img/x_icon.png"/></label>
               </div>
             </div>
           </div>
         </div>
         <!-- meditation box-->
-        <div id="ui_meditation" class="row box">
-          <b>Meditation<span id="meditation_inactive"> requires cultists</span></b><br><br>
-          <div class="row" id="start_meditation">
+        <div id="ui-meditation" class="row box">
+          <b>Meditation<span id="meditation-inactive"> requires cultists</span></b><br><br>
+          <div class="row" id="start-meditation">
             <div class="small-6 columns center">
-              <button class="meditation_btn btn_light" onclick="action('start_meditation')">
+              <button class="meditation-btn btn-light" onclick="action('start_meditation')">
                 <!-- <img src="static/img/monk.png" width="24px"><br> -->
-                <span id="meditation_price"></span>
+                <span id="meditation-price"></span>
                 <img src='static/img/focus_light.png' style='width:24px'></img>
               </button>
             </div>
             <div class="small-6 columns center">
-              <button class="meditation_btn btn_light" onclick="action('start_practice')">
+              <button class="meditation-btn btn-light" onclick="action('start_practice')">
                 <!-- <img src="static/img/monk.png" width="24px"><br> -->
                 pratice
               </button>
             </div>
           </div>
           <!-- meditation bar -->
-            <div id="meditation_target_container">
-              <div class="stacked" id="meditation_target_bg"></div>
-              <div class="stacked" id="meditation_target"></div>
-              <div class="stacked" id="meditation_current"></div>
-              <div class="stacked" id="meditation_line"></div>
-              <div class="stacked meditation_try" id="meditation_try0"></div>
-              <div class="stacked meditation_try" id="meditation_try1"></div>
-              <div class="stacked meditation_try" id="meditation_try2"></div>
+            <div id="meditation-target-container">
+              <div class="stacked" id="meditation-target-bg"></div>
+              <div class="stacked" id="meditation-target"></div>
+              <div class="stacked" id="meditation-current"></div>
+              <div class="stacked" id="meditation-line"></div>
+              <div class="stacked meditation-try" id="meditation-try0"></div>
+              <div class="stacked meditation-try" id="meditation-try1"></div>
+              <div class="stacked meditation-try" id="meditation-try2"></div>
             </div>
           
           <!-- try boxes -->
-          <div class="row" id="meditation_boxes">
-            <div id="meditation_box_container0" class="small-4 columns meditation_box_container">
-              <div onclick="action('try_meditation', 0)" class="meditation_box" id="meditation_box0">
-                <img id="meditation_try_monk0" src="static/img/monk.png" width="40px">
+          <div class="row" id="meditation-boxes">
+            <div id="meditation-box-container0" class="small-4 columns meditation-box-container">
+              <div onclick="action('try_meditation', 0)" class="meditation-box" id="meditation-box0">
+                <img id="meditation-try-monk0" src="static/img/monk.png" width="40px">
               </div>
             </div>
-            <div id="meditation_box_container1" class="small-4 columns meditation_box_container">
-              <div onclick="action('try_meditation', 1)" class="meditation_box" id="meditation_box1">
-                <img id="meditation_try_monk1" src="static/img/monk.png" width="40px">
+            <div id="meditation-box-container1" class="small-4 columns meditation-box-container">
+              <div onclick="action('try_meditation', 1)" class="meditation-box" id="meditation-box1">
+                <img id="meditation-try-monk1" src="static/img/monk.png" width="40px">
               </div>
             </div>
-            <div onclick="action('try_meditation', 2)" id="meditation_box_container2" class="small-4 columns meditation_box_container">
-              <div class="meditation_box" id="meditation_box2">
-                <img id="meditation_try_monk1" src="static/img/monk.png" width="40px">
+            <div onclick="action('try_meditation', 2)" id="meditation-box-container2" class="small-4 columns meditation-box-container">
+              <div class="meditation-box" id="meditation-box2">
+                <img id="meditation-try-monk1" src="static/img/monk.png" width="40px">
               </div>
             </div>
           </div>
 
           <!-- meditation result -->
-          <div id="meditation_win">
-            <img src="static/img/meditation_win.png" width="40px">  + <span id="meditation_amount"></span> <img src='static/img/focus_dark.png'>
+          <div id="meditation-win">
+            <img src="static/img/meditation_win.png" width="40px">  + <span id="meditation-amount"></span> <img src='static/img/focus_dark.png'>
           </div>
-          <div id="meditation_lose">
+          <div id="meditation-lose">
             <img src="static/img/meditation_lose.png" width="40px">
           </div>
 
         </div>
       </div>
       <!-- right column -->
-      <div class="small-4 columns main_column">
+      <div class="small-4 columns main-column">
         <!-- projects box -->
-        <div id="ui_projects1" class="row box"></div>
+        <div id="ui-projects1" class="row box"></div>
       </div>
-    </div>
-
-
-
-
-
-
-    <!-- phase2 starts here -->
-    <div id="ui_game_phase2" class="row">
-      <!-- left column -->
-      <div class="small-4 columns main_column">
-        <!-- teabag-stats box -->
-        <div class="row box">
-          <div class="row">
-            <div class="small-6 columns">
-              <h5>Teas</h5>
-            </div>
-            <div class="small-6 columns teabag_container inf">
-              <span id="alef">&alefsym;</span><span id="teabags2">0</span>
-              <br><br>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-6 columns">
-            </div>
-            <div class="small-6 columns teabag_container">
-              <span id="teabags_rate2"></span> &alefsym;/s<br>
-            </div>
-          </div>
-        </div>
-
-                <!-- collecting box -->
-        <div id="ui_teabageria" class="row box relative">
-          <!-- little title tab -->
-          <div class="title_tab">
-            <img src="static/img/greenhouse_tab.png">
-          </div>
-          <div class="row">
-            <div class="small-12 columns">
-
-              <div id="ui_teabageria_bonus" class="row more_line_height">
-                <div class="small-5 columns">
-                  cult-bonus
-                </div>
-                <div class="small-2 columns">
-                  <span id="teabageria_bonus"></span>
-                </div>
-
-              <div class="small-5 columns">
-                 <div id="progress_teabageria" class="success progress">
-                  <div id="meter_teabageria" class="progress-meter" style="width:50%"></div>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          <div id="ui_teabageria_use" class="row more_line_height">
-            <div class="small-4 columns">
-              bonus use
-            </div>
-            <div class="small-2 columns">
-              <span id="teabageria_use"></span>
-            </div>
-            <div class="small-6 columns">
-              <button id="buy_teabageria_use" class="btn_buy" onclick="action('buy_upgrade', 'teabageria_use')">+</button>
-              <span id="price_teabageria_use"></span>
-            </div>
-          </div>
-          <br>
-
-          <div id="ui_teabageria_speed" class="row more_line_height">
-            <div class="small-4 columns">
-              Speed
-            </div>
-            <div class="small-2 columns">
-              <span id="teabageria_speed"></span>
-            </div>
-            <div class="small-6 columns">
-              <button id="buy_teabageria_speed" class="btn_buy" onclick="action('buy_upgrade', 'teabageria_speed')">+</button>
-              <span id="price_teabageria_speed"></span>
-            </div>
-          </div>
-
-          <br>
-        </div>
-
-        <div class="row box">
-          Focus: <span id="focus2"></span><br>
-          Moral: <span id="moral"></span> / 100
-        </div>
-        <div class="row box">
-          <button class="btn_cheat" id="cheat" onclick="cheat()">Cheat</button>
-          &nbsp;
-          <button class="btn_cheat" id="void_teabags" onclick="void_teabags()">Void</button>
-          &nbsp;
-          <button class="btn_cheat" id="give_worker" onclick="give_worker()">+ Worker</button>
-          <br><br>
-          <button class="btn_cheat" id="reset" onclick="reset_save()">Restart</button>
-        </div>
-      </div>
-
-      <div class="small-8 columns main_column">
-        <div id="ui_map" class="row box">
-          PICK YOUR ADVENTURE<br><br>
-          <div id="ceremonies"></div>
-        </div>
-        <div id="ui_selection" class="row box">
-          ASSEMBLE A TEAM FOR THIS CEREMONY<br><br>
-          <div class="row">
-            <div class="small-3 columns">
-              Fire<br><span class="fire_require"></span>
-            </div>
-            <div class="small-3 columns">
-              Nature<br><span class="nature_require"></span>
-            </div>
-            <div class="small-3 columns">
-              Water<br><span class="water_require"></span>
-            </div>
-            <div class="small-3 columns">
-              Max Explosion<br><span class="explosion_max"></span>
-            </div>
-          </div>
-          <br><br>
-          <div id="selection_container" class="row small-up-2 medium-up-3 large-up-4"></div>
-          <br><br>
-          <button id="start_ceremony" onclick="action('start_ceremony')">Start ceremony</button>
-          &emsp;<button id="cancel_selection" onclick="action('cancel_selection')">Cancel</button>
-        </div>
-        <div id="ui_reward" class="row box">
-          <div id="reward_text">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
-          <br><br>
-          <button id="return_to_map" onclick="action('return_to_map')">Return to map</button>
-        </div>
-        <div id="ui_fight" class="row box">
-          <div id="ceremony_container">
-            <div id="ceremony_bg"></div>
-
-            <img id="waterfall" src="static/img/waterfall.gif">
-            <div id="ceremony_bottom"></div>
-            <div id="ceremony_decor_left"></div>
-            <div id="ceremony_decor_right"></div>
-            <div id="ceremony_pillar_left"></div>
-            <div id="ceremony_pillar_right"></div>
-            <div id="ceremony_top"></div>
-
-            <div id="ceremony_fire">
-              <span id="fire" class="counter"></span> / <span class="fire_require"></span>
-            </div>
-            <div id="ceremony_nature">
-              <span id="nature" class="counter"></span> / <span class="nature_require"></span>
-            </div>
-            <div id="ceremony_water">
-              <span id="water" class="counter"></span> / <span class="water_require"></span>
-            </div>
-            <img id="ceremony_icon_fire" src="static/img/fire.png">
-            <img id="ceremony_icon_nature" src="static/img/nature.png">
-            <img id="ceremony_icon_water" src="static/img/water.png">
-
-            <img id="ceremony_utensil1" src="static/img/water.png">
-
-            <div id="picked_teapet"><img id="picked_teapet_img"></div>
-
-            <a id="pick_bag" onclick="action('pick_bag')"><img src="static/img/gong.png"></a>
-            <button id="abort_ceremony" onclick="action('abort_ceremony')">ABORT!</button>
-
-            <div id="picked_teapet_text"></div>
-
-            <div id="progress_explosion" class="alert progress">
-              <div id="meter_explosion" class="progress-meter" style="width:50%"></div>
-            </div>
-
-          </div>
-          <br>
-          <div id="utensil_container"></div>
-          <br><br>
-          <br><br><br>
-          <!-- <div id="bag" class="row small-up-2 medium-up-2 large-up-3"></div> -->
-        </div>
-      </div>
-      </div>
-
     </div>
     <footer class="footer">
     </footer>
@@ -982,25 +797,22 @@
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/projects.js"></script>
-    <script type="text/javascript" src="js/ceremonies.js"></script>
-    <script type="text/javascript" src="js/teapets.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/engine/base.js"></script>
     <script type="text/javascript" src="js/engine/engine0.js"></script>
     <script type="text/javascript" src="js/engine/engine1.js"></script>
-    <script type="text/javascript" src="js/engine/engine2.js"></script>
   </body>
 
   <script id="project-template" type="text/x-handlebars-template">
     {{#each projects}}
-    <div class="project clickable" id="project_{{id}}" onclick="action('buy_project', '{{id}}')">
-      <div class="project_title">
+    <div class="project clickable" id="project-{{id}}" onclick="action('buy_project', '{{id}}')">
+      <div class="project-title">
         {{title}}
       </div>
-      <div class="project_description">
+      <div class="project-description">
         {{description}}
       </div>
-      <div class="project_price">
+      <div class="project-price">
         {{{cost_str}}}
       </div>
     </div>
@@ -1008,42 +820,42 @@
   </script>
 
   <script id="focus-project-template" type="text/x-handlebars-template">
-  <div class='focus_project relative' onclick="action('activate_focus_project', '{{id}}')" id='focus_project{{id}}'>
-    <div id="focus_monks{{id}}" class="focus_actions_container">
-        {{#if_eq focus_action 1}}
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        {{/if_eq}}
-        {{#if_eq focus_action 2}}
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        {{/if_eq}}
-        {{#if_eq focus_action 3}}
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        {{/if_eq}}
-        {{#if_eq focus_action 4}}
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        <img src="static/img/monk.png" class="icon_focus_actions">
-        {{/if_eq}}
+  <div class='focus-project relative' onclick="action('activate_focus_project', '{{id}}')" id='focus-project{{id}}'>
+    <div id="focus-monks{{id}}" class="focus-actions-container">
+      {{#if_eq focus_action 1}}
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      {{/if_eq}}
+      {{#if_eq focus_action 2}}
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      {{/if_eq}}
+      {{#if_eq focus_action 3}}
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      {{/if_eq}}
+      {{#if_eq focus_action 4}}
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      <img src="static/img/monk.png" class="icon-focus-actions">
+      {{/if_eq}}
     </div>
     <div class="row">
-      <div class="small-10 columns no_padding">
+      <div class="small-10 columns no-padding">
         {{#if_eq ftype 'converter'}}
-        <img id="focus_swirl{{id}}" class="focus_swirl converter" src="static/img/mandala_converter.gif">
+        <img id="focus-swirl{{id}}" class="focus-swirl converter" src="static/img/mandala_converter.gif">
         {{/if_eq}}
         {{#if_eq ftype 'generator'}}
-        <img id="focus_swirl{{id}}" class="focus_swirl generator" src="static/img/mandala.gif">
+        <img id="focus-swirl{{id}}" class="focus-swirl generator" src="static/img/mandala.gif">
         {{/if_eq}}
-        <div id="focus_btn{{id}}" class="btn_light focus_icons_btn inactive">
-          <div class="focus_icons">
+        <div id="focus-btn{{id}}" class="btn-light focus-icons-btn inactive">
+          <div class="focus-icons">
             {{#each effect}}
-            <img src="static/img/{{@key}}_light.png" class="img_focus_project level{{../focus_action}} resources{{../id}}">
+            <img src="static/img/{{@key}}_light.png" class="img-focus-project level{{../focus-action}} resources{{../id}}">
             {{#if @first}}
             {{#if_eq ../ftype 'converter'}}
-            <img src="static/img/arrow_white.png" class="arrow_focus_project">
+            <img src="static/img/arrow_white.png" class="arrow-focus-project">
             {{/if_eq}}
             {{/if}}
             {{/each}}
@@ -1053,15 +865,4 @@
     </div>
   </div>
   </script>
-
-  <script id="teapet-template" type="text/x-handlebars-template">
-  <div class='teapet clickable column' onclick="action('select_teapet', {{ zoo_id }})" id='teapet{{zoo_id}}'>
-    {{title}}
-  </div>
-  </script>
-
-  <script id="ceremony-template" type="text/x-handlebars-template">
-    <button class='clickable' onclick="action('start_selection', {{ list_id }})" id='ceremony{{list_id}}'>
-      {{title}}
-    </button>
-  </script>
+</html>
