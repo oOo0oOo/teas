@@ -704,9 +704,10 @@ input:checked + .compost-slider:before {
 
 .focus-swirl.generator {
   -webkit-animation: rotation linear 10s infinite;
+  animation: rotation linear 10s infinite;
 }
 
-@-webkit-keyframes rotation {
+@keyframes rotation {
   from {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
   }
