@@ -86,14 +86,14 @@ var START_STATE = {
     'factory_speed': 0,
     'factory_efficiency': 0,
     'factory_use': 0,
-    'factory_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],          // Use less power, factor for 'power_use' (cult bonus)
-    'factory_speeds': [55, 110, 192, 333, 581, 1011, 1760, 3065, 5336, 9290],             // How much is processed per processor
-    'factory_efficiencies': [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 3, 5],      // Make more teabags then use up herbs
+    'factory_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6],          // Use less power, factor for 'power_use' (cult bonus)
+    'factory_speeds': [60, 110, 192, 333, 581, 1011, 1760, 3065, 5336],             // How much is processed per processor
+    'factory_efficiencies': [1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5],      // Make more teabags then use up herbs
 
     'greenhouse_speed': 0,
     'greenhouse_use': 0,
-    'greenhouse_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5],  // Use less fertilizer, factor for 'fertilizer_use' (cult bonus)
-    'greenhouse_speeds': [50, 100, 175, 303, 528, 919, 1600, 2786, 4850, 8445],       // How much is collected per farmer
+    'greenhouse_uses': [1.0, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6],  // Use less fertilizer, factor for 'fertilizer_use' (cult bonus)
+    'greenhouse_speeds': [55, 100, 175, 303, 528, 919, 1600, 2786, 4850],       // How much is collected per farmer
 
     // 'greenhouse_num': [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],               // How many farmers per worker
 
@@ -101,9 +101,9 @@ var START_STATE = {
     'focus_action': 0.0,
     'monk_focus_action_generate': 0.0013,             // Focus action generated per monk per tick
 
-    'price_greenhouse_speed':       [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
-    'price_factory_speed':          [1e5, 5e5, 8e5, 32e5, 185e5, 520e5, 1.1e8, 12e8, 110e8],
-    'price_factory_efficiency':     [3e5, 5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
+    'price_greenhouse_speed':       [1e5, 1.5e6, 12e6, 40e6, 100e6, 400e6, 800e6, 1.2e9],
+    'price_factory_speed':          [1e5, 1.5e6, 12e6, 40e6, 100e6, 400e6, 800e6, 1.2e9],
+    'price_factory_efficiency':     [1e5, 1.5e6, 12e6, 40e6, 200e6, 1.2e9],
     'price_greenhouse_use':         [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
     'price_factory_use':            [1e5, 1.5e5, 7e5, 30e5, 180e5, 500e5, 1e8, 10e8],
 
@@ -205,11 +205,11 @@ var START_STATE = {
             'name': 'Focus to nature',
             'effect': {
                 'focus': [-0.005, -0.006],
-                'fertilizer': [0.025, 0.035],
+                'fertilizer': [0.02, 0.03],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [1, 2],
-            'rarity': [0.3, 0.3],
+            'rarity': [0.1, 0.1],
             'level': [
                 [2, 3],
                 [2, 3, 4]
@@ -219,11 +219,11 @@ var START_STATE = {
             'name': 'Focus to processing',
             'effect': {
                 'focus': [-0.005, -0.006],
-                'power': [0.025, 0.035],
+                'power': [0.02, 0.03],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [2, 3],
-            'rarity': [0.3, 0.3],
+            'rarity': [0.1, 0.1],
             'level': [
                 [2, 3],
                 [3, 4]
@@ -233,11 +233,11 @@ var START_STATE = {
             'name': 'Nature to processing',
             'effect': {
                 'fertilizer': [-0.005, -0.006],
-                'power': [0.025, 0.035],
+                'power': [0.02, 0.03],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [1, 2],
-            'rarity': [0.05, 0.05],
+            'rarity': [0.02, 0.02],
             'level': [
                 [2, 3],
                 [3, 4]
@@ -246,12 +246,12 @@ var START_STATE = {
         {
             'name': 'Processing to Nature',
             'effect': {
-                'fertilizer': [0.025, 0.035],
+                'fertilizer': [0.02, 0.03],
                 'power': [-0.005, -0.006],
             },
             'duration': [700, 800],                  // Ticks (20 / s)
             'focus_action': [1, 2],
-            'rarity': [0.05, 0.05],
+            'rarity': [0.02, 0.02],
             'level': [
                 [2, 3],
                 [3, 4]

@@ -25,6 +25,8 @@ Ceremony:
 * Special Focus Projects (increase teas, temporary worker, doubling teas)
 * Special Focus Projects (double cult bonus)
 - Cleanup: E.g. No unnecessary css
+- winter anim
+- show meditation upgrade in title (box)
 
 ## Nice to have
 

@@ -58,9 +58,7 @@ function run_engine(save_state) {
       $("#ui-game-phase1").show();
       break;
     case 2:
-      engine = new EnginePhase2(save_state);
-      $("#ui-game-phase2").show();
-      break;
+      reset_save();
   }
 
   if (engine) {
@@ -243,26 +241,8 @@ function switch_to_game_phase_1() {
 }
 
 function switch_to_game_phase_2() {
-  // Hide all remaining projects
-  $(".project").hide();
-
-  // Clone the projects from ui_projects1 to ui_projects2
-  var p = $("#projects-list").clone();
-  $("#ui-projects1").remove();
-  $("#ui-projects2").append(p);
-
-  // Show the new ui
-  $("#ui-game-phase1").hide();
-
-  // Update some of the state
-  var s = engine.serialize();
-  s["state"]["game_phase"] = 2;
-  s["state"]["teabags"] = 0;
-  s["state"]["greenhouse_speed"] = 0;
-  s["state"]["factory_speed"] = 0;
-
-  run_engine(s);
-}
+    reset_save();
+};
 
 /* Get the documentElement (<html>) to display the page in fullscreen */
 var elem = document.documentElement;
