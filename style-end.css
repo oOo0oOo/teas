@@ -1,0 +1,52 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #499360;
+    margin: 0;
+    padding: 0;
+  }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .central-box {
+    background-color: #499360;
+  }
+  
+  .crazy-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh + 320px);
+    background-image: url("/static/img/bg_crazy.png");
+    background-repeat: round;
+    animation: 3s linear infinite moveup;
+  }
+  
+  .crazy-bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh + 320px);
+    background-image: url("/static/img/bg_crazy.png");
+    background-repeat: round;
+    animation: 3s linear infinite movedown;
+  }
+  
+  @keyframes moveup {
+    from {transform: translateY(0);}
+    to{transform: translateY(-320px);}
+  }
+  
+  @keyframes movedown {
+    from {transform: translateY(-320px);}
+    to{transform: translateY(0px);}
+  }
