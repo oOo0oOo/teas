@@ -569,10 +569,18 @@ input:checked + .compost-slider:before {
   margin: 3px;
 }
 
+#free-workers-display {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
 .free-workers-highlight {
   color: rgb(255, 30, 4);
   font-size: 11pt;
-  padding-top: 5px;
+  /* padding-top: 5px; */
   animation: blinker 0.8s alternate linear infinite;
 }
 
@@ -975,4 +983,8 @@ input:checked + .compost-slider:before {
 
 .fmonk-width {
     width: 101px;
+}
+
+#popup-end_img {
+  margin-bottom: 15px;
 }

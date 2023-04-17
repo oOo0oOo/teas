@@ -580,7 +580,7 @@ var projects = [
 		id: "fertilizer_bonus_max2",
 		title: "Fertilizer Ceremony",
 		trigger: function(state){return engine.project_done('focus_level4') && engine.project_done('more_workers3')},
-        cost: {focus: 90, teabags: 100000000},
+        cost: {focus: 90, teabags:70000000},
 		game_phase: 1,
 		description: "Further increase the effects of your ceremonies on herb production.",
 		effect: function(state){
@@ -592,7 +592,7 @@ var projects = [
 		id: "power_bonus_max2",
 		title: "Brewing Ritual",
 		trigger: function(state){return engine.project_done('focus_level4') && engine.project_done('more_workers3')},
-        cost: {focus: 85, teabags: 100000000},
+        cost: {focus: 85, teabags: 80000000},
 		game_phase: 1,
 		description: "The effect of your cult bonus on the brewing process is increased.",
 		effect: function(state){
@@ -617,7 +617,7 @@ var projects = [
 		id: "meditation2",
 		title: "Trance Meditation",
 		trigger: function(state){return engine.project_done('focus_level4')},
-        cost: {focus: 170, teabags: 200000000},
+        cost: {focus: 170, teabags: 150000000},
 		game_phase: 1,
 		description: "Your master's secret meditation techniques start to make more sense.",
 		effect: function(state){
@@ -660,7 +660,8 @@ var projects = [
 		game_phase: 1,
 		description: "This is it.",
 		effect: function(state){
-            reset_save();
+            //open end popup
+			$("#end-popup-phase1").foundation('open');
 			return state
 		}
 	}

@@ -11,6 +11,8 @@
 
 ## Simi
 
+- swirl is not centered?
+
 - reorder elements in gardening and processing tab
 Ceremony:
 
