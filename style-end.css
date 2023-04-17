@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "PixelOperator";
+  src: url("static/fonts/PixelOperator8.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "PixelOperator";
+  src: url("static/fonts/PixelOperator8-Bold.ttf");
+  font-weight: bold;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -5,18 +17,73 @@ body {
     background: #499360;
     margin: 0;
     padding: 0;
+    color: #091810;
+    font-family: "PixelOperator";
+    font-size: 8pt;
+    animation: 20s infinite change_color;
+  }
+
+  @keyframes change_color {
+    from {filter: hue-rotate(0);}
+    to {filter: hue-rotate(360deg);}
   }
 
   .center-content {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+
   }
 
   .central-box {
-    background-color: #499360;
+    font-size: 10pt;
+    text-align: center;
+    padding: 40px;
+    line-height: 25pt;
+    background: rgba(73, 147, 96, .7);
+    z-index: 10;
+    margin: 0 15px;
+
+    border-radius: 3px;
+    border-style: double;
+    border-width: 6px;
+    border-color: var(--dark-color);
+    animation: 4s alternate infinite glitch;
+  }
+
+  @keyframes glitch {
+    0% {transform: translate(0,0);}
+    10% {transform: translate(0,0);}
+    11% {transform: translate(7px,0);}
+    25% {transform: translate(7px,0px);}
+    26% {transform: translate(-3px, 8px);}
+    32% {transform: translate(-3px, 8px) scaleX(1);}
+    33% {transform: translate(-3px, 8px) scaleX(-1);}
+    34% {transform: translate(-3px, 8px) scaleX(1);}
+    45% {transform: translate(-3px,8px);}
+    46% {transform: translate(-9px,8px);}
+    80% {transform: translate(-9px,8px);}
+    81% {transform: translate(2px,2px);}
+    97% {transform: translate(2px, 2px);}
+    98% {transform: translate(0px, 0px);}
+    99% {transform: translate(0px, 0px) scaleX(1);}
+    100% {transform: translate(0px, 0px) scaleX(-1);}
+  }
+
+
+
+  #insane-tp {
+    animation: 4s ease-in-out infinite insanity;
+  }
+
+  @keyframes insanity {
+    0% {transform: translateX(-150px) scaleX(-1);}
+    49% {transform: translateX(150px)scaleX(-1);}
+    50% {transform: translateX(150px)scaleX(1);}
+    100% {transform: translateX(-150px) scaleX(1);}
   }
   
   .crazy-bg {
@@ -28,6 +95,7 @@ body {
     background-image: url("/static/img/bg_crazy.png");
     background-repeat: round;
     animation: 3s linear infinite moveup;
+    opacity: .5;
   }
   
   .crazy-bg2 {
@@ -38,7 +106,8 @@ body {
     height: calc(100vh + 320px);
     background-image: url("/static/img/bg_crazy.png");
     background-repeat: round;
-    animation: 3s linear infinite movedown;
+    animation: 5s linear infinite movedown;
+    opacity: .5;
   }
   
   @keyframes moveup {
