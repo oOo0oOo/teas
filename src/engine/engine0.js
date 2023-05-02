@@ -1,4 +1,9 @@
-class EnginePhase0 extends BaseEngine {
+import { BaseEngine } from "./base.js";
+import { num_to_mega, randn_bm, shuffle, to_css_id, randrange } from "../utils.js";
+
+import { MAP_COLORS } from "../config.js";
+
+export class EnginePhase0 extends BaseEngine {
     constructor(save_state){
         super(save_state);
 
@@ -9,6 +14,9 @@ class EnginePhase0 extends BaseEngine {
         this.tile_size = 0;
         this.num_tiles = 0;
         this.making_tea = false;
+
+        this.map_canvas = document.getElementById("map0");
+        this.map_ctx = this.map_canvas.getContext("2d");
     }
 
     init_game(save_state){
@@ -69,8 +77,8 @@ class EnginePhase0 extends BaseEngine {
         width = this.tile_size * this.num_tiles;
 
         $("#map-container0").width(width);
-        canvas.width = width;
-        canvas.height = width;
+        this.map_canvas.width = width;
+        this.map_canvas.height = width;
 
         if (reset){
             // Give some extra herbs in the beginning
@@ -193,8 +201,8 @@ class EnginePhase0 extends BaseEngine {
                     break;
                 case 'place_compost':
                     // Tile coords
-                    var tx = Math.floor(this.num_tiles * (action[1][0] / canvas.width));
-                    var ty = Math.floor(this.num_tiles * (action[1][1] / canvas.height));
+                    var tx = Math.floor(this.num_tiles * (action[1][0] / this.map_canvas.width));
+                    var ty = Math.floor(this.num_tiles * (action[1][1] / this.map_canvas.height));
                     this.place_compost(tx, ty);
                     break;
                 case 'strategy_up':
@@ -720,20 +728,21 @@ class EnginePhase0 extends BaseEngine {
 
         var ts = this.tile_size;
         var c = MAP_COLORS['farmer'];
-        ctx.fillStyle = "rgb("+ c[0] +","+ c[1] + "," + c[2] +")";
+        this.map_ctx.fillStyle = "rgb("+ c[0] +","+ c[1] + "," + c[2] +")";
 
         for (var j = 0;j<num_farmers;j++){
             var coords = this.farmers[j];
-            ctx.beginPath();
+            this.map_ctx.beginPath();
             var m = ts / 2;
-            ctx.arc(coords[0] * ts + m, coords[1] * ts + m, ts / 4, 0, 2 * Math.PI);
-            ctx.fill();
+            this.map_ctx.arc(coords[0] * ts + m, coords[1] * ts + m, ts / 4, 0, 2 * Math.PI);
+            this.map_ctx.fill();
         }
     }
 
     render_composts(){
         var ts = this.tile_size;
         var lifetime =  this.state['compost_lifetime'];
+        var ctx = this.map_ctx;
         this.composts.forEach(function(compost){
             var value = lifetime[compost[1]] / compost[2];
             var c = [0, 0, 0];
@@ -759,8 +768,8 @@ class EnginePhase0 extends BaseEngine {
                 c[i] = (1.0 - value) * MAP_COLORS['field_no_herbs'][i] + value * MAP_COLORS['field_full_herbs'][i]
             };
         }
-        ctx.fillStyle = "rgb("+ c[0] +","+ c[1] + "," + c[2] +")";
-        ctx.fillRect(x*this.tile_size, y*this.tile_size, this.tile_size, this.tile_size);
+        this.map_ctx.fillStyle = "rgb("+ c[0] +","+ c[1] + "," + c[2] +")";
+        this.map_ctx.fillRect(x*this.tile_size, y*this.tile_size, this.tile_size, this.tile_size);
     }
 
     render_all_tiles(){

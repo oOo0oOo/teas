@@ -1,8 +1,17 @@
-class EnginePhase1 extends BaseEngine {
+import { BaseEngine } from "./base.js";
+import { num_to_mega, gradient_value, randf, choice, to_css_id } from "../utils";
+import { engine } from "../game.js";  // TODO: remove this dependency
+
+
+export class EnginePhase1 extends BaseEngine {
     constructor(save_state){
         super(save_state);
 
         this.focus_projects = [];
+
+        // Compile the template for the focus projects
+        var source = $("#focus-project-template").html();
+        this.focus_project_template = Handlebars.compile(source);
     }
 
     init_game(save_state){
@@ -25,7 +34,7 @@ class EnginePhase1 extends BaseEngine {
             this.focus_projects.push(project);
 
             $('#focus-project-slot' + i).empty();
-            $('#focus-project-slot' + i).append(focus_project_template(project));
+            $('#focus-project-slot' + i).append(this.focus_project_template(project));
             $("#focus-project-slot" + i).foundation();
         }
 
@@ -209,7 +218,7 @@ class EnginePhase1 extends BaseEngine {
             var project = this.generate_focus_project();
             this.focus_projects.splice(ind, 1, project);
 
-            var html = "<div class='fp-slot small-4 columns' id='focus-project-slot" + ind + "'>" + focus_project_template(project) + "</div>";
+            var html = "<div class='fp-slot small-4 columns' id='focus-project-slot" + ind + "'>" + this.focus_project_template(project) + "</div>";
             $("#focus-project-slot" + ind).replaceWith(html);
             $("#focus-project-slot" + ind).foundation();
         }

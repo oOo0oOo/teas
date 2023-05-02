@@ -1,14 +1,4 @@
-@font-face {
-  font-family: "PixelOperator";
-  src: url("static/fonts/PixelOperator8.ttf");
-  font-weight: normal;
-}
 
-@font-face {
-  font-family: "PixelOperator";
-  src: url("static/fonts/PixelOperator8-Bold.ttf");
-  font-weight: bold;
-}
 
 body {
     width: 100%;

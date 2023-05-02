@@ -1,4 +1,8 @@
-class BaseEngine{
+import { num_to_mega } from "../utils.js";
+import { projects } from "../projects.js";
+import { TICK_TIME } from "../config.js";
+
+export class BaseEngine{
     constructor(save_state){
         this.state = false;
 

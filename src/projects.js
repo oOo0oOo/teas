@@ -1,5 +1,6 @@
+import {engine} from "./game.js"
 
-var projects = [
+export var projects = [
 	{
 		id: "initial",
 		title: "Enjoy the Moment",

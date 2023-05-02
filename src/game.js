@@ -1,20 +1,13 @@
-// Infinity main file
+import {SAVE_VERSION, TICK_TIME, START_STATE} from "./config.js";
+import {projects} from "./projects.js";
+import {num_to_mega} from "./utils.js";
+import {EnginePhase0} from "./engine/engine0.js";
+import {EnginePhase1} from "./engine/engine1.js";
 
-// Cool FX
-//https://codepen.io/linrock/pen/tBefH
-//https://codepen.io/briangonzalez/pen/DrJyG
-//https://codepen.io/hi-im-si/pen/oXyqjG/
 
 window.onload = setup;
 
-var canvas;
-var ctx;
-
-var engine;
-
-var focus_project_template;
-var teapet_template;
-var ceremony_template;
+export var engine;
 
 // BASICS
 function action(type, params) {
@@ -28,7 +21,6 @@ function tick_game() {
 
 function load_game_state() {
   var save_state;
-
   var save_available = false;
   if (localStorage.getItem("InfiniteaSave") != null) {
     save_state = JSON.parse(localStorage.getItem("InfiniteaSave"));
@@ -39,7 +31,6 @@ function load_game_state() {
         }
     }
   };
-
   if (!save_available) {
     save_state = {
       state: JSON.parse(JSON.stringify(START_STATE)),
@@ -54,7 +45,7 @@ function load_game_state() {
 }
 
 function run_engine(save_state) {
-  delete engine;
+//   delete engine;
   switch (save_state["state"]["game_phase"]) {
     case -1:
       $("#intro").show();
@@ -71,7 +62,7 @@ function run_engine(save_state) {
       reset_save();
   }
 
-  if (engine) {
+  if (engine != undefined) {
     engine.init_game(save_state);
     tick_game();
   }
@@ -87,10 +78,6 @@ function update_free_workers() {
 }
 
 function setup() {
-  // Load map
-  canvas = document.getElementById("map0");
-  ctx = canvas.getContext("2d");
-
   $("#map0").click(function (e) {
     action("place_compost", [e.offsetX, e.offsetY]);
   });
@@ -103,7 +90,7 @@ function setup() {
   var source = $("#project-template").html();
   var template = Handlebars.compile(source);
 
-  for (i = 0; i < projects.length; i++) {
+  for (var i = 0; i < projects.length; i++) {
     var p = projects[i];
     var cost = "";
     // if focus is in the cost dictionary, add the focus icon
@@ -126,16 +113,6 @@ function setup() {
   }
   var html = template({ projects: projects });
   $("#projects-list").html(html);
-
-  // Compile the template for the focus projects
-  var source = $("#focus-project-template").html();
-  focus_project_template = Handlebars.compile(source);
-
-//   var source = $("#teapet-template").html();
-//   teapet_template = Handlebars.compile(source);
-
-//   var source = $("#ceremony-template").html();
-//   ceremony_template = Handlebars.compile(source);
 
   // Detect double click on main tea icon --> toggle visibility of the debug box
   $(".debug-box").hide();
@@ -245,18 +222,12 @@ function switch_to_game_phase_1() {
   s["state"]["garden_size"] = 1;
   s["state"]["farmer_delay"] = 6;
 
-  canvas = document.getElementById("map1");
-  ctx = canvas.getContext("2d");
   run_engine(s);
 }
 
-function switch_to_game_phase_2() {
-    reset_save();
-};
-
 /* Get the documentElement (<html>) to display the page in fullscreen */
 var elem = document.documentElement;
-is_fullscreen = false;
+var is_fullscreen = false;
 
 function toggle_fullscreen() {
   if (is_fullscreen) {
@@ -324,3 +295,17 @@ audioPlayer.onplaying = function () {
 audioPlayer.onpause = function () {
   isPlaying = false;
 };
+
+// Expose some functions, mainly for html onclick
+window.action = action;
+window.reset_meditation = reset_meditation;
+window.update_free_workers = update_free_workers;
+window.cheat = cheat;
+window.void_teabags = void_teabags;
+window.give_worker = give_worker;
+window.reset_save = reset_save;
+window.switch_to_game_phase_0 = switch_to_game_phase_0;
+window.stay_in_game_phase_0 = stay_in_game_phase_0;
+window.switch_to_game_phase_1 = switch_to_game_phase_1;
+window.toggle_fullscreen = toggle_fullscreen;
+window.toggle_play = toggle_play;

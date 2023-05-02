@@ -1,6 +1,8 @@
+import {MEGA_AMOUNTS, MEGA_UNITS} from "./config.js";
+
 // Standard Normal variate using Box-Muller transform.
 // https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
-function randn_bm() {
+export function randn_bm() {
     var u = 0, v = 0;
     while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
     while(v === 0) v = Math.random();
@@ -8,7 +10,7 @@ function randn_bm() {
 }
 
 
-function shuffle(array) {
+export function shuffle(array) {
     var currentIndex = array.length;
     var temporaryValue, randomIndex;
 
@@ -33,7 +35,7 @@ String.prototype.replaceAll = function(search, replacement) {
 };
 
 
-function num_to_mega(num, high_precision=false){
+export function num_to_mega(num, high_precision=false){
     var unit = "";
 
     for (var i=MEGA_AMOUNTS.length-1;i>=0;i--){
@@ -63,8 +65,7 @@ function num_to_mega(num, high_precision=false){
 
 
 
-var choice = function(arr, exclude=[]){
-    var found = false;
+export function choice(arr, exclude=[]){
     while (true){
         var e = arr[Math.floor(Math.random()*arr.length)];
         if (!exclude.includes(e)){
@@ -74,11 +75,11 @@ var choice = function(arr, exclude=[]){
 }
 
 
-function randf(min, max) {
+export function randf(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-function randrange(min, max) {
+export function randrange(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -98,7 +99,7 @@ function gradient_color(value){
     ];
 }
 
-function gradient_value(color){
+export function gradient_value(color){
     return (color[0] - c1[0]) / gdiff[0];
 }
 
@@ -106,6 +107,6 @@ function lerp(fraction, min, max){
     return Math.round(min + fraction * (max - min));
 }
 
-function to_css_id(id){
+export function to_css_id(id){
     return id.replaceAll("_", "-");
 }

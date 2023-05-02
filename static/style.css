@@ -1,12 +1,12 @@
 @font-face {
   font-family: "PixelOperator";
-  src: url("static/fonts/PixelOperator8.ttf");
+  src: url("fonts/PixelOperator8.ttf");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "PixelOperator";
-  src: url("static/fonts/PixelOperator8-Bold.ttf");
+  src: url("fonts/PixelOperator8-Bold.ttf");
   font-weight: bold;
 }
 
@@ -71,7 +71,7 @@ select {
   bottom: 0px;
   height: 90px;
   width: 100%;
-  background-image: url("static/img/footer1.png");
+  background-image: url("img/footer1.png");
   background-repeat: repeat-x;
   z-index: -1;
 }
