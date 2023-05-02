@@ -82,7 +82,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(100vh + 320px);
-    background-image: url("/static/img/bg_crazy.png");
+    background-image: url("img/bg_crazy.png");
     background-repeat: round;
     animation: 3s linear infinite moveup;
     opacity: .5;
@@ -94,7 +94,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(100vh + 320px);
-    background-image: url("/static/img/bg_crazy.png");
+    background-image: url("img/bg_crazy.png");
     background-repeat: round;
     animation: 5s linear infinite movedown;
     opacity: .5;

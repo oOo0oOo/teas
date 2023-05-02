@@ -19,7 +19,7 @@
           You have opened the ancient teapot and let INSANITY crawl out of its prison.<br>
           It will spread and convert all human beings to insane cultists!
         </p>
-        <img id="insane-tp" src="/static/img/teapets/TP_Insanity.png" alt="insanity" /><br>
+        <img id="insane-tp" src="static/img/teapets/TP_Insanity.png" alt="insanity" /><br>
         Thanks for playing?!<br><br>
         <button class="btn-cheat" onclick="reset_save()">Restart</button>
       </div>
@@ -28,7 +28,7 @@
     function reset_save() {
         if (!confirm("Do you want to do the same thing all over again?")) return;
         localStorage.clear();
-        location.href = "/";
+        location.href = "/tea";
     }
     </script>
   </body>
