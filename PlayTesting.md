@@ -20,8 +20,9 @@ x one more worker before temple leader. 150 & 30
 - no project after enlightenment meditation.
 - nirvana: 5G & 500 focus
 
+Ok, but a little boring throughout, at the same time quite hectic.
 Time to nirvana: 1:10, final production approx 7.5M Tb/s.
 500 Focus is ok, with leader and 4 monks
-Ok, but a little boring throughout.
 Leader & meditation are both not the killer features.
 Quite a few projects do not feel impactful. Maybe too many?
+The whole thing feels a bit mechanical, shuffling just numbers and not people/tea/meditation.

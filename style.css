@@ -985,11 +985,11 @@ input:checked + .compost-slider:before {
     width: 101px;
 }
 
-#popup-end_img {
+#popup-end-img {
   margin-bottom: 15px;
 }
 
-#popup-end_img:hover {
+#popup-end-img:hover {
   filter: drop-shadow(0 0 5px white);
 }
 
