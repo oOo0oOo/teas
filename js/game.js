@@ -28,9 +28,19 @@ function tick_game() {
 
 function load_game_state() {
   var save_state;
+
+  var save_available = false;
   if (localStorage.getItem("InfiniteaSave") != null) {
     save_state = JSON.parse(localStorage.getItem("InfiniteaSave"));
-  } else {
+    // Check if the version is correct
+    if (save_state.state["save_version"] != undefined) {
+        if (save_state.state["save_version"] == SAVE_VERSION) {
+            save_available = true;
+        }
+    }
+  };
+
+  if (!save_available) {
     save_state = {
       state: JSON.parse(JSON.stringify(START_STATE)),
       farmers: [],

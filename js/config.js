@@ -1,9 +1,10 @@
-var TICK_TIME = 50;     // Delay between ticks: 50 ms --> max 20 ticks/second
+const SAVE_VERSION = 2;   // Increment this when the save format changes
+const TICK_TIME = 50;     // Delay between ticks: 50 ms --> max 20 ticks/second
 
-var MEGA_AMOUNTS = [1e3, 1e6, 1e9, 1e12, 1e15, 1e18, 1e21, 1e24];
-var MEGA_UNITS = [' k', ' M', ' G', ' T', ' P', ' E', ' Z', ' Y'];
+const MEGA_AMOUNTS = [1e3, 1e6, 1e9, 1e12, 1e15, 1e18, 1e21, 1e24];
+const MEGA_UNITS = [' k', ' M', ' G', ' T', ' P', ' E', ' Z', ' Y'];
 
-var MAP_COLORS = {
+const MAP_COLORS = {
     'field_no_herbs': [72, 180, 108],
     'field_full_herbs': [32, 80, 48],
     'house': [70, 70, 70],
@@ -14,6 +15,7 @@ var MAP_COLORS = {
 }
 
 var START_STATE = {
+    'save_version': SAVE_VERSION,
     'game_phase': -1,   // -1 = intro, others
 
     // Core variables, dont change
